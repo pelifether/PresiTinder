@@ -87,19 +87,19 @@ def main() -> None:
     d.text((yx0 + 15, 82 + 8), "2026", font=f_year, fill=(255, 255, 255))
 
     # headline
-    f_head = black(56)
-    lines = ["10 perguntas pra", "descobrir qual plano", "de governo é o seu", "“match”."]
-    y = 196
+    f_head = black(64)
+    lines = ["Qual plano de", "governo é seu", "“match”?"]
+    y = 232
     for i, line in enumerate(lines):
         if i == len(lines) - 1:
             # highlight the payoff word
             d.rounded_rectangle(
-                (LX - 8, y - 4, LX + d.textlength(line, font=f_head) + 6, y + 66),
+                (LX - 8, y - 4, LX + d.textlength(line, font=f_head) + 6, y + 74),
                 10,
                 fill=YELLOW,
             )
         d.text((LX, y), line, font=f_head, fill=INK)
-        y += 70
+        y += 80
 
     f_foot = sans(21, 500)
     d.text(

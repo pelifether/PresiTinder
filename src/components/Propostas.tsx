@@ -1,5 +1,6 @@
-import { CANDIDATES } from "../data/candidates";
+import { CANDIDATES, bySlug } from "../data/candidates";
 import wordfreq from "../data/wordfreq.json";
+import aiscore from "../data/aiscore.json";
 import { asset } from "../lib/asset";
 import { SEMANTIC, type Dim } from "../data/quiz";
 
@@ -15,6 +16,7 @@ interface DocStats {
 }
 
 const stats = wordfreq as Record<string, DocStats>;
+const ai = aiscore as Record<string, { score: number }>;
 
 const DIMS: { key: Dim; label: string; left: string; right: string }[] = [
   { key: "econ", label: "Economia", left: "+ Estado", right: "+ Mercado" },
@@ -36,10 +38,22 @@ function cellColor(v: number): string {
   return `rgba(27, 63, 143, ${a === 0 ? 0.04 : 0.12 + a * 0.75})`;
 }
 
-const withPlan = CANDIDATES.filter((c) => c.hasPlan);
-const ORDERED = [...withPlan].sort(
+/** traffic-light grading requested for the AI estimate */
+function aiColor(score: number): string {
+  if (score >= 90) return "#d6352c";
+  if (score >= 60) return "#f26522";
+  if (score >= 30) return "#e3a008";
+  return "#0e7a4e";
+}
+
+const ORDERED = [...CANDIDATES].sort(
   (a, b) => SEMANTIC[a.slug].scores.econ - SEMANTIC[b.slug].scores.econ,
 );
+
+const AI_RANKED = Object.entries(ai)
+  .map(([slug, v]) => ({ c: bySlug[slug], score: v.score }))
+  .filter((e) => e.c)
+  .sort((a, b) => b.score - a.score);
 
 function WordBars({ words, color }: { words: WordEntry[]; color: string }) {
   const max = words[0]?.n ?? 1;
@@ -65,11 +79,39 @@ export default function Propostas() {
   return (
     <section>
       <div className="prop-header">
-        <h2>O que cada plano repete</h2>
+        <h2>Quanto a IA ajudou no plano?</h2>
         <p>
-          Palavras mais frequentes em cada plano de governo protocolado no
-          TSE, tirando conectivos, chavões genéricos e nomes.
+          Estimativa estilométrica aberta: frases-clichê típicas de IA,
+          uniformidade das frases, travessões e aberturas repetidas.
         </p>
+      </div>
+      <div className="ai-grid">
+        {AI_RANKED.map(({ c, score }) => (
+          <article className="card ai-box" key={c.slug}>
+            <img
+              className="ai-avatar"
+              src={asset(`candidatos/${c.slug}.jpg`)}
+              alt={c.name}
+            />
+            <div className="ai-pct" style={{ color: aiColor(score) }}>
+              {score}%
+            </div>
+            <div className="ai-name">{c.name}</div>
+            <div
+              className="ai-bar"
+              style={{ width: `${score}%`, background: aiColor(score) }}
+            />
+          </article>
+        ))}
+      </div>
+      <p className="heat-hint">
+        Não é um detector treinado (como Pangram ou GPTZero) — trate como
+        indício, não veredito. Nenhum plano tem cara de IA pura; o método está
+        aberto em <code>pipeline/aidetect.py</code>.
+      </p>
+
+      <div className="section-divider">
+        <h3>Palavra mais repetida em cada plano</h3>
       </div>
 
       <div className="prop-grid">
@@ -85,27 +127,15 @@ export default function Propostas() {
                 <div className="cand-name">{c.name}</div>
                 <div className="cand-party">{c.party}</div>
               </div>
-              <div className="cand-number">{c.number}</div>
+              <div className="cand-word">{stats[c.slug].top[0].w}</div>
             </div>
-            {c.hasPlan && stats[c.slug] ? (
-              <WordBars words={stats[c.slug].top.slice(0, 10)} color={c.color} />
-            ) : (
-              <p className="no-plan-note">
-                Não protocolou plano de governo no TSE até o registro da
-                candidatura. Sem documento, sem análise.
-              </p>
-            )}
+            <WordBars words={stats[c.slug].top.slice(0, 10)} color={c.color} />
           </article>
         ))}
       </div>
 
       <div className="section-divider">
         <h3>A matriz semântica</h3>
-        <p>
-          Cada plano, lido por inteiro e pontuado nas mesmas 6 dimensões.
-          Vermelho puxa para um lado, azul para o outro — a intensidade é a
-          convicção do texto.
-        </p>
       </div>
       <div className="card" style={{ overflowX: "auto", padding: 18 }}>
         <table className="heat-table">
@@ -154,14 +184,14 @@ export default function Propostas() {
       </div>
 
       <div className="section-divider">
-        <h3>O que só este plano fala</h3>
+        <h3>O que é único de cada candidato</h3>
         <p>
           Termos estatisticamente distintivos de cada documento (TF-IDF): o
           vocabulário que um candidato usa e os outros não.
         </p>
       </div>
       <div className="prop-grid">
-        {withPlan.map((c) => (
+        {CANDIDATES.map((c) => (
           <article className="card chip-card" key={c.slug}>
             <div className="chip-owner">
               <span className="chip-dot" style={{ background: c.color }} />
@@ -179,19 +209,15 @@ export default function Propostas() {
       </div>
 
       <div className="section-divider">
-        <h3>Tamanho do plano</h3>
-        <p>
-          Palavras de conteúdo em cada documento. Detalhe não é garantia de
-          qualidade — mas diz quanto o candidato se dispôs a pôr no papel.
-        </p>
+        <h3>Quantas palavras tem o plano?</h3>
       </div>
       <div className="card" style={{ padding: "22px 26px" }}>
         <div className="wordbars">
-          {[...withPlan]
+          {[...CANDIDATES]
             .sort((a, b) => stats[b.slug].totalWords - stats[a.slug].totalWords)
             .map((c) => {
               const max = Math.max(
-                ...withPlan.map((x) => stats[x.slug].totalWords),
+                ...CANDIDATES.map((x) => stats[x.slug].totalWords),
               );
               const n = stats[c.slug].totalWords;
               return (

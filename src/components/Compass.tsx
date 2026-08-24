@@ -43,7 +43,7 @@ const LABEL: Record<
 };
 
 // SVG y grows downward; conservative is up, so invert y.
-const CAND_POS = CANDIDATES.filter((c) => c.hasPlan).map((c) => {
+const CAND_POS = CANDIDATES.map((c) => {
   const p = candidateCompass(c.slug);
   const [nx, ny] = NUDGE[c.slug] ?? [0, 0];
   return { ...c, px: toPx(p.x) + nx, py: toPx(-p.y) + ny };

@@ -146,10 +146,6 @@
     "n": 30
    },
    {
-    "w": "página",
-    "n": 15
-   },
-   {
     "w": "avaliação",
     "n": 13
    },
@@ -216,6 +212,10 @@
    {
     "w": "digital",
     "n": 5
+   },
+   {
+    "w": "economia",
+    "n": 5
    }
   ],
   "distinctive": [
@@ -226,10 +226,6 @@
    {
     "w": "indicadores sugeridos",
     "n": 30
-   },
-   {
-    "w": "página",
-    "n": 15
    },
    {
     "w": "indicadores",
@@ -266,6 +262,10 @@
    {
     "w": "crianças",
     "n": 6
+   },
+   {
+    "w": "negócios",
+    "n": 4
    }
   ]
  },
@@ -813,10 +813,6 @@
   "totalWords": 11179,
   "top": [
    {
-    "w": "capítulo",
-    "n": 48
-   },
-   {
     "w": "lei",
     "n": 40
    },
@@ -827,10 +823,6 @@
    {
     "w": "missão",
     "n": 37
-   },
-   {
-    "w": "livro",
-    "n": 35
    },
    {
     "w": "saúde",
@@ -891,24 +883,20 @@
    {
     "w": "poder",
     "n": 26
+   },
+   {
+    "w": "terras",
+    "n": 25
+   },
+   {
+    "w": "projetos",
+    "n": 25
    }
   ],
   "distinctive": [
    {
     "w": "amarelo",
     "n": 24
-   },
-   {
-    "w": "livro amarelo",
-    "n": 23
-   },
-   {
-    "w": "capítulo",
-    "n": 48
-   },
-   {
-    "w": "livro",
-    "n": 35
    },
    {
     "w": "desfavelização",
@@ -941,6 +929,18 @@
    {
     "w": "zonas econômicas",
     "n": 11
+   },
+   {
+    "w": "gerencial",
+    "n": 14
+   },
+   {
+    "w": "econômicas especiais",
+    "n": 10
+   },
+   {
+    "w": "saudade",
+    "n": 7
    }
   ]
  },
@@ -1357,10 +1357,6 @@
     "n": 75
    },
    {
-    "w": "eixo",
-    "n": 49
-   },
-   {
     "w": "prazo",
     "n": 44
    },
@@ -1431,6 +1427,10 @@
    {
     "w": "número",
     "n": 21
+   },
+   {
+    "w": "veterinário",
+    "n": 21
    }
   ],
   "distinctive": [
@@ -1459,10 +1459,6 @@
     "n": 9
    },
    {
-    "w": "mandato eixo",
-    "n": 9
-   },
-   {
     "w": "painel",
     "n": 19
    },
@@ -1475,12 +1471,16 @@
     "n": 8
    },
    {
-    "w": "eixo",
-    "n": 49
-   },
-   {
     "w": "animal",
     "n": 26
+   },
+   {
+    "w": "arrecadação",
+    "n": 16
+   },
+   {
+    "w": "animais",
+    "n": 16
    }
   ]
  },
@@ -1570,10 +1570,6 @@
   ],
   "distinctive": [
    {
-    "w": "eixos centrais",
-    "n": 15
-   },
-   {
     "w": "apresentamos soluções",
     "n": 14
    },
@@ -1616,6 +1612,10 @@
    {
     "w": "destravar",
     "n": 13
+   },
+   {
+    "w": "fortalecer",
+    "n": 35
    }
   ]
  }

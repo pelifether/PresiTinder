@@ -15,15 +15,19 @@ protocolados no
   (Estado ↔ Mercado × Progressista ↔ Conservador). Os candidatos só aparecem
   no mapa no fim, junto com o plano que mais combina com você, a explicação e
   uma citação do documento.
-- **Aba "Propostas"**: 4 visualizações dos 12 planos — palavras mais
-  frequentes por plano (barras), matriz semântica candidatos × 6 dimensões
-  (heatmap com evidência no hover), termos distintivos por TF-IDF (chips) e
-  tamanho de cada documento.
+- **Aba "Propostas"**: 5 visualizações dos 12 planos — estimativa
+  estilométrica de quanto cada texto tem cara de IA (`pipeline/aidetect.py`),
+  palavras mais frequentes por plano (barras), matriz semântica candidatos ×
+  6 dimensões (heatmap com evidência no hover), termos distintivos por TF-IDF
+  (chips) e tamanho de cada documento.
+- **Um experimento aberto de cores**: cada visitante recebe um de seis temas
+  nas paletas dos principais partidos. Protocolo em
+  [EXPERIMENT.md](EXPERIMENT.md).
 
 ## Método
 
-1. Os 12 planos de governo em PDF (Pablo Marçal/PRTB não protocolou plano)
-   foram convertidos para texto (`data/text/`).
+1. Os 12 planos de governo em PDF foram convertidos para texto
+   (`data/text/`).
 2. Cada documento foi lido por inteiro e pontuado numa rubrica fixa de
    6 dimensões (`data/semantic/RUBRIC.md`), com nota de −2 a +2 e citação
    verbatim obrigatória como evidência. Todas as 68 citações foram validadas

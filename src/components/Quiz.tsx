@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Compass from "./Compass";
 import SwipeCard from "./SwipeCard";
 import { CANDIDATES } from "../data/candidates";
 import { asset } from "../lib/asset";
+import { BUNDLE, logRun } from "../lib/experiment";
 import {
   affinity,
   agreementHighlights,
@@ -40,6 +41,11 @@ const IconYes = () => (
   </svg>
 );
 
+/** First sentence only — the result card should tease the plan, not retell it. */
+function firstSentence(text: string): string {
+  return text.match(/^.*?\.(?=\s+[A-ZÀ-Ú])/s)?.[0] ?? text;
+}
+
 function whyMatch(
   slug: string,
   session: Question[],
@@ -58,7 +64,7 @@ function whyMatch(
   );
   return {
     where,
-    resumo: s.resumo,
+    resumo: firstSentence(s.resumo),
     quote: evDim ? s.evidencia[evDim] : "",
     quoteDim: evDim ? DIM_LABEL[evDim] : "",
   };
@@ -83,7 +89,7 @@ export default function Quiz() {
     // Some plans score identically (the far-left programmes are the same on
     // every dimension we measure). Break ties at random instead of letting
     // list order silently crown the same candidate every time.
-    return CANDIDATES.filter((c) => c.hasPlan)
+    return CANDIDATES
       .map((c) => ({
         c,
         pct: affinity(session, answers, c.slug),
@@ -91,6 +97,23 @@ export default function Quiz() {
       }))
       .sort((a, b) => b.pct - a.pct || a.seed - b.seed);
   }, [phase, session, answers]);
+
+  // One experiment record per completed run (see EXPERIMENT.md).
+  const logged = useRef(false);
+  useEffect(() => {
+    if (phase !== "result" || !ranking.length || !answered || logged.current)
+      return;
+    logged.current = true;
+    logRun({
+      v: 1,
+      t: Math.round(Date.now() / 1000),
+      b: BUNDLE.id,
+      q: session.map((q) => q.id),
+      a: session.map((q) => answers[q.id] ?? 0),
+      m: ranking[0].c.slug,
+      p: ranking[0].pct,
+    });
+  }, [phase, ranking, answered, session, answers]);
 
   useEffect(() => {
     if (phase !== "asking") return;
@@ -115,6 +138,7 @@ export default function Quiz() {
   }
 
   function restart() {
+    logged.current = false;
     setSession(buildSession());
     setPhase("intro");
     setIdx(0);
@@ -128,10 +152,7 @@ export default function Quiz() {
       <section>
         <div className="hero">
           <h1>Qual candidato pensa como você?</h1>
-          <p>
-            Responda {PER_SESSION} perguntas e veja qual plano de governo
-            combina mais com suas ideias.
-          </p>
+          <p>Responda {PER_SESSION} perguntas rápidas e descubra.</p>
         </div>
         <div style={{ textAlign: "center" }}>
           <motion.button
@@ -235,10 +256,6 @@ export default function Quiz() {
             ))}
           </div>
 
-          <p style={{ fontSize: 13, color: "var(--muted)" }}>
-            Pablo Marçal (PRTB) não protocolou plano de governo e ficou fora do
-            cálculo.
-          </p>
           <button className="btn ghost" onClick={restart}>
             Jogar de novo
           </button>

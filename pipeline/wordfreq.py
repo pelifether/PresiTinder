@@ -33,6 +33,8 @@ brasil brasileiro brasileira brasileiros brasileiras país pais nacional
 nacionais governo governos plano planos programa programas proposta propostas
 política políticas político políticos público pública públicos públicas
 federal presidente presidência república estado estados milhões bilhões
+capítulo capítulos livro livros eixo eixos seção seções página páginas
+item itens tópico tópicos
 """.split())
 
 # Candidate self-references and party names: showing a candidate's own name as

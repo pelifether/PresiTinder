@@ -1,0 +1,218 @@
+{
+  "augusto-cury": {
+    "score": 23,
+    "raw": {
+      "cliches_per_1k": 1.26,
+      "burstiness": 0.65,
+      "dashes_per_1k": 1.36,
+      "starter_share": 0.0033,
+      "ttr_1k": 0.49,
+      "words": 40486
+    },
+    "norm": {
+      "cliche": 0.217,
+      "burst": 0.444,
+      "dash": 0.156,
+      "starter": 0.0,
+      "ttr": 0.214
+    }
+  },
+  "clariana-barao": {
+    "score": 26,
+    "raw": {
+      "cliches_per_1k": 0.0,
+      "burstiness": 0.552,
+      "dashes_per_1k": 0.0,
+      "starter_share": 0.0,
+      "ttr_1k": 0.384,
+      "words": 1806
+    },
+    "norm": {
+      "cliche": 0.0,
+      "burst": 0.661,
+      "dash": 0.0,
+      "starter": 0.0,
+      "ttr": 0.971
+    }
+  },
+  "edmilson-costa": {
+    "score": 27,
+    "raw": {
+      "cliches_per_1k": 0.66,
+      "burstiness": 0.564,
+      "dashes_per_1k": 2.63,
+      "starter_share": 0.0,
+      "ttr_1k": 0.471,
+      "words": 7609
+    },
+    "norm": {
+      "cliche": 0.045,
+      "burst": 0.635,
+      "dash": 0.387,
+      "starter": 0.0,
+      "ttr": 0.353
+    }
+  },
+  "flavio-bolsonaro": {
+    "score": 20,
+    "raw": {
+      "cliches_per_1k": 0.09,
+      "burstiness": 0.579,
+      "dashes_per_1k": 0.49,
+      "starter_share": 0.001,
+      "ttr_1k": 0.458,
+      "words": 22482
+    },
+    "norm": {
+      "cliche": 0.0,
+      "burst": 0.603,
+      "dash": 0.0,
+      "starter": 0.0,
+      "ttr": 0.443
+    }
+  },
+  "hertz-dias": {
+    "score": 26,
+    "raw": {
+      "cliches_per_1k": 0.55,
+      "burstiness": 0.536,
+      "dashes_per_1k": 1.57,
+      "starter_share": 0.0,
+      "ttr_1k": 0.445,
+      "words": 12704
+    },
+    "norm": {
+      "cliche": 0.015,
+      "burst": 0.699,
+      "dash": 0.195,
+      "starter": 0.0,
+      "ttr": 0.536
+    }
+  },
+  "lula": {
+    "score": 30,
+    "raw": {
+      "cliches_per_1k": 0.86,
+      "burstiness": 0.484,
+      "dashes_per_1k": 1.24,
+      "starter_share": 0.0105,
+      "ttr_1k": 0.458,
+      "words": 24280
+    },
+    "norm": {
+      "cliche": 0.104,
+      "burst": 0.813,
+      "dash": 0.134,
+      "starter": 0.007,
+      "ttr": 0.44
+    }
+  },
+  "renan-santos": {
+    "score": 17,
+    "raw": {
+      "cliches_per_1k": 0.55,
+      "burstiness": 0.602,
+      "dashes_per_1k": 0.8,
+      "starter_share": 0.0138,
+      "ttr_1k": 0.507,
+      "words": 19986
+    },
+    "norm": {
+      "cliche": 0.014,
+      "burst": 0.551,
+      "dash": 0.055,
+      "starter": 0.055,
+      "ttr": 0.094
+    }
+  },
+  "ronaldo-caiado": {
+    "score": 21,
+    "raw": {
+      "cliches_per_1k": 0.44,
+      "burstiness": 0.51,
+      "dashes_per_1k": 0.56,
+      "starter_share": 0.0,
+      "ttr_1k": 0.49,
+      "words": 40964
+    },
+    "norm": {
+      "cliche": 0.0,
+      "burst": 0.757,
+      "dash": 0.011,
+      "starter": 0.0,
+      "ttr": 0.215
+    }
+  },
+  "rui-costa-pimenta": {
+    "score": 19,
+    "raw": {
+      "cliches_per_1k": 0.0,
+      "burstiness": 0.662,
+      "dashes_per_1k": 0.41,
+      "starter_share": 0.0,
+      "ttr_1k": 0.394,
+      "words": 2455
+    },
+    "norm": {
+      "cliche": 0.0,
+      "burst": 0.417,
+      "dash": 0.0,
+      "starter": 0.0,
+      "ttr": 0.9
+    }
+  },
+  "samara": {
+    "score": 28,
+    "raw": {
+      "cliches_per_1k": 0.97,
+      "burstiness": 0.542,
+      "dashes_per_1k": 0.11,
+      "starter_share": 0.0241,
+      "ttr_1k": 0.473,
+      "words": 18545
+    },
+    "norm": {
+      "cliche": 0.134,
+      "burst": 0.685,
+      "dash": 0.0,
+      "starter": 0.202,
+      "ttr": 0.332
+    }
+  },
+  "wilson-grassi": {
+    "score": 36,
+    "raw": {
+      "cliches_per_1k": 0.36,
+      "burstiness": 0.542,
+      "dashes_per_1k": 10.21,
+      "starter_share": 0.0,
+      "ttr_1k": 0.47,
+      "words": 16846
+    },
+    "norm": {
+      "cliche": 0.0,
+      "burst": 0.685,
+      "dash": 1.0,
+      "starter": 0.0,
+      "ttr": 0.354
+    }
+  },
+  "zema": {
+    "score": 27,
+    "raw": {
+      "cliches_per_1k": 0.55,
+      "burstiness": 0.508,
+      "dashes_per_1k": 0.09,
+      "starter_share": 0.0178,
+      "ttr_1k": 0.439,
+      "words": 21923
+    },
+    "norm": {
+      "cliche": 0.014,
+      "burst": 0.761,
+      "dash": 0.0,
+      "starter": 0.111,
+      "ttr": 0.58
+    }
+  }
+}

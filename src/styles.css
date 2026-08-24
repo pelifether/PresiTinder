@@ -7,10 +7,46 @@
   --accent: #0e7a4e;
   --accent-2: #ffd23f;
   --danger: #d6352c;
+  /* SIM/NÃO stay semantic in every theme arm — never party-colored */
+  --yes: #0e7a4e;
+  --no: #d6352c;
+  /* brand accents are what the experiment bundles swap (see EXPERIMENT.md) */
+  --brand: #0e7a4e;
+  --brand-soft: #ffd23f;
   --radius: 16px;
   --shadow: 5px 5px 0 rgba(25, 21, 18, 0.9);
   --shadow-sm: 3px 3px 0 rgba(25, 21, 18, 0.9);
   font-size: 16px;
+}
+
+[data-theme="pt"] {
+  --brand: #c0281c;
+  --brand-soft: #ffb9ab;
+}
+
+[data-theme="pl"] {
+  --brand: #1b3f8f;
+  --brand-soft: #ffd23f;
+}
+
+[data-theme="psd"] {
+  --brand: #2f6fb7;
+  --brand-soft: #bcd7f2;
+}
+
+[data-theme="novo"] {
+  --brand: #d95410;
+  --brand-soft: #ffd2ae;
+}
+
+[data-theme="missao"] {
+  --brand: #8a6d00;
+  --brand-soft: #ffe289;
+}
+
+[data-theme="pco"] {
+  --brand: #7c1616;
+  --brand-soft: #f0c3c3;
 }
 
 * {
@@ -66,13 +102,19 @@ body {
 
 .logo-badge em {
   font-style: normal;
-  color: var(--accent-2);
+  color: var(--brand-soft);
+}
+
+.logo-emoji {
+  font-size: clamp(22px, 3.6vw, 30px);
+  transform: rotate(4deg);
+  line-height: 1;
 }
 
 .logo-year {
   font-family: "Archivo Black", sans-serif;
   font-size: clamp(14px, 2vw, 18px);
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   padding: 2px 10px 3px;
   border-radius: 8px;
@@ -167,7 +209,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: var(--accent-2);
+  background: var(--brand-soft);
   border: 2px solid var(--line);
   padding: 2px 11px;
   border-radius: 999px;
@@ -188,10 +230,10 @@ body {
   height: 100%;
   background: repeating-linear-gradient(
     -45deg,
-    var(--accent),
-    var(--accent) 8px,
-    #0f8a58 8px,
-    #0f8a58 16px
+    var(--brand),
+    var(--brand) 8px,
+    color-mix(in srgb, var(--brand) 82%, white) 8px,
+    color-mix(in srgb, var(--brand) 82%, white) 16px
   );
   border-radius: 999px;
 }
@@ -249,6 +291,14 @@ body {
   flex: none;
 }
 
+.swipe-hint span:first-child {
+  color: var(--no);
+}
+
+.swipe-hint span:last-child {
+  color: var(--yes);
+}
+
 .stamp {
   position: absolute;
   top: 62px;
@@ -263,15 +313,15 @@ body {
 
 .stamp.no {
   left: 20px;
-  color: var(--danger);
-  border-color: var(--danger);
+  color: var(--no);
+  border-color: var(--no);
   transform: rotate(-14deg);
 }
 
 .stamp.yes {
   right: 20px;
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--yes);
+  border-color: var(--yes);
   transform: rotate(14deg);
 }
 
@@ -316,11 +366,11 @@ body {
 }
 
 .swipe-btn.no {
-  color: var(--danger);
+  color: var(--no);
 }
 
 .swipe-btn.yes {
-  color: var(--accent);
+  color: var(--yes);
 }
 
 .swipe-btn.skip {
@@ -335,7 +385,7 @@ body {
   padding: 12px 26px;
   border: 2px solid var(--line);
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
@@ -484,7 +534,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 13px;
-  color: var(--accent);
+  color: var(--brand);
 }
 
 .result-name {
@@ -627,16 +677,21 @@ body {
   letter-spacing: 0.6px;
 }
 
-.cand-number {
+.cand-word {
   margin-left: auto;
   font-family: "Archivo Black", sans-serif;
-  font-size: 22px;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
   border: 2px solid var(--line);
   border-radius: 10px;
-  background: var(--accent-2);
-  padding: 2px 10px;
+  background: var(--brand-soft);
+  padding: 5px 9px;
   transform: rotate(2deg);
   box-shadow: var(--shadow-sm);
+  max-width: 46%;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .wordbars {
@@ -680,13 +735,49 @@ body {
   font-weight: 700;
 }
 
-.no-plan-note {
-  font-size: 14px;
-  color: var(--muted);
-  background: var(--paper);
-  border: 2px dashed var(--line);
-  border-radius: 10px;
-  padding: 12px 14px;
+/* ---------- AI estimate ---------- */
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.ai-box {
+  padding: 16px 14px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--line);
+}
+
+.ai-pct {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.ai-name {
+  font-weight: 700;
+  font-size: 13.5px;
+  line-height: 1.2;
+}
+
+.ai-bar {
+  height: 8px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  align-self: flex-start;
+  min-width: 10%;
 }
 
 /* ---------- heat matrix ---------- */
@@ -800,7 +891,7 @@ body {
 }
 
 .footnote a {
-  color: var(--accent);
+  color: var(--brand);
 }
 
 .section-divider {
