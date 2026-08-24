@@ -1,0 +1,47 @@
+{
+  "slug": "wilson-grassi",
+  "titulo_plano": "Brasil em Primeiro Lugar — Plano de Governo 2027–2030 (Partido Democrata)",
+  "paginas_estimadas": 58,
+  "resumo": "Plano do Democrata centrado no Imposto Único Federal sobre movimentação financeira, substituindo nove tributos e desonerando a folha, com isenção de IRPF até cinco salários mínimos. Traz segurança baseada em isolamento de líderes de facções, asfixia financeira e plebiscito sobre presídio modelo El Salvador, Saúde Única com viés veterinário, proteção animal, habitação via portabilidade do aluguel e metas verificáveis por eixo.",
+  "eixos_centrais": [
+    "Reforma tributária: Imposto Único Federal sobre movimentação financeira",
+    "Segurança pública e guerra ao crime organizado",
+    "Saúde Única, sanidade e proteção animal",
+    "Desburocratização, Estado digital e transparência",
+    "Emprego e formalização via desoneração da folha"
+  ],
+  "propostas_marcantes": [
+    "Imposto Único Federal sobre movimentação financeira substituindo nove tributos federais",
+    "Isenção de Imposto de Renda para quem ganha até cinco salários mínimos",
+    "Plebiscito nacional sobre presídio de segurança máxima nos moldes de El Salvador",
+    "Bolsa Atleta com inscrição direta do atleta, sem intermediação de federações",
+    "Financiamento habitacional com parcela equivalente ao aluguel já comprovado"
+  ],
+  "estilo": "Gerencial e didático, em primeira pessoa, com instrumento jurídico, indicador e prazo declarados ao fim de cada eixo.",
+  "scores": {
+    "econ": {
+      "v": 1,
+      "ev": "A aposta econômica desta candidatura está declarada: crescer reduzindo atrito, não expandindo gasto."
+    },
+    "social": {
+      "v": 0,
+      "ev": "ausente"
+    },
+    "seguranca": {
+      "v": 1.5,
+      "ev": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima, destinado exclusivamente a lideranças e presos de alta periculosidade."
+    },
+    "ambiente": {
+      "v": 0.5,
+      "ev": "Defendemos abrir o debate sobre um regime legal de aproveitamento mineral em terra indígena com participação econômica dos indígenas e responsabilidade ambiental."
+    },
+    "welfare": {
+      "v": 0.5,
+      "ev": "Sem avaliação, programa social vira folha de pagamento."
+    },
+    "instituicoes": {
+      "v": 0,
+      "ev": "Respeito à decisão judicial, inclusive quando desfavorável ao governo, com uso dos meios processuais em vez do enfrentamento retórico."
+    }
+  }
+}

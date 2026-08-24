@@ -1,0 +1,47 @@
+{
+  "slug": "augusto-cury",
+  "titulo_plano": "Cultura da Paz em uma Sociedade Polarizada e Adoecida — O Brasil dos Nossos Sonhos",
+  "paginas_estimadas": 200,
+  "resumo": "Plano ensaístico do psiquiatra Augusto Cury que propõe superar a polarização com uma 'cultura da paz' e gestão da emoção. Combina responsabilidade fiscal, simplificação tributária e empreendedorismo em massa com programas de saúde mental, proteção às mulheres e telemedicina. Estrutura-se em 18 projetos e três reformas: semipresidencialismo, mandato de oito anos para ministros do STF e diplomacia econômica com embaixadas empreendedoras.",
+  "eixos_centrais": [
+    "Pacificação nacional, gestão da emoção e saúde mental",
+    "Empreendedorismo em massa e economia distribuída",
+    "Revolução da educação com formação socioemocional",
+    "Responsabilidade fiscal, agroindústria e abertura exportadora",
+    "Reforma institucional: semipresidencialismo e reforma do STF"
+  ],
+  "propostas_marcantes": [
+    "Semipresidencialismo com Primeiro-Ministro apoiado na maioria parlamentar",
+    "STF com nove ministros, mandato de oito anos, escolhidos pelas classes jurídicas",
+    "Banco do Empreendedor: crédito até R$ 20 mil com juros de 5% a 6% ao ano",
+    "10 mil Escolas de Empreendedorismo e 10 milhões de novos empreendedores",
+    "Fundo mundial contra a fome com 0,5% do comércio global e 2% da indústria de armamentos"
+  ],
+  "estilo": "Ensaístico e autoral, mistura discurso psiquiátrico-motivacional e filosófico com listas gerenciais de projetos, metas e siglas.",
+  "scores": {
+    "econ": {
+      "v": 1,
+      "ev": "Defenderemos a simplificação dos tributos, a redução da burocracia, a unificação de procedimentos e a diminuição dos custos de conformidade para empresas e cidadãos."
+    },
+    "social": {
+      "v": -0.5,
+      "ev": "Essas distorções estruturais serão enfrentadas com políticas de transparência salarial, fiscalização rigorosa e mecanismos de correção de desigualdades..."
+    },
+    "seguranca": {
+      "v": 1,
+      "ev": "Programa FATO – Força de Alerta Total: será o maior programa já realizado no Brasil que integra, treina, equipa e valoriza todas as forças policiais"
+    },
+    "ambiente": {
+      "v": 0,
+      "ev": "O crescimento econômico e a preservação ambiental não são objetivos incompatíveis."
+    },
+    "welfare": {
+      "v": 1,
+      "ev": "O Bolsa família ama a pobreza, mas não ama os pobres, pois os perpetuam na pobreza."
+    },
+    "instituicoes": {
+      "v": 1,
+      "ev": "Propomos estabelecer mandato de oito anos para os ministros do Supremo Tribunal Federal (STF), com critérios mais objetivos de composição e ingresso."
+    }
+  }
+}

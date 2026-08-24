@@ -1,0 +1,1622 @@
+{
+ "augusto-cury": {
+  "totalWords": 24611,
+  "top": [
+   {
+    "w": "inteligência",
+    "n": 126
+   },
+   {
+    "w": "saúde",
+    "n": 114
+   },
+   {
+    "w": "emocional",
+    "n": 99
+   },
+   {
+    "w": "projeto",
+    "n": 98
+   },
+   {
+    "w": "educação",
+    "n": 97
+   },
+   {
+    "w": "tecnologia",
+    "n": 94
+   },
+   {
+    "w": "social",
+    "n": 89
+   },
+   {
+    "w": "precisamos",
+    "n": 88
+   },
+   {
+    "w": "precisa",
+    "n": 86
+   },
+   {
+    "w": "segurança",
+    "n": 85
+   },
+   {
+    "w": "sociedade",
+    "n": 81
+   },
+   {
+    "w": "econômica",
+    "n": 78
+   },
+   {
+    "w": "transformar",
+    "n": 77
+   },
+   {
+    "w": "desenvolvimento",
+    "n": 76
+   },
+   {
+    "w": "mulheres",
+    "n": 75
+   },
+   {
+    "w": "economia",
+    "n": 70
+   },
+   {
+    "w": "pessoas",
+    "n": 65
+   },
+   {
+    "w": "mundo",
+    "n": 64
+   },
+   {
+    "w": "digital",
+    "n": 63
+   },
+   {
+    "w": "humana",
+    "n": 62
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "emoção",
+    "n": 52
+   },
+   {
+    "w": "emocional",
+    "n": 99
+   },
+   {
+    "w": "emocionalmente",
+    "n": 42
+   },
+   {
+    "w": "gestão emoção",
+    "n": 36
+   },
+   {
+    "w": "precisamos",
+    "n": 88
+   },
+   {
+    "w": "mente",
+    "n": 43
+   },
+   {
+    "w": "emocionais",
+    "n": 23
+   },
+   {
+    "w": "humanidade",
+    "n": 35
+   },
+   {
+    "w": "autoestima",
+    "n": 19
+   },
+   {
+    "w": "saúde emocional",
+    "n": 24
+   },
+   {
+    "w": "destruir",
+    "n": 23
+   },
+   {
+    "w": "cooperativismo",
+    "n": 29
+   }
+  ]
+ },
+ "clariana-barao": {
+  "totalWords": 971,
+  "top": [
+   {
+    "w": "indicadores",
+    "n": 36
+   },
+   {
+    "w": "sugeridos",
+    "n": 30
+   },
+   {
+    "w": "página",
+    "n": 15
+   },
+   {
+    "w": "avaliação",
+    "n": 13
+   },
+   {
+    "w": "tempo",
+    "n": 11
+   },
+   {
+    "w": "cobertura",
+    "n": 9
+   },
+   {
+    "w": "metas",
+    "n": 8
+   },
+   {
+    "w": "mulheres",
+    "n": 8
+   },
+   {
+    "w": "segurança",
+    "n": 8
+   },
+   {
+    "w": "saúde",
+    "n": 7
+   },
+   {
+    "w": "custo",
+    "n": 7
+   },
+   {
+    "w": "crianças",
+    "n": 6
+   },
+   {
+    "w": "infantil",
+    "n": 6
+   },
+   {
+    "w": "educação",
+    "n": 6
+   },
+   {
+    "w": "formação",
+    "n": 6
+   },
+   {
+    "w": "desenvolvimento",
+    "n": 5
+   },
+   {
+    "w": "proteção",
+    "n": 5
+   },
+   {
+    "w": "resposta",
+    "n": 5
+   },
+   {
+    "w": "participação",
+    "n": 5
+   },
+   {
+    "w": "digital",
+    "n": 5
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "sugeridos",
+    "n": 30
+   },
+   {
+    "w": "indicadores sugeridos",
+    "n": 30
+   },
+   {
+    "w": "página",
+    "n": 15
+   },
+   {
+    "w": "indicadores",
+    "n": 36
+   },
+   {
+    "w": "sugeridos cobertura",
+    "n": 5
+   },
+   {
+    "w": "sugeridos tempo",
+    "n": 4
+   },
+   {
+    "w": "mulheres crianças",
+    "n": 4
+   },
+   {
+    "w": "avaliação",
+    "n": 13
+   },
+   {
+    "w": "reincidência",
+    "n": 4
+   },
+   {
+    "w": "evidências",
+    "n": 4
+   },
+   {
+    "w": "cobertura",
+    "n": 9
+   },
+   {
+    "w": "crianças",
+    "n": 6
+   }
+  ]
+ },
+ "edmilson-costa": {
+  "totalWords": 4211,
+  "top": [
+   {
+    "w": "popular",
+    "n": 45
+   },
+   {
+    "w": "poder",
+    "n": 28
+   },
+   {
+    "w": "populares",
+    "n": 28
+   },
+   {
+    "w": "saúde",
+    "n": 27
+   },
+   {
+    "w": "trabalhadores",
+    "n": 26
+   },
+   {
+    "w": "ampliação",
+    "n": 24
+   },
+   {
+    "w": "população",
+    "n": 23
+   },
+   {
+    "w": "social",
+    "n": 21
+   },
+   {
+    "w": "trabalho",
+    "n": 21
+   },
+   {
+    "w": "criação",
+    "n": 21
+   },
+   {
+    "w": "povos",
+    "n": 20
+   },
+   {
+    "w": "combate",
+    "n": 17
+   },
+   {
+    "w": "educação",
+    "n": 17
+   },
+   {
+    "w": "sistema",
+    "n": 17
+   },
+   {
+    "w": "povo",
+    "n": 15
+   },
+   {
+    "w": "luta",
+    "n": 15
+   },
+   {
+    "w": "direitos",
+    "n": 15
+   },
+   {
+    "w": "sociais",
+    "n": 15
+   },
+   {
+    "w": "defesa",
+    "n": 14
+   },
+   {
+    "w": "classe",
+    "n": 14
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "poder popular",
+    "n": 21
+   },
+   {
+    "w": "popular",
+    "n": 45
+   },
+   {
+    "w": "conselhos populares",
+    "n": 9
+   },
+   {
+    "w": "monopólio estatal",
+    "n": 5
+   },
+   {
+    "w": "populares",
+    "n": 28
+   },
+   {
+    "w": "petrobrás",
+    "n": 8
+   },
+   {
+    "w": "classe trabalhadora",
+    "n": 10
+   },
+   {
+    "w": "trabalhadores trabalhadoras",
+    "n": 6
+   },
+   {
+    "w": "anticapitalista",
+    "n": 4
+   },
+   {
+    "w": "ampliação investimentos",
+    "n": 4
+   },
+   {
+    "w": "dieese",
+    "n": 7
+   },
+   {
+    "w": "liberdades democráticas",
+    "n": 5
+   }
+  ]
+ },
+ "flavio-bolsonaro": {
+  "totalWords": 11602,
+  "top": [
+   {
+    "w": "família",
+    "n": 60
+   },
+   {
+    "w": "trabalho",
+    "n": 59
+   },
+   {
+    "w": "casa",
+    "n": 57
+   },
+   {
+    "w": "segurança",
+    "n": 56
+   },
+   {
+    "w": "emprego",
+    "n": 55
+   },
+   {
+    "w": "menos",
+    "n": 51
+   },
+   {
+    "w": "vida",
+    "n": 49
+   },
+   {
+    "w": "cidadão",
+    "n": 47
+   },
+   {
+    "w": "tempo",
+    "n": 43
+   },
+   {
+    "w": "precisa",
+    "n": 43
+   },
+   {
+    "w": "hoje",
+    "n": 39
+   },
+   {
+    "w": "saúde",
+    "n": 37
+   },
+   {
+    "w": "energia",
+    "n": 36
+   },
+   {
+    "w": "tecnologia",
+    "n": 32
+   },
+   {
+    "w": "mundo",
+    "n": 32
+   },
+   {
+    "w": "caminho",
+    "n": 31
+   },
+   {
+    "w": "escola",
+    "n": 31
+   },
+   {
+    "w": "mulher",
+    "n": 30
+   },
+   {
+    "w": "tudo",
+    "n": 30
+   },
+   {
+    "w": "famílias",
+    "n": 29
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "tesouraço",
+    "n": 10
+   },
+   {
+    "w": "casa própria",
+    "n": 12
+   },
+   {
+    "w": "voucher",
+    "n": 8
+   },
+   {
+    "w": "menos impostos",
+    "n": 8
+   },
+   {
+    "w": "cidadão",
+    "n": 47
+   },
+   {
+    "w": "fila",
+    "n": 26
+   },
+   {
+    "w": "caixa",
+    "n": 13
+   },
+   {
+    "w": "prospera",
+    "n": 10
+   },
+   {
+    "w": "prateleira",
+    "n": 7
+   },
+   {
+    "w": "orientação financeira",
+    "n": 7
+   },
+   {
+    "w": "internet infraestrutura",
+    "n": 7
+   },
+   {
+    "w": "faltou",
+    "n": 7
+   }
+  ]
+ },
+ "hertz-dias": {
+  "totalWords": 6808,
+  "top": [
+   {
+    "w": "trabalhadores",
+    "n": 72
+   },
+   {
+    "w": "classe",
+    "n": 60
+   },
+   {
+    "w": "trabalhadora",
+    "n": 59
+   },
+   {
+    "w": "trabalho",
+    "n": 52
+   },
+   {
+    "w": "controle",
+    "n": 49
+   },
+   {
+    "w": "população",
+    "n": 46
+   },
+   {
+    "w": "empresas",
+    "n": 40
+   },
+   {
+    "w": "direitos",
+    "n": 40
+   },
+   {
+    "w": "produção",
+    "n": 34
+   },
+   {
+    "w": "educação",
+    "n": 31
+   },
+   {
+    "w": "luta",
+    "n": 31
+   },
+   {
+    "w": "serviços",
+    "n": 30
+   },
+   {
+    "w": "mulheres",
+    "n": 30
+   },
+   {
+    "w": "social",
+    "n": 29
+   },
+   {
+    "w": "violência",
+    "n": 28
+   },
+   {
+    "w": "sistema",
+    "n": 27
+   },
+   {
+    "w": "enfrentar",
+    "n": 27
+   },
+   {
+    "w": "garantir",
+    "n": 25
+   },
+   {
+    "w": "agronegócio",
+    "n": 25
+   },
+   {
+    "w": "saúde",
+    "n": 24
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "classe trabalhadora",
+    "n": 50
+   },
+   {
+    "w": "trabalhadora",
+    "n": 59
+   },
+   {
+    "w": "extrema direita",
+    "n": 9
+   },
+   {
+    "w": "trabalhadores",
+    "n": 72
+   },
+   {
+    "w": "imperialismo",
+    "n": 20
+   },
+   {
+    "w": "trabalhadora aliados",
+    "n": 7
+   },
+   {
+    "w": "classe",
+    "n": 60
+   },
+   {
+    "w": "monopólios",
+    "n": 18
+   },
+   {
+    "w": "lgbtqiapn",
+    "n": 6
+   },
+   {
+    "w": "auto organização",
+    "n": 6
+   },
+   {
+    "w": "capitalistas",
+    "n": 17
+   },
+   {
+    "w": "privatização",
+    "n": 13
+   }
+  ]
+ },
+ "lula": {
+  "totalWords": 13428,
+  "top": [
+   {
+    "w": "desenvolvimento",
+    "n": 96
+   },
+   {
+    "w": "mandato",
+    "n": 70
+   },
+   {
+    "w": "investimentos",
+    "n": 67
+   },
+   {
+    "w": "social",
+    "n": 62
+   },
+   {
+    "w": "acesso",
+    "n": 57
+   },
+   {
+    "w": "segurança",
+    "n": 52
+   },
+   {
+    "w": "ampliar",
+    "n": 52
+   },
+   {
+    "w": "novo",
+    "n": 50
+   },
+   {
+    "w": "proteção",
+    "n": 48
+   },
+   {
+    "w": "saúde",
+    "n": 46
+   },
+   {
+    "w": "produção",
+    "n": 46
+   },
+   {
+    "w": "trabalho",
+    "n": 45
+   },
+   {
+    "w": "educação",
+    "n": 42
+   },
+   {
+    "w": "sistema",
+    "n": 41
+   },
+   {
+    "w": "inovação",
+    "n": 40
+   },
+   {
+    "w": "infraestrutura",
+    "n": 40
+   },
+   {
+    "w": "economia",
+    "n": 39
+   },
+   {
+    "w": "fortalecer",
+    "n": 37
+   },
+   {
+    "w": "cultura",
+    "n": 37
+   },
+   {
+    "w": "capacidade",
+    "n": 37
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "pac",
+    "n": 30
+   },
+   {
+    "w": "novo pac",
+    "n": 30
+   },
+   {
+    "w": "continuaremos",
+    "n": 36
+   },
+   {
+    "w": "próximo mandato",
+    "n": 24
+   },
+   {
+    "w": "seguiremos",
+    "n": 22
+   },
+   {
+    "w": "atual mandato",
+    "n": 21
+   },
+   {
+    "w": "mandato",
+    "n": 70
+   },
+   {
+    "w": "retomamos",
+    "n": 12
+   },
+   {
+    "w": "avançaremos",
+    "n": 12
+   },
+   {
+    "w": "manteremos",
+    "n": 19
+   },
+   {
+    "w": "ampliaremos",
+    "n": 17
+   },
+   {
+    "w": "novo mandato",
+    "n": 9
+   }
+  ]
+ },
+ "renan-santos": {
+  "totalWords": 11179,
+  "top": [
+   {
+    "w": "capítulo",
+    "n": 48
+   },
+   {
+    "w": "lei",
+    "n": 40
+   },
+   {
+    "w": "sistema",
+    "n": 39
+   },
+   {
+    "w": "missão",
+    "n": 37
+   },
+   {
+    "w": "livro",
+    "n": 35
+   },
+   {
+    "w": "saúde",
+    "n": 32
+   },
+   {
+    "w": "cultura",
+    "n": 32
+   },
+   {
+    "w": "educação",
+    "n": 32
+   },
+   {
+    "w": "hoje",
+    "n": 32
+   },
+   {
+    "w": "problemas",
+    "n": 31
+   },
+   {
+    "w": "fiscal",
+    "n": 29
+   },
+   {
+    "w": "infraestrutura",
+    "n": 28
+   },
+   {
+    "w": "projeto",
+    "n": 28
+   },
+   {
+    "w": "problema",
+    "n": 28
+   },
+   {
+    "w": "municípios",
+    "n": 28
+   },
+   {
+    "w": "parte",
+    "n": 27
+   },
+   {
+    "w": "tecnologia",
+    "n": 27
+   },
+   {
+    "w": "integração",
+    "n": 27
+   },
+   {
+    "w": "cerca",
+    "n": 27
+   },
+   {
+    "w": "poder",
+    "n": 26
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "amarelo",
+    "n": 24
+   },
+   {
+    "w": "livro amarelo",
+    "n": 23
+   },
+   {
+    "w": "capítulo",
+    "n": 48
+   },
+   {
+    "w": "livro",
+    "n": 35
+   },
+   {
+    "w": "desfavelização",
+    "n": 14
+   },
+   {
+    "w": "partido missão",
+    "n": 9
+   },
+   {
+    "w": "favela",
+    "n": 9
+   },
+   {
+    "w": "zees",
+    "n": 8
+   },
+   {
+    "w": "responsabilidade gerencial",
+    "n": 8
+   },
+   {
+    "w": "remédio amargo",
+    "n": 8
+   },
+   {
+    "w": "amargo",
+    "n": 8
+   },
+   {
+    "w": "zonas econômicas",
+    "n": 11
+   }
+  ]
+ },
+ "ronaldo-caiado": {
+  "totalWords": 25919,
+  "top": [
+   {
+    "w": "saúde",
+    "n": 176
+   },
+   {
+    "w": "segurança",
+    "n": 160
+   },
+   {
+    "w": "capacidade",
+    "n": 104
+   },
+   {
+    "w": "acesso",
+    "n": 102
+   },
+   {
+    "w": "proteção",
+    "n": 89
+   },
+   {
+    "w": "renda",
+    "n": 87
+   },
+   {
+    "w": "infraestrutura",
+    "n": 86
+   },
+   {
+    "w": "investimento",
+    "n": 82
+   },
+   {
+    "w": "tempo",
+    "n": 82
+   },
+   {
+    "w": "dados",
+    "n": 82
+   },
+   {
+    "w": "criar",
+    "n": 80
+   },
+   {
+    "w": "risco",
+    "n": 80
+   },
+   {
+    "w": "ampliar",
+    "n": 79
+   },
+   {
+    "w": "tecnologia",
+    "n": 78
+   },
+   {
+    "w": "qualidade",
+    "n": 76
+   },
+   {
+    "w": "empresas",
+    "n": 75
+   },
+   {
+    "w": "reduzir",
+    "n": 74
+   },
+   {
+    "w": "energia",
+    "n": 73
+   },
+   {
+    "w": "integrar",
+    "n": 71
+   },
+   {
+    "w": "cuidado",
+    "n": 69
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "aps",
+    "n": 20
+   },
+   {
+    "w": "tema",
+    "n": 57
+   },
+   {
+    "w": "goiás",
+    "n": 12
+   },
+   {
+    "w": "cardiovascular",
+    "n": 12
+   },
+   {
+    "w": "turismo",
+    "n": 33
+   },
+   {
+    "w": "integrar",
+    "n": 71
+   },
+   {
+    "w": "alto risco",
+    "n": 16
+   },
+   {
+    "w": "uti",
+    "n": 11
+   },
+   {
+    "w": "prioridade clínica",
+    "n": 11
+   },
+   {
+    "w": "equidade",
+    "n": 15
+   },
+   {
+    "w": "fortalecer",
+    "n": 63
+   },
+   {
+    "w": "avc",
+    "n": 10
+   }
+  ]
+ },
+ "rui-costa-pimenta": {
+  "totalWords": 1267,
+  "top": [
+   {
+    "w": "trabalhadores",
+    "n": 31
+   },
+   {
+    "w": "povo",
+    "n": 22
+   },
+   {
+    "w": "eleições",
+    "n": 16
+   },
+   {
+    "w": "luta",
+    "n": 15
+   },
+   {
+    "w": "controle",
+    "n": 14
+   },
+   {
+    "w": "preciso",
+    "n": 10
+   },
+   {
+    "w": "saúde",
+    "n": 10
+   },
+   {
+    "w": "abaixo",
+    "n": 10
+   },
+   {
+    "w": "ditadura",
+    "n": 8
+   },
+   {
+    "w": "empresas",
+    "n": 8
+   },
+   {
+    "w": "direito",
+    "n": 8
+   },
+   {
+    "w": "salários",
+    "n": 7
+   },
+   {
+    "w": "destruição",
+    "n": 7
+   },
+   {
+    "w": "educação",
+    "n": 7
+   },
+   {
+    "w": "índios",
+    "n": 7
+   },
+   {
+    "w": "salário",
+    "n": 6
+   },
+   {
+    "w": "trabalho",
+    "n": 6
+   },
+   {
+    "w": "terra",
+    "n": 6
+   },
+   {
+    "w": "trabalhador",
+    "n": 6
+   },
+   {
+    "w": "organizações",
+    "n": 6
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "índios",
+    "n": 7
+   },
+   {
+    "w": "luta eleições",
+    "n": 7
+   },
+   {
+    "w": "cancelamento",
+    "n": 5
+   },
+   {
+    "w": "trabalhadores",
+    "n": 31
+   },
+   {
+    "w": "controle trabalhadores",
+    "n": 6
+   },
+   {
+    "w": "ditadura",
+    "n": 8
+   },
+   {
+    "w": "eleições",
+    "n": 16
+   },
+   {
+    "w": "luta",
+    "n": 15
+   },
+   {
+    "w": "operário",
+    "n": 4
+   },
+   {
+    "w": "golpistas",
+    "n": 4
+   },
+   {
+    "w": "autodefesa",
+    "n": 4
+   },
+   {
+    "w": "lutar",
+    "n": 6
+   }
+  ]
+ },
+ "samara": {
+  "totalWords": 10008,
+  "top": [
+   {
+    "w": "saúde",
+    "n": 63
+   },
+   {
+    "w": "povo",
+    "n": 57
+   },
+   {
+    "w": "trabalho",
+    "n": 57
+   },
+   {
+    "w": "educação",
+    "n": 55
+   },
+   {
+    "w": "trabalhadores",
+    "n": 49
+   },
+   {
+    "w": "população",
+    "n": 47
+   },
+   {
+    "w": "social",
+    "n": 42
+   },
+   {
+    "w": "controle",
+    "n": 38
+   },
+   {
+    "w": "empresas",
+    "n": 38
+   },
+   {
+    "w": "pessoas",
+    "n": 35
+   },
+   {
+    "w": "direitos",
+    "n": 35
+   },
+   {
+    "w": "garantir",
+    "n": 34
+   },
+   {
+    "w": "violência",
+    "n": 32
+   },
+   {
+    "w": "produção",
+    "n": 30
+   },
+   {
+    "w": "sistema",
+    "n": 30
+   },
+   {
+    "w": "luta",
+    "n": 29
+   },
+   {
+    "w": "acesso",
+    "n": 29
+   },
+   {
+    "w": "classe",
+    "n": 28
+   },
+   {
+    "w": "segundo",
+    "n": 27
+   },
+   {
+    "w": "indígenas",
+    "n": 27
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "burguesia",
+    "n": 23
+   },
+   {
+    "w": "classe trabalhadora",
+    "n": 17
+   },
+   {
+    "w": "mortos",
+    "n": 10
+   },
+   {
+    "w": "meios produção",
+    "n": 7
+   },
+   {
+    "w": "defende",
+    "n": 12
+   },
+   {
+    "w": "privatização",
+    "n": 15
+   },
+   {
+    "w": "capitalistas",
+    "n": 18
+   },
+   {
+    "w": "fascista",
+    "n": 6
+   },
+   {
+    "w": "lucros",
+    "n": 17
+   },
+   {
+    "w": "meios comunicação",
+    "n": 13
+   },
+   {
+    "w": "trabalhadores",
+    "n": 49
+   },
+   {
+    "w": "capitalista",
+    "n": 16
+   }
+  ]
+ },
+ "wilson-grassi": {
+  "totalWords": 8985,
+  "top": [
+   {
+    "w": "lei",
+    "n": 75
+   },
+   {
+    "w": "eixo",
+    "n": 49
+   },
+   {
+    "w": "prazo",
+    "n": 44
+   },
+   {
+    "w": "sistema",
+    "n": 41
+   },
+   {
+    "w": "hoje",
+    "n": 38
+   },
+   {
+    "w": "base",
+    "n": 34
+   },
+   {
+    "w": "imposto",
+    "n": 32
+   },
+   {
+    "w": "primeiro",
+    "n": 32
+   },
+   {
+    "w": "paga",
+    "n": 31
+   },
+   {
+    "w": "segurança",
+    "n": 29
+   },
+   {
+    "w": "saúde",
+    "n": 29
+   },
+   {
+    "w": "congresso",
+    "n": 27
+   },
+   {
+    "w": "emenda",
+    "n": 26
+   },
+   {
+    "w": "animal",
+    "n": 26
+   },
+   {
+    "w": "decreto",
+    "n": 25
+   },
+   {
+    "w": "defesa",
+    "n": 24
+   },
+   {
+    "w": "nada",
+    "n": 23
+   },
+   {
+    "w": "existe",
+    "n": 23
+   },
+   {
+    "w": "renda",
+    "n": 22
+   },
+   {
+    "w": "número",
+    "n": 21
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "veterinário",
+    "n": 21
+   },
+   {
+    "w": "art",
+    "n": 16
+   },
+   {
+    "w": "iuf",
+    "n": 11
+   },
+   {
+    "w": "tributo",
+    "n": 14
+   },
+   {
+    "w": "emenda",
+    "n": 26
+   },
+   {
+    "w": "soldo",
+    "n": 9
+   },
+   {
+    "w": "mandato eixo",
+    "n": 9
+   },
+   {
+    "w": "painel",
+    "n": 19
+   },
+   {
+    "w": "serviço veterinário",
+    "n": 8
+   },
+   {
+    "w": "incide",
+    "n": 8
+   },
+   {
+    "w": "eixo",
+    "n": 49
+   },
+   {
+    "w": "animal",
+    "n": 26
+   }
+  ]
+ },
+ "zema": {
+  "totalWords": 11790,
+  "top": [
+   {
+    "w": "investimentos",
+    "n": 63
+   },
+   {
+    "w": "setor",
+    "n": 63
+   },
+   {
+    "w": "saúde",
+    "n": 62
+   },
+   {
+    "w": "segurança",
+    "n": 57
+   },
+   {
+    "w": "infraestrutura",
+    "n": 52
+   },
+   {
+    "w": "desenvolvimento",
+    "n": 51
+   },
+   {
+    "w": "gestão",
+    "n": 49
+   },
+   {
+    "w": "ampliar",
+    "n": 49
+   },
+   {
+    "w": "reduzir",
+    "n": 44
+   },
+   {
+    "w": "privado",
+    "n": 44
+   },
+   {
+    "w": "educação",
+    "n": 40
+   },
+   {
+    "w": "mercado",
+    "n": 38
+   },
+   {
+    "w": "sistema",
+    "n": 37
+   },
+   {
+    "w": "mundo",
+    "n": 37
+   },
+   {
+    "w": "fortalecer",
+    "n": 35
+   },
+   {
+    "w": "garantir",
+    "n": 34
+   },
+   {
+    "w": "qualidade",
+    "n": 34
+   },
+   {
+    "w": "projetos",
+    "n": 34
+   },
+   {
+    "w": "serviços",
+    "n": 33
+   },
+   {
+    "w": "garantindo",
+    "n": 32
+   }
+  ],
+  "distinctive": [
+   {
+    "w": "eixos centrais",
+    "n": 15
+   },
+   {
+    "w": "apresentamos soluções",
+    "n": 14
+   },
+   {
+    "w": "apresentamos",
+    "n": 16
+   },
+   {
+    "w": "turismo",
+    "n": 21
+   },
+   {
+    "w": "modernizar",
+    "n": 21
+   },
+   {
+    "w": "investimentos privados",
+    "n": 10
+   },
+   {
+    "w": "facilitar",
+    "n": 20
+   },
+   {
+    "w": "aprimorar",
+    "n": 20
+   },
+   {
+    "w": "órgãos controle",
+    "n": 12
+   },
+   {
+    "w": "atrair",
+    "n": 18
+   },
+   {
+    "w": "soluções quatro",
+    "n": 6
+   },
+   {
+    "w": "destravar",
+    "n": 13
+   }
+  ]
+ }
+}

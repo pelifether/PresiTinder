@@ -1,0 +1,685 @@
+:root {
+  --paper: #f6f1e7;
+  --paper-2: #fffdf6;
+  --ink: #191512;
+  --muted: #75695c;
+  --line: #191512;
+  --accent: #0e7a4e;
+  --accent-2: #ffd23f;
+  --danger: #d6352c;
+  --radius: 16px;
+  --shadow: 5px 5px 0 rgba(25, 21, 18, 0.9);
+  --shadow-sm: 3px 3px 0 rgba(25, 21, 18, 0.9);
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image: radial-gradient(rgba(25, 21, 18, 0.055) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 96px;
+}
+
+/* ---------- header ---------- */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  transform: rotate(-1.2deg);
+  user-select: none;
+}
+
+.logo-badge {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(24px, 4.4vw, 38px);
+  letter-spacing: 0.5px;
+  background: var(--ink);
+  color: var(--paper-2);
+  padding: 4px 14px 6px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-badge em {
+  font-style: normal;
+  color: var(--accent-2);
+}
+
+.logo-year {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 10px 3px;
+  border-radius: 8px;
+  transform: rotate(2deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 9px 20px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s;
+}
+
+.tab:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(25, 21, 18, 0.9);
+}
+
+.tab.active {
+  background: var(--ink);
+  color: var(--paper-2);
+}
+
+/* ---------- quiz ---------- */
+.hero {
+  text-align: center;
+  margin: 24px auto 34px;
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(26px, 5vw, 40px);
+  line-height: 1.12;
+  margin: 0 0 12px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 16.5px;
+}
+
+.card {
+  background: var(--paper-2);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 28px;
+}
+
+.quiz-card {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.q-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.q-count {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.q-theme {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--accent-2);
+  border: 2px solid var(--line);
+  padding: 2px 10px;
+  border-radius: 999px;
+  transform: rotate(1.5deg);
+}
+
+.q-text {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(19px, 3vw, 24px);
+  line-height: 1.3;
+  margin: 6px 0 22px;
+}
+
+.likert {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.likert button {
+  border: 2px solid var(--line);
+  background: var(--paper);
+  border-radius: 12px;
+  padding: 12px 6px 10px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  line-height: 1.25;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.12s, box-shadow 0.1s ease;
+}
+
+.likert button .dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  margin: 0 auto 8px;
+  background: #fff;
+  transition: background 0.12s;
+}
+
+.likert button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+
+.likert button:hover .dot {
+  background: var(--accent-2);
+}
+
+.likert button:active {
+  transform: scale(0.96);
+}
+
+.progress-track {
+  height: 10px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  overflow: hidden;
+  margin-top: 26px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent),
+    var(--accent) 8px,
+    #0f8a58 8px,
+    #0f8a58 16px
+  );
+  border-radius: 999px;
+}
+
+.btn {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 15px;
+  padding: 12px 26px;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(25, 21, 18, 0.9);
+}
+
+.btn.ghost {
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+}
+
+/* ---------- compass ---------- */
+.compass-wrap {
+  max-width: 640px;
+  margin: 26px auto 0;
+}
+
+.compass-title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.compass-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ax-label {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  fill: #75695c;
+}
+
+.cand-label {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  fill: #191512;
+  paint-order: stroke;
+  stroke: #f6f1e7;
+  stroke-width: 3px;
+}
+
+.cand-label.hl {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 13px;
+}
+
+.you-label {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  fill: #191512;
+  paint-order: stroke;
+  stroke: #f6f1e7;
+  stroke-width: 3px;
+}
+
+/* ---------- result ---------- */
+.result-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result-kicker {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.result-name {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(26px, 5vw, 38px);
+  margin: 6px 0 2px;
+}
+
+.result-party {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.result-photo {
+  width: 132px;
+  height: 176px;
+  object-fit: cover;
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transform: rotate(-2deg);
+  margin: 8px auto 14px;
+}
+
+.result-why {
+  text-align: left;
+  background: var(--paper);
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 15px;
+  margin: 14px 0 20px;
+}
+
+.ranking {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 18px 0 22px;
+  text-align: left;
+}
+
+.rank-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 52px;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rank-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--line);
+}
+
+.rank-bar-track {
+  height: 14px;
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.rank-bar {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.rank-pct {
+  text-align: right;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 13px;
+}
+
+/* ---------- propostas tab ---------- */
+.prop-header {
+  max-width: 760px;
+  margin: 8px auto 30px;
+  text-align: center;
+}
+
+.prop-header h2 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(22px, 4vw, 32px);
+  margin: 0 0 10px;
+}
+
+.prop-header p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.prop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.cand-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cand-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.cand-photo {
+  width: 62px;
+  height: 82px;
+  object-fit: cover;
+  border: 2.5px solid var(--line);
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.cand-name {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.cand-party {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.cand-number {
+  margin-left: auto;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 22px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--accent-2);
+  padding: 2px 10px;
+  transform: rotate(2deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.wordbars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wordbar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 34px;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.wordbar-label {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wordbar-track {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.wordbar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.wordbar-n {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.no-plan-note {
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--paper);
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+/* ---------- heat matrix ---------- */
+.heat-table {
+  border-collapse: separate;
+  border-spacing: 4px;
+  width: 100%;
+  min-width: 660px;
+}
+
+.heat-table th {
+  font-size: 12.5px;
+  font-family: "Archivo Black", sans-serif;
+  padding-bottom: 2px;
+}
+
+.heat-poles {
+  display: block;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+}
+
+.heat-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  padding-right: 6px;
+}
+
+.heat-name img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--line);
+}
+
+.heat-cell {
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 12px;
+  padding: 7px 0;
+  min-width: 52px;
+  cursor: help;
+}
+
+.heat-hint {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+/* ---------- distinctive chips ---------- */
+.chip-card {
+  padding: 16px 18px;
+  gap: 10px;
+}
+
+.chip-owner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 14px;
+}
+
+.chip-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.size-row {
+  grid-template-columns: 130px 1fr 56px;
+}
+
+.footnote {
+  margin-top: 44px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footnote a {
+  color: var(--accent);
+}
+
+.section-divider {
+  max-width: 760px;
+  margin: 46px auto 30px;
+  text-align: center;
+}
+
+.section-divider h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(19px, 3vw, 26px);
+  margin: 0 0 8px;
+}
+
+.section-divider p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 15px;
+}
+
+@media (max-width: 560px) {
+  .likert {
+    grid-template-columns: 1fr;
+  }
+  .likert button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+  .likert button .dot {
+    margin: 0;
+  }
+}

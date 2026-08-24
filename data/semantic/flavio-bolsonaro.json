@@ -1,0 +1,47 @@
+{
+  "slug": "flavio-bolsonaro",
+  "titulo_plano": "O Brasil Vai Vencer (Um Convite à Nação)",
+  "paginas_estimadas": 75,
+  "resumo": "Plano organizado como uma 'jornada do cidadão', com prioridade máxima à segurança pública: facções tratadas como narcoterroristas, presídios de segurança máxima e endurecimento penal. Promete Estado digital sem filas, redução de impostos e da conta de luz, programa 'Brasil por Elas' para mulheres, equilíbrio fiscal via 'Tesouraço', reforma do STF e retomada das agendas do governo Bolsonaro, em tom de forte oposição ao PT.",
+  "eixos_centrais": [
+    "Segurança pública com endurecimento penal máximo ('Brasil sem Medo')",
+    "Ajuste fiscal, corte de gastos e redução de impostos ('Tesouraço')",
+    "Desburocratização e Estado digital ('Brasil sem Fila')",
+    "Proteção e autonomia econômica das mulheres ('Brasil por Elas')",
+    "Crescimento pró-mercado: infraestrutura, energia, agro e reforma do Judiciário"
+  ],
+  "propostas_marcantes": [
+    "Complexo 'TREVA': 5 presídios federais de segurança máxima no modelo de El Salvador",
+    "Castração química para estupradores e abusadores de crianças condenados",
+    "'Muralha Brasileira': reconhecimento facial com mais de 1 milhão de novas câmeras",
+    "Central da Mulher com assistente de IA 'ClarIA' e voucher-creche",
+    "Fim da reeleição presidencial e corte de no mínimo 10 ministérios"
+  ],
+  "estilo": "Panfletário-programático: linguagem direta de campanha, slogans e trocadilhos ('Tesouraço', 'Luz, câmara, prisão'), forte contraste retórico com o governo Lula/PT e constante evocação do legado Bolsonaro.",
+  "scores": {
+    "econ": {
+      "v": 1,
+      "ev": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso... com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo"
+    },
+    "social": {
+      "v": 1,
+      "ev": "valores que consideramos inegociáveis... o respeito à liberdade, à família, à vida desde a concepção... A educação será orientada pelo conhecimento e livre de doutrinação político-partidária"
+    },
+    "seguranca": {
+      "v": 2,
+      "ev": "Bandido armado com fuzil na mão vai ser abatido pelas forças de segurança... O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador"
+    },
+    "ambiente": {
+      "v": 0.5,
+      "ev": "Teremos a meta de zerar o desmatamento ilegal até 2029... Se não decidir nem se manifestar dentro desse prazo, a licença deve ser concedida"
+    },
+    "welfare": {
+      "v": 1,
+      "ev": "Toda política deste governo será desenhada com uma pergunta em mente: isso ajuda a pessoa a depender menos do Estado amanhã do que ela depende hoje?"
+    },
+    "instituicoes": {
+      "v": 1,
+      "ev": "Fim das competências criminais originárias do STF... Limitação das decisões monocráticas do STF, privilegiando as decisões colegiadas"
+    }
+  }
+}

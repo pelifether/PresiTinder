@@ -1,0 +1,29 @@
+{
+  "slug": "lula",
+  "titulo_plano": "Diretrizes para o Programa de Transformação do Brasil: um país soberano, democrático, desenvolvido, sustentável e criativo",
+  "paginas_estimadas": 83,
+  "resumo": "Plano de continuidade do governo Lula, estruturado em 13 diretrizes que combinam defesa da soberania nacional, reconstrução do Estado e combate às desigualdades. Propõe neoindustrialização verde, transição energética, desmatamento líquido zero até 2030, fortalecimento do SUS e da educação, valorização do salário mínimo e jornada de 40 horas sem redução salarial. Contrasta resultados do mandato atual com a herança dos governos Temer e Bolsonaro.",
+  "eixos_centrais": [
+    "Soberania nacional em todas as dimensões",
+    "Combate às desigualdades e proteção social",
+    "Neoindustrialização e transformação ecológica",
+    "Fortalecimento dos serviços públicos (SUS, educação)",
+    "Democracia participativa e modernização do Estado"
+  ],
+  "propostas_marcantes": [
+    "Fim da escala 6x1 e jornada de 40 horas sem redução salarial",
+    "Desmatamento líquido zero até 2030",
+    "Criação do Ministério da Segurança Pública após aprovação da PEC da Segurança",
+    "Regulação democrática das redes sociais e plataformas digitais",
+    "Farmácia Popular passará a incluir exames laboratoriais de condições crônicas"
+  ],
+  "estilo": "Documento extenso e programático, em tom de balanço de gestão e continuidade, misturando prestação de contas do mandato atual com promessas de aprofundamento.",
+  "scores": {
+    "econ": {"v": -1, "ev": "voltamos a usar o poder de compra do Estado como uma ferramenta crucial de desenvolvimento, indução de políticas e investimentos, inovação, estabelecimento de padrões de sustentabilidade e soberania"},
+    "social": {"v": -1, "ev": "Manteremos o combate ao racismo no centro de nossa estratégia de desenvolvimento"},
+    "seguranca": {"v": -0.5, "ev": "manteremos uma política de controle de armas e munições, fundamental para reduzir a violência e fortalecer uma política democrática de segurança pública"},
+    "ambiente": {"v": -1.5, "ev": "continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos"},
+    "welfare": {"v": -1.5, "ev": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial"},
+    "instituicoes": {"v": -1, "ev": "É parte da reafirmação da democracia avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais"}
+  }
+}

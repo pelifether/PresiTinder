@@ -1,0 +1,47 @@
+{
+  "slug": "edmilson-costa",
+  "titulo_plano": "Construir o Poder Popular, rumo ao Socialismo",
+  "paginas_estimadas": 14,
+  "resumo": "Programa do PCB para construir o Poder Popular rumo ao socialismo. Propõe Assembleia Constituinte de Novo Tipo, conselhos populares e mandatos revogáveis; estatização do sistema financeiro, das comunicações e das empresas privatizadas; jornada de 30 horas sem redução salarial, salário mínimo do Dieese e tarifa zero; reforma agrária popular com desapropriação sem indenização; desmilitarização da segurança e política externa anti-imperialista, com rompimento com Israel.",
+  "eixos_centrais": [
+    "Poder popular e democracia direta (Constituinte de Novo Tipo, conselhos populares)",
+    "Estatização da economia e reversão das privatizações",
+    "Direitos trabalhistas: jornada de 30 horas e revogação das contrarreformas",
+    "Anti-imperialismo e solidariedade internacional",
+    "Combate às opressões: racismo, machismo e LGBTfobia"
+  ],
+  "propostas_marcantes": [
+    "Assembleia Constituinte de Novo Tipo em dois anos, com extinção do Senado",
+    "Jornada de 30 horas sem redução salarial e fim da escala 6x1",
+    "Estatização do sistema financeiro e reestatização das empresas privatizadas",
+    "Suspensão do pagamento dos juros da dívida durante auditoria",
+    "Tarifa zero com transporte 100% público em todo o território nacional"
+  ],
+  "estilo": "Documento panfletário e doutrinário, com linguagem classista de matriz marxista e propostas maximalistas de ruptura com a ordem capitalista.",
+  "scores": {
+    "econ": {
+      "v": -2,
+      "ev": "a estatização das áreas estratégicas da economia e dos setores produtores de bens necessários à vida, como água, energia, saneamento"
+    },
+    "social": {
+      "v": -2,
+      "ev": "Legalização do aborto, com garantia de atendimento na rede pública de saúde ... Criminalização da misoginia."
+    },
+    "seguranca": {
+      "v": -2,
+      "ev": "a completa desmilitarização da segurança pública ... Descriminalização do uso de drogas, com legalização da maconha a curto prazo."
+    },
+    "ambiente": {
+      "v": -1,
+      "ev": "o governo do Poder Popular desenvolverá uma política radical de combate à destruição da natureza promovida pelo capitalismo"
+    },
+    "welfare": {
+      "v": -2,
+      "ev": "implantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1; a revogação das contrarreformas"
+    },
+    "instituicoes": {
+      "v": -2,
+      "ev": "O governo do Poder Popular convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo"
+    }
+  }
+}

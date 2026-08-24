@@ -1,0 +1,47 @@
+{
+  "slug": "renan-santos",
+  "titulo_plano": "O Futuro é Glorioso — Resumo executivo do Livro Amarelo (Partido Missão)",
+  "paginas_estimadas": 51,
+  "resumo": "Resumo executivo do Livro Amarelo, plano do Partido Missão. Propõe ajuste fiscal via PEC de Transição, guerra ao crime organizado com Direito Penal do Inimigo, fusão de municípios inviáveis, Lei de Responsabilidade Gerencial, substituição do Bolsa Família por frentes de trabalho, Zonas Econômicas Especiais, verticalização das terras raras, marco de inteligência artificial e desfavelização integral em dez anos, visando tornar o Brasil potência global.",
+  "eixos_centrais": [
+    "Segurança pública e guerra ao crime organizado",
+    "Ajuste fiscal e reforma do Estado",
+    "Reforma do pacto federativo e da gestão pública",
+    "Infraestrutura, terras raras, agro e inteligência artificial",
+    "Desfavelização e projeção geopolítica do Brasil"
+  ],
+  "propostas_marcantes": [
+    "Adotar o Direito Penal do Inimigo contra facções, com estado de defesa e GLO",
+    "Fundir municípios fiscalmente inviáveis, reduzindo de 5.570 para cerca de 1.656",
+    "Substituir o Bolsa Família por Frentes Cidadãs de trabalho remunerado",
+    "PEC declarando terras raras questão de segurança nacional, verticalizando a cadeia",
+    "Desfavelização integral em dez anos, com títulos de propriedade e mortgage de 50 anos"
+  ],
+  "estilo": "Ensaístico e visionário, mistura diagnóstico técnico detalhado com retórica geracional, civilizacional e de refundação nacional.",
+  "scores": {
+    "econ": {
+      "v": 1,
+      "ev": "fala-se de contenção de gastos, de reforma trabalhista para flexibilizar relações de trabalho, de redução de supersalários, de reforma administrativa e de austeridade fiscal"
+    },
+    "social": {
+      "v": 1,
+      "ev": "Abolir o sistema de cotas na educação brasileira e em geral."
+    },
+    "seguranca": {
+      "v": 2,
+      "ev": "o governo da Missão vai declarar no primeiro dia de mandato uma grande Guerra ao Crime, visando à adoção imediata do Direito Penal do Inimigo (DPI)"
+    },
+    "ambiente": {
+      "v": 1,
+      "ev": "construir, no Congresso, o marco da exploração mineral controlada em terras indígenas, que abrigam reservas estratégicas de fosfato e potássio"
+    },
+    "welfare": {
+      "v": 1.5,
+      "ev": "a reforma do assistencialismo e a substituição do Bolsa Família por frentes de trabalho remuneradas para a população em idade economicamente ativa"
+    },
+    "instituicoes": {
+      "v": 1,
+      "ev": "a Lei de Responsabilidade Gerencial, nosso projeto que condiciona recursos partidários e até a elegibilidade dos políticos a metas objetivas de desempenho"
+    }
+  }
+}

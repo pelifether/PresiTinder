@@ -1,0 +1,47 @@
+{
+  "slug": "zema",
+  "titulo_plano": "Plano Implacável — Propostas concretas para os maiores problemas do país",
+  "paginas_estimadas": 80,
+  "resumo": "Documento de propostas objetivas em 18 capítulos temáticos. Prioriza segurança pública com Forças Armadas contra facções, combate a privilégios e corrupção, reforma do Judiciário para limitar o STF e choque fiscal com privatização de todas as estatais, corte de impostos e abertura comercial. Defende contrapartidas de trabalho no Bolsa Família, liberdade de expressão, saída do BRICS e gestão pública por resultados.",
+  "eixos_centrais": [
+    "Choque liberal na economia: privatizações, corte de gastos e abertura comercial",
+    "Segurança pública com endurecimento penal e Forças Armadas contra facções",
+    "Reforma do Judiciário e combate a privilégios da elite política",
+    "Estado enxuto e gestão pública por resultados",
+    "Contrapartidas e 'porta de saída' dos programas sociais pelo trabalho"
+  ],
+  "propostas_marcantes": [
+    "Privatizar todas as empresas estatais e desverticalizar a Petrobras",
+    "Sair do BRICS e transformar o Mercosul em zona de livre comércio",
+    "'Sócios do Brasil': depositar R$1.000 em ações para cada brasileiro ao nascer",
+    "Prêmio de R$5 mil às famílias que saírem do Bolsa Família",
+    "Autonomia para estados criarem crimes próprios e agravarem penas"
+  ],
+  "estilo": "Gerencial e tecnocrático-liberal: cada capítulo abre com diagnóstico carregado de estatísticas e desemboca em eixos com propostas curtas e padronizadas, em tom de 'choque de gestão' apartidário.",
+  "scores": {
+    "econ": {
+      "v": 2,
+      "ev": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe, como segurança pública e educação"
+    },
+    "social": {
+      "v": 0.5,
+      "ev": "avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling"
+    },
+    "seguranca": {
+      "v": 2,
+      "ev": "Empregar as Forças Armadas de forma integrada às polícias para retomar territórios dominados pelo crime organizado... Reduzir a maioridade penal para 16 anos ou menos"
+    },
+    "ambiente": {
+      "v": 0.5,
+      "ev": "Garantir critérios técnicos, previsibilidade e segurança jurídica no licenciamento ambiental... sem penalizar quem produz e investe dentro da lei"
+    },
+    "welfare": {
+      "v": 1.5,
+      "ev": "com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público"
+    },
+    "instituicoes": {
+      "v": 1.5,
+      "ev": "Restringir as competências do STF à sua função constitucional, retirando da Corte matérias tributárias e penais... Criar uma corregedoria independente para o STF"
+    }
+  }
+}

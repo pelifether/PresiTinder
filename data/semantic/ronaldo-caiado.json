@@ -1,0 +1,47 @@
+{
+  "slug": "ronaldo-caiado",
+  "titulo_plano": "Plano de Governo 2027 a 2030 — Muito pra mostrar, nada pra esconder",
+  "paginas_estimadas": 100,
+  "resumo": "Plano extenso e gerencial de Ronaldo Caiado (PSD), organizado em 26 temas com metas e indicadores. Prioriza o combate ao crime organizado com uma Lei do Terrorismo Doméstico, estabilização fiscal, crescimento puxado pela iniciativa privada, SUS regulado por prioridade clínica e alfabetização na idade certa. Propõe fim da reeleição, sistema distrital misto e política externa pragmática, prometendo um governo que planeja, executa, mede e presta contas.",
+  "eixos_centrais": [
+    "Segurança pública e combate ao crime organizado como prioridade presidencial",
+    "Estabilização fiscal e gestão pública por metas e resultados",
+    "Crescimento via investimento privado, produtividade e infraestrutura",
+    "Reorganização do SUS por prioridade clínica e prevenção",
+    "Educação com foco em alfabetização e recomposição de aprendizagens"
+  ],
+  "propostas_marcantes": [
+    "Lei do Terrorismo Doméstico enquadrando facções como PCC e CV",
+    "PEC do fim da reeleição no Executivo, valendo já para 2027",
+    "Redução da maioridade penal para 16 anos em crimes graves",
+    "Regime penitenciário REDAD: cela individual e progressão só após 90% da pena",
+    "Orçamento da Verdade e filas do SUS com prioridade clínica rastreável"
+  ],
+  "estilo": "Documento técnico-gerencial e extenso, estruturado por diagnósticos, propostas numeradas, metas quantificadas para 2030 e indicadores de acompanhamento por tema.",
+  "scores": {
+    "econ": {
+      "v": 1,
+      "ev": "A iniciativa privada será o principal motor da economia; ao Estado caberá garantir estabilidade, concorrência, infraestrutura, capital humano, regulação de qualidade"
+    },
+    "social": {
+      "v": -0.5,
+      "ev": "Reduzir desigualdades raciais e de gênero por políticas mensuráveis de segurança, educação, saúde e oportunidades."
+    },
+    "seguranca": {
+      "v": 2,
+      "ev": "permite que as Forças Armadas sejam integradas ao enfrentamento do crime organizado sem acionamento da GLO"
+    },
+    "ambiente": {
+      "v": -0.5,
+      "ev": "Vamos combater com rigor o desmatamento, a grilagem e a mineração ilegal, ao mesmo tempo em que daremos previsibilidade ao empreendedor regular e remuneração a quem conserva."
+    },
+    "welfare": {
+      "v": 1,
+      "ev": "Manteremos a rede de transferência de renda para quem precisa, mas conectaremos benefícios a qualificação, cuidado infantil, inclusão produtiva, habitação, saúde e educação."
+    },
+    "instituicoes": {
+      "v": 0,
+      "ev": "pacificar o país, formar uma maioria transparente em torno do Plano de Governo ... com respeito à Constituição e aos demais Poderes."
+    }
+  }
+}

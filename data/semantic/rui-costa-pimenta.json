@@ -1,0 +1,29 @@
+{
+  "slug": "rui-costa-pimenta",
+  "titulo_plano": "Por salário, trabalho e terra — Revolução, governo operário e comunismo",
+  "paginas_estimadas": 8,
+  "resumo": "Programa revolucionário que trata a eleição como tribuna de propaganda do socialismo e do governo operário. Defende aumento salarial emergencial de 50%, jornada de 35 horas, reversão das privatizações, estatização de bancos e da grande mídia, reforma agrária com expropriação do latifúndio, dissolução da Polícia Militar, fim do STF e cancelamento das dívidas, culminando em um governo das organizações operárias e camponesas.",
+  "eixos_centrais": [
+    "Revolução e governo operário",
+    "Salários e direitos trabalhistas",
+    "Reestatização da economia e dos bancos",
+    "Reforma agrária e moradia com expropriações",
+    "Fim do aparato repressivo e da 'ditadura do Judiciário'"
+  ],
+  "propostas_marcantes": [
+    "Aumento emergencial de 50% dos salários e escala móvel contra a inflação",
+    "Salário mínimo vital de R$ 7.500 e jornada máxima de 35 horas",
+    "Estatização do sistema financeiro em banco estatal único sob controle operário",
+    "Dissolução da Polícia Militar e comitês de autodefesa dos trabalhadores",
+    "Fim do STF, com juízes eleitos por voto popular e mandatos revogáveis"
+  ],
+  "estilo": "Panfletário e agitativo, com linguagem classista de confronto, palavras de ordem e rejeição explícita da via eleitoral como meio de transformação.",
+  "scores": {
+    "econ": {"v": -2, "ev": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.) ... Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores"},
+    "social": {"v": -0.5, "ev": "o massacre do povo negro, dos jovens e trabalhadores, com as mais de seis mil mortes por ano provocadas pela polícia"},
+    "seguranca": {"v": -2, "ev": "Dissolução da polícia militar e de todo o aparato repressivo"},
+    "ambiente": {"v": 0, "ev": "ausente — a Amazônia aparece apenas como tema de soberania anti-imperialista, sem agenda climática"},
+    "welfare": {"v": -2, "ev": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem"},
+    "instituicoes": {"v": -2, "ev": "Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com mandatos revogáveis"}
+  }
+}

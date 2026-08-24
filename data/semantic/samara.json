@@ -1,0 +1,47 @@
+{
+  "slug": "samara",
+  "titulo_plano": "Programa da Unidade Popular pelo Socialismo — Brasil Soberano, Popular e Socialista",
+  "paginas_estimadas": 68,
+  "resumo": "Programa abertamente socialista da Unidade Popular. Diagnostica o capitalismo como causa de guerras, fome e desigualdade e propõe um governo popular dos trabalhadores: dobrar o salário mínimo, jornada de 30 horas, suspensão do pagamento da dívida pública, estatização de bancos, monopólios e transportes, reforma agrária popular, desmilitarização das polícias, combate às opressões e ruptura anti-imperialista com EUA, China e União Europeia.",
+  "eixos_centrais": [
+    "Socialismo e governo popular dos trabalhadores",
+    "Estatização de bancos, monopólios e setores estratégicos",
+    "Direitos trabalhistas, salário e jornada",
+    "Combate às opressões (mulheres, negros, LGBTI+, indígenas, PCDs)",
+    "Anti-imperialismo e soberania nacional"
+  ],
+  "propostas_marcantes": [
+    "Aumento imediato de 100% do salário mínimo como medida emergencial",
+    "Suspensão imediata do pagamento da dívida pública, com auditoria cidadã",
+    "Nacionalização dos bancos e estatização de todo o sistema financeiro",
+    "Jornada de 30 horas semanais sem redução salarial e fim da escala 6x1",
+    "Eleição direta para juízes e tribunais superiores"
+  ],
+  "estilo": "Panfletário e doutrinário, com citações de Marx e Engels e linguagem de agitação classista voltada à mobilização.",
+  "scores": {
+    "econ": {
+      "v": -2,
+      "ev": "Reestatização das Empresas Estratégicas: Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale"
+    },
+    "social": {
+      "v": -2,
+      "ev": "Vamos combater todas as formas de exploração, racismo, machismo, LGBTfobia, capacitismo e opressão; defender os povos indígenas, quilombolas e comunidades tradicionais"
+    },
+    "seguranca": {
+      "v": -2,
+      "ev": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada"
+    },
+    "ambiente": {
+      "v": -1,
+      "ev": "a superação da crise climática exige transformações profundas e uma nova ordem econômica e social, que não esteja subordinada aos lucros da burguesia"
+    },
+    "welfare": {
+      "v": -2,
+      "ev": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial"
+    },
+    "instituicoes": {
+      "v": -2,
+      "ev": "Um Governo Popular dos Trabalhadores, baseado na participação permanente do povo, no controle público dos setores estratégicos, na soberania nacional, na planificação democrática da economia"
+    }
+  }
+}

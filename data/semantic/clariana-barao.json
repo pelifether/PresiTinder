@@ -1,0 +1,29 @@
+{
+  "slug": "clariana-barao",
+  "titulo_plano": "Proteger Hoje, Transformar o Amanhã",
+  "paginas_estimadas": 15,
+  "resumo": "Documento técnico-gerencial organizado em seis capítulos, com a proteção de mulheres e crianças como eixo transversal. Cada seção define objetivos, entregas e indicadores de acompanhamento, sem metas numéricas fechadas. Propõe ambiente de negócios simplificado, responsabilidade fiscal, segurança orientada por dados, fronteiras monitoradas por tecnologia, saúde preventiva e governo digital, com gestão por metas, avaliação de programas e federalismo de resultados.",
+  "eixos_centrais": [
+    "Proteção de mulheres e crianças",
+    "Economia pró-negócios com responsabilidade fiscal",
+    "Educação básica e formação técnica",
+    "Segurança baseada em dados e tecnologia",
+    "Gestão pública por metas e resultados"
+  ],
+  "propostas_marcantes": [
+    "Rede nacional de proteção à violência com painel público de indicadores",
+    "Fronteiras monitoradas com sensores, radares e drones dentro do marco legal",
+    "Sufocamento financeiro das facções com rastreamento de lavagem de dinheiro",
+    "Governo digital com princípio de pedir dados uma única vez",
+    "Encerramento ou reformulação de programas públicos ineficazes após avaliação"
+  ],
+  "estilo": "Gerencial e esquemático, com estrutura repetitiva de objetivos e indicadores por seção, tom tecnocrático e cauteloso quanto a metas e viabilidade jurídico-fiscal.",
+  "scores": {
+    "econ": {"v": 1, "ev": "Ambiente de negócios simples e previsível ... Simplificação regulatória ... Concessões, PPPs e planejamento de longo prazo"},
+    "social": {"v": -0.5, "ev": "Autonomia econômica das mulheres ... Rede de cuidado para ampliar participação no trabalho"},
+    "seguranca": {"v": 0.5, "ev": "Combate ao narcotráfico e ao tráfico de armas ... Sufocamento financeiro das facções ... Prioridade a grandes organizações e cadeias de abastecimento"},
+    "ambiente": {"v": 0, "ev": "ausente"},
+    "welfare": {"v": 0.5, "ev": "Revisão de gastos e subsídios ... Transferências associadas a indicadores quando juridicamente cabível"},
+    "instituicoes": {"v": 0, "ev": "ausente"}
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "hertz-dias",
+  "titulo_plano": "Com os Trabalhadores Contra o Sistema — Por um Brasil Soberano e Socialista",
+  "paginas_estimadas": 32,
+  "resumo": "Programa revolucionário do PSTU que rejeita promessas eleitorais e convoca a classe trabalhadora à mobilização contra o imperialismo e a burguesia nacional. Propõe expropriar sem indenização empresas estratégicas e o grande agronegócio, estatizar o sistema financeiro, reduzir a jornada a 36 horas sem redução salarial, desmilitarizar a PM e descriminalizar as drogas, rumo a um governo socialista baseado na democracia operária.",
+  "eixos_centrais": [
+    "Ruptura anti-imperialista e soberania nacional",
+    "Expropriação e estatização das empresas estratégicas com planejamento econômico",
+    "Direitos do trabalho: fim da escala 6x1 e jornada de 36 horas",
+    "Combate às opressões: racismo, machismo, LGBTfobia e defesa dos povos indígenas",
+    "Governo socialista dos trabalhadores e democracia operária"
+  ],
+  "propostas_marcantes": [
+    "Fim da escala 6x1 e jornada de 36 horas sem redução de salários",
+    "Aumento de 100% no salário mínimo, rumo ao mínimo do Dieese",
+    "Expropriação sem indenização de Petrobras, Vale e grandes empresas do agronegócio",
+    "Desmilitarização da PM, descriminalização das drogas e desencarceramento em massa",
+    "Suspensão do pagamento da dívida pública aos grandes investidores, com auditoria"
+  ],
+  "estilo": "Panfletário e doutrinário, com linguagem marxista de agitação, diagnóstico anti-imperialista e listas de reivindicações classistas.",
+  "scores": {
+    "econ": {
+      "v": -2,
+      "ev": "Expropriação imediata (em grande parte dos casos, reversão de privatização) das grandes empresas privadas dos setores de mineração, petróleo, energia, siderurgia, celulose..."
+    },
+    "social": {
+      "v": -2,
+      "ev": "Educação sexual para decidir, contraceptivo para não engravidar, aborto legal e seguro para não morrer."
+    },
+    "seguranca": {
+      "v": -2,
+      "ev": "Descriminalização das drogas e revogação da Lei Antidrogas, para efetivamente combater e acabar com o narcotráfico, junto com políticas públicas de prevenção, tratamento e redução de danos."
+    },
+    "ambiente": {
+      "v": -1,
+      "ev": "É preciso superar o modelo do grande agronegócio e construir formas de produção que respeitem os territórios, os povos e os limites ecológicos da Terra."
+    },
+    "welfare": {
+      "v": -2,
+      "ev": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego)."
+    },
+    "instituicoes": {
+      "v": -2,
+      "ev": "Defendemos um Estado operário revolucionário, uma ditadura revolucionária do proletariado contra a burguesia, os monopólios e o imperialismo..."
+    }
+  }
+}
