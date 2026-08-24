@@ -66,10 +66,8 @@ export default function Propostas() {
       <div className="prop-header">
         <h2>O que cada plano repete</h2>
         <p>
-          As 10 palavras mais frequentes em cada plano de governo protocolado
-          no TSE — depois de remover conectivos, chavões genéricos e o nome do
-          próprio candidato. Vocabulário é escolha: o que se repete revela a
-          prioridade.
+          Palavras mais frequentes em cada plano de governo protocolado no
+          TSE, tirando conectivos, chavões genéricos e nomes.
         </p>
       </div>
 

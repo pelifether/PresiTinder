@@ -87,10 +87,8 @@ export default function Quiz() {
         <div className="hero">
           <h1>Qual candidato pensa como você?</h1>
           <p>
-            Lemos os 12 planos de governo protocolados no TSE para a eleição
-            presidencial de 2026 — palavra por palavra. Responda 7 perguntas e
-            veja em que ponto do mapa político você cai, e qual plano mais
-            combina com as suas ideias.
+            Responda 7 perguntas e veja qual plano de governo combina mais com
+            suas ideias.
           </p>
         </div>
         <div style={{ textAlign: "center" }}>
@@ -101,7 +99,7 @@ export default function Quiz() {
             whileTap={{ scale: 0.94 }}
             onClick={() => setPhase("asking")}
           >
-            Começar o quiz
+            COMEÇAR
           </motion.button>
         </div>
         <Compass user={null} pulse={0} />

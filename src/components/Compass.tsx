@@ -53,7 +53,6 @@ interface Props {
 export default function Compass({ user, pulse, highlight }: Props) {
   return (
     <div className="compass-wrap">
-      <div className="compass-title">Sua posição no mapa político</div>
       <svg
         className="compass-svg"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
@@ -120,17 +119,15 @@ export default function Compass({ user, pulse, highlight }: Props) {
             animate={{ x: toPx(user.x), y: toPx(-user.y) }}
             transition={{ type: "spring", stiffness: 260, damping: 16, mass: 0.9 }}
           >
-            <motion.g
-              key={pulse}
-              animate={{
-                scaleX: [1, 1.45, 0.75, 1.15, 1],
-                scaleY: [1, 0.65, 1.35, 0.9, 1],
-              }}
-              transition={{ duration: 0.55, ease: "easeOut" }}
-            >
-              <circle r="13" fill="#ffd23f" stroke="#191512" strokeWidth="3" />
-              <circle r="4.5" fill="#191512" />
-            </motion.g>
+            {/* idle float: suggests the dot is alive and can move anytime.
+                CSS keyframes, because framer-motion keyframes silently no-op
+                on SVG <g> elements. Squish replays on remount via key. */}
+            <g className="you-float">
+              <g className="you-squish" key={pulse}>
+                <circle r="13" fill="#ffd23f" stroke="#191512" strokeWidth="3" />
+                <circle r="4.5" fill="#191512" />
+              </g>
+            </g>
             <text y={30} textAnchor="middle" className="you-label">
               VOCÊ
             </text>

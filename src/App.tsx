@@ -12,7 +12,7 @@ export default function App() {
       <header className="masthead">
         <div className="logo" onClick={() => setTab("quiz")} role="button">
           <span className="logo-badge">
-            Meu<em>Presidente</em>
+            Meu<em>Presida</em>
           </span>
           <span className="logo-year">2026</span>
         </div>
