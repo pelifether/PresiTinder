@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Quiz from "./components/Quiz";
 import Propostas from "./components/Propostas";
-import { BUNDLE } from "./lib/experiment";
+import Flame from "./components/Flame";
 
 type Tab = "quiz" | "propostas";
 
@@ -15,9 +15,7 @@ export default function App() {
           <span className="logo-badge">
             Presi<em>Tinder</em>
           </span>
-          <span className="logo-emoji" aria-hidden="true">
-            {BUNDLE.emoji}
-          </span>
+          <Flame />
           <span className="logo-year">2026</span>
         </div>
         <nav className="tabs">
@@ -49,15 +47,7 @@ export default function App() {
           TSE (DivulgaCandContas)
         </a>
         . Este site não tem filiação partidária e não substitui a leitura dos
-        planos. Ele também roda um{" "}
-        <a
-          href="https://github.com/pelifether/PresiTinder/blob/main/EXPERIMENT.md"
-          target="_blank"
-          rel="noreferrer"
-        >
-          experimento aberto
-        </a>{" "}
-        de cores — parte da diversão.
+        planos.
       </p>
     </div>
   );

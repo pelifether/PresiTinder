@@ -15,36 +15,45 @@ protocolados no
   (Estado ↔ Mercado × Progressista ↔ Conservador). Os candidatos só aparecem
   no mapa no fim, junto com o plano que mais combina com você, a explicação e
   uma citação do documento.
-- **Aba "Propostas"**: 5 visualizações dos 12 planos — estimativa
-  estilométrica de quanto cada texto tem cara de IA (`pipeline/aidetect.py`),
-  palavras mais frequentes por plano (barras), matriz semântica candidatos ×
-  6 dimensões (heatmap com evidência no hover), termos distintivos por TF-IDF
-  (chips) e tamanho de cada documento.
-- **Um experimento aberto de cores**: cada visitante recebe um de seis temas
-  nas paletas dos principais partidos. Protocolo em
-  [EXPERIMENT.md](EXPERIMENT.md).
+- **Aba "Propostas"**: 5 visualizações dos 12 planos — estimativa de uso de
+  IA por documento, palavra mais repetida em cada plano, termos distintivos por
+  TF-IDF (chips), tamanho de cada documento e a matriz semântica candidatos ×
+  8 dimensões (heatmap com a citação que justifica cada nota no hover).
 
 ## Método
 
 1. Os 12 planos de governo em PDF foram convertidos para texto
    (`data/text/`).
-2. Cada documento foi lido por inteiro e pontuado numa rubrica fixa de
-   6 dimensões (`data/semantic/RUBRIC.md`), com nota de −2 a +2 e citação
-   verbatim obrigatória como evidência. Todas as 68 citações foram validadas
-   automaticamente contra os textos-fonte.
-3. **Banco de 22 perguntas**, cada uma tirada de uma proposta que aparece de
+2. Cada documento foi lido por inteiro e pontuado em **8 dimensões**, com nota
+   de −4 a +4 (passos de 0,5) e citação verbatim obrigatória como evidência
+   (`pipeline/rescore.py`). Seis dimensões são as clássicas (economia, direitos
+   sociais, costumes, segurança, ambiente, instituições); duas foram
+   acrescentadas porque são o "segundo eixo" canônico da literatura comparada
+   e, na prática, são o que separa planos que nas seis primeiras pareciam
+   iguais:
+   - **soberania** — anti-imperialismo/protecionismo ↔ integração global. Não
+     é monótona com a esquerda-direita: o NOVO quer sair do BRICS e entrar na
+     OCDE, enquanto a MISSÃO ataca o "protecionismo crônico" e ao mesmo tempo
+     dedica um capítulo a "terras raras e soberania nacional".
+   - **método** — ruptura/mobilização ↔ reforma pelas instituições. O PCO diz
+     que as conquistas "não virão pelo voto"; o PT governa por mesa de
+     negociação.
+3. **Banco de 28 perguntas**, cada uma tirada de uma proposta que aparece de
    fato em algum plano. Cada sessão sorteia 10, com amostragem estratificada
-   (as 6 dimensões sempre aparecem) e distribuição round-robin, então dois
+   (as 8 dimensões sempre aparecem) e distribuição round-robin, então dois
    cards seguidos nunca são do mesmo tema.
 4. Uma resposta sim/não carrega direção mas não intensidade. A intensidade
-   está na pergunta: cada uma tem um **pivô** (0…2) — o quanto um plano precisa
-   se inclinar antes de endossar *aquela* medida. "Menos imposto" (0,5) é
+   está na pergunta: cada uma tem um **pivô** (0…4) — o quanto um plano precisa
+   se inclinar antes de endossar *aquela* medida. "Menos imposto" (1) é
    assinado por quase toda a direita; "privatizar tudo, inclusive a Petrobras"
-   (1,5) só pelo mais radical. Sem isso, todo plano do mesmo lado de um tema
-   pareceria igualmente perto de você.
-5. A afinidade pesa cada card pela convicção do plano e divide pelo número de
-   cards da mesma dimensão, então um tema sorteado duas vezes não conta dobrado.
-   Onde o plano é silencioso, o card não conta.
+   (3) só pelo mais radical.
+5. O pivô também posiciona *você*: um SIM em "privatizar tudo" (pivô 3) diz que
+   você está em [3, 4] na economia; um SIM em "menos imposto" (pivô 1) só diz
+   [1, 4]. As respostas de uma mesma dimensão são **interseccionadas**, e o
+   resultado é comparado com a nota do plano na mesma escala — um modelo de
+   proximidade, em que um plano que passa longe demais é penalizado tanto
+   quanto um que fica curto. Antes disso a afinidade só olhava o *sinal* da
+   resposta, e dois planos do mesmo lado empatavam por construção.
 6. Onde o texto do documento contradiz a projeção da dimensão, a posição é
    corrigida à mão e comentada no código (`stances` em `src/data/quiz.ts`) —
    por exemplo, o plano do PT comemora a retomada da exploração de petróleo,
@@ -54,17 +63,26 @@ protocolados no
 
 ### Limites conhecidos
 
-As notas são por dimensão, não por pergunta: dentro de uma mesma dimensão, um
-plano responde a todas as perguntas na mesma direção (a intensidade varia pelo
-pivô). Planos que pontuam igual nas 6 dimensões — os três programas da esquerda
-de ruptura são idênticos — empatam de verdade; o site sorteia a ordem e avisa do
-empate em vez de fingir precisão.
+- As notas são por dimensão, não por pergunta: dentro de uma mesma dimensão, um
+  plano responde a todas as perguntas na mesma direção (a intensidade varia pelo
+  pivô), salvo os `stances` corrigidos à mão.
+- Dez cards binários não separam completamente cinco planos de direita muito
+  parecidos: quem responde exatamente como o Zema o vê no top 3 em ~67% das
+  sessões, porque em várias dimensões ele divide o extremo do campo com
+  Caiado, Flávio e Renan. É limite de informação do instrumento, não de dados.
+- A ordenação por meio ponto dentro de um mesmo bloco (Cury +2 vs. Caiado +2,5)
+  é juízo de leitura, não medição. O sinal e a ordem de grandeza são o que
+  sustentamos.
+- Empates de verdade caíram de ~16% para ~1% das sessões (`node
+  scripts/testquiz.mjs`). Quando ainda acontecem, o site avisa em vez de
+  fingir precisão.
 
 ## Rodar
 
 ```bash
 npm install
 npm run dev
+node scripts/testquiz.mjs   # valida o motor do quiz (empates, recuperação)
 ```
 
 Pipeline de dados (só necessário para regenerar `src/data/`, as fotos e o card
@@ -73,7 +91,7 @@ social):
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python pipeline/wordfreq.py
-.venv/bin/python pipeline/cartoonify.py
+.venv/bin/python pipeline/rescore.py
 .venv/bin/python pipeline/ogcard.py   # precisa das fontes Archivo em /tmp/ogfonts
 ```
 

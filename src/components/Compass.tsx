@@ -17,9 +17,12 @@ const toPx = (v: number) => PAD + INSET + ((v + 1) / 2) * SPAN;
 // names collide.
 // The three identical far-left plans are dealt as a tight vertical stack: it
 // reads as one cluster rather than pretending they hold different positions.
+// The three rupture-left plans land within ~10px of each other in the
+// bottom-left corner; fan them out vertically so the labels stay readable.
 const NUDGE: Record<string, [number, number]> = {
-  "edmilson-costa": [0, -24],
-  samara: [0, 24],
+  "edmilson-costa": [0, -22],
+  samara: [0, 0],
+  "hertz-dias": [0, 22],
   "ronaldo-caiado": [8, 7],
   "augusto-cury": [-6, -8],
 };

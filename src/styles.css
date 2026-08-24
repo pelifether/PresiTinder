@@ -7,46 +7,15 @@
   --accent: #0e7a4e;
   --accent-2: #ffd23f;
   --danger: #d6352c;
-  /* SIM/NÃO stay semantic in every theme arm — never party-colored */
   --yes: #0e7a4e;
   --no: #d6352c;
-  /* brand accents are what the experiment bundles swap (see EXPERIMENT.md) */
-  --brand: #0e7a4e;
-  --brand-soft: #ffd23f;
+  /* Tinder-esque brand accents, matched to the flame mark */
+  --brand: #fd3a6d;
+  --brand-soft: #ffc9b0;
   --radius: 16px;
   --shadow: 5px 5px 0 rgba(25, 21, 18, 0.9);
   --shadow-sm: 3px 3px 0 rgba(25, 21, 18, 0.9);
   font-size: 16px;
-}
-
-[data-theme="pt"] {
-  --brand: #c0281c;
-  --brand-soft: #ffb9ab;
-}
-
-[data-theme="pl"] {
-  --brand: #1b3f8f;
-  --brand-soft: #ffd23f;
-}
-
-[data-theme="psd"] {
-  --brand: #2f6fb7;
-  --brand-soft: #bcd7f2;
-}
-
-[data-theme="novo"] {
-  --brand: #d95410;
-  --brand-soft: #ffd2ae;
-}
-
-[data-theme="missao"] {
-  --brand: #8a6d00;
-  --brand-soft: #ffe289;
-}
-
-[data-theme="pco"] {
-  --brand: #7c1616;
-  --brand-soft: #f0c3c3;
 }
 
 * {
@@ -105,10 +74,10 @@ body {
   color: var(--brand-soft);
 }
 
-.logo-emoji {
-  font-size: clamp(22px, 3.6vw, 30px);
+.flame {
   transform: rotate(4deg);
-  line-height: 1;
+  flex: none;
+  filter: drop-shadow(2px 2px 0 rgba(25, 21, 18, 0.18));
 }
 
 .logo-year {
@@ -733,6 +702,102 @@ body {
   font-size: 11.5px;
   color: var(--muted);
   font-weight: 700;
+}
+
+/* ---------- semantic matrix ---------- */
+.matrix-card {
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.heat-cell {
+  outline: none;
+}
+
+.heat-cell:hover,
+.heat-cell:focus-visible {
+  box-shadow: 0 0 0 2.5px var(--ink) inset;
+}
+
+/* Fixed, not absolute: the table is a scroll container and would clip it. */
+.heat-tip {
+  position: fixed;
+  z-index: 60;
+  transform: translate(-50%, -100%);
+  width: max-content;
+  max-width: 320px;
+  padding: 10px 12px;
+  background: var(--ink);
+  color: #fdfaf3;
+  border-radius: 10px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: 0 6px 20px rgba(25, 21, 18, 0.28);
+  pointer-events: none;
+}
+
+.heat-tip.below {
+  transform: translate(-50%, 0);
+}
+
+.heat-tip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-2);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.heat-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--ink);
+}
+
+.heat-tip.below::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- result extras ---------- */
+.match-warning {
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #ffe9a8;
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.result-words {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px dashed rgba(25, 21, 18, 0.18);
+  text-align: left;
+}
+
+.result-words-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
 /* ---------- AI estimate ---------- */

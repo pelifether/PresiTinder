@@ -1,410 +1,458 @@
 {
- "augusto-cury": {
-  "resumo": "Plano ensaístico do psiquiatra Augusto Cury que propõe superar a polarização com uma 'cultura da paz' e gestão da emoção. Combina responsabilidade fiscal, simplificação tributária e empreendedorismo em massa com programas de saúde mental, proteção às mulheres e telemedicina. Estrutura-se em 18 projetos e três reformas: semipresidencialismo, mandato de oito anos para ministros do STF e diplomacia econômica com embaixadas empreendedoras.",
-  "eixos": [
-   "Pacificação nacional, gestão da emoção e saúde mental",
-   "Empreendedorismo em massa e economia distribuída",
-   "Revolução da educação com formação socioemocional",
-   "Responsabilidade fiscal, agroindústria e abertura exportadora",
-   "Reforma institucional: semipresidencialismo e reforma do STF"
-  ],
-  "propostas": [
-   "Semipresidencialismo com Primeiro-Ministro apoiado na maioria parlamentar",
-   "STF com nove ministros, mandato de oito anos, escolhidos pelas classes jurídicas",
-   "Banco do Empreendedor: crédito até R$ 20 mil com juros de 5% a 6% ao ano",
-   "10 mil Escolas de Empreendedorismo e 10 milhões de novos empreendedores",
-   "Fundo mundial contra a fome com 0,5% do comércio global e 2% da indústria de armamentos"
-  ],
-  "estilo": "Ensaístico e autoral, mistura discurso psiquiátrico-motivacional e filosófico com listas gerenciais de projetos, metas e siglas.",
-  "scores": {
-   "econ": 1,
-   "social": -0.5,
-   "seguranca": 1,
-   "ambiente": 0,
-   "welfare": 1,
-   "instituicoes": 1
+  "augusto-cury": {
+    "resumo": "Plano ensaístico do psiquiatra Augusto Cury que propõe superar a polarização com uma 'cultura da paz' e gestão da emoção. Combina responsabilidade fiscal, simplificação tributária e empreendedorismo em massa com programas de saúde mental, proteção às mulheres e telemedicina. Estrutura-se em 18 projetos e três reformas: semipresidencialismo, mandato de oito anos para ministros do STF e diplomacia econômica com embaixadas empreendedoras.",
+    "eixos": [
+      "Pacificação nacional, gestão da emoção e saúde mental",
+      "Empreendedorismo em massa e economia distribuída",
+      "Revolução da educação com formação socioemocional",
+      "Responsabilidade fiscal, agroindústria e abertura exportadora",
+      "Reforma institucional: semipresidencialismo e reforma do STF"
+    ],
+    "propostas": [
+      "Semipresidencialismo com Primeiro-Ministro apoiado na maioria parlamentar",
+      "STF com nove ministros, mandato de oito anos, escolhidos pelas classes jurídicas",
+      "Banco do Empreendedor: crédito até R$ 20 mil com juros de 5% a 6% ao ano",
+      "10 mil Escolas de Empreendedorismo e 10 milhões de novos empreendedores",
+      "Fundo mundial contra a fome com 0,5% do comércio global e 2% da indústria de armamentos"
+    ],
+    "estilo": "Ensaístico e autoral, mistura discurso psiquiátrico-motivacional e filosófico com listas gerenciais de projetos, metas e siglas.",
+    "scores": {
+      "econ": 2,
+      "welfare": 1.5,
+      "social": -1.5,
+      "seguranca": 2,
+      "ambiente": 0.5,
+      "instituicoes": 1.5,
+      "soberania": 2,
+      "metodo": 2
+    },
+    "evidencia": {
+      "econ": "Defenderemos a simplificação dos tributos, a redução da burocracia, a unificação de procedimentos e a diminuição dos custos de conformidade para empresas e cidadãos.",
+      "social": "Essas distorções estruturais serão enfrentadas com políticas de transparência salarial, fiscalização rigorosa e mecanismos de correção de desigualdades...",
+      "seguranca": "Programa FATO – Força de Alerta Total: será o maior programa já realizado no Brasil que integra, treina, equipa e valoriza todas as forças policiais",
+      "ambiente": "O crescimento econômico e a preservação ambiental não são objetivos incompatíveis.",
+      "welfare": "O Bolsa família ama a pobreza, mas não ama os pobres, pois os perpetuam na pobreza.",
+      "instituicoes": "Propomos estabelecer mandato de oito anos para os ministros do Supremo Tribunal Federal (STF), com critérios mais objetivos de composição e ingresso.",
+      "soberania": "Expandiremos acordos comerciais estratégicos com diferentes blocos econômicos",
+      "metodo": "O Estado brasileiro precisa tornar-se mais eficiente, moderno e orientado para resultados. Uma ampla reforma administrativa buscará simplificar estruturas"
+    }
   },
-  "evidencia": {
-   "econ": "Defenderemos a simplificação dos tributos, a redução da burocracia, a unificação de procedimentos e a diminuição dos custos de conformidade para empresas e cidadãos.",
-   "social": "Essas distorções estruturais serão enfrentadas com políticas de transparência salarial, fiscalização rigorosa e mecanismos de correção de desigualdades...",
-   "seguranca": "Programa FATO – Força de Alerta Total: será o maior programa já realizado no Brasil que integra, treina, equipa e valoriza todas as forças policiais",
-   "ambiente": "O crescimento econômico e a preservação ambiental não são objetivos incompatíveis.",
-   "welfare": "O Bolsa família ama a pobreza, mas não ama os pobres, pois os perpetuam na pobreza.",
-   "instituicoes": "Propomos estabelecer mandato de oito anos para os ministros do Supremo Tribunal Federal (STF), com critérios mais objetivos de composição e ingresso."
-  }
- },
- "clariana-barao": {
-  "resumo": "Documento técnico-gerencial organizado em seis capítulos, com a proteção de mulheres e crianças como eixo transversal. Cada seção define objetivos, entregas e indicadores de acompanhamento, sem metas numéricas fechadas. Propõe ambiente de negócios simplificado, responsabilidade fiscal, segurança orientada por dados, fronteiras monitoradas por tecnologia, saúde preventiva e governo digital, com gestão por metas, avaliação de programas e federalismo de resultados.",
-  "eixos": [
-   "Proteção de mulheres e crianças",
-   "Economia pró-negócios com responsabilidade fiscal",
-   "Educação básica e formação técnica",
-   "Segurança baseada em dados e tecnologia",
-   "Gestão pública por metas e resultados"
-  ],
-  "propostas": [
-   "Rede nacional de proteção à violência com painel público de indicadores",
-   "Fronteiras monitoradas com sensores, radares e drones dentro do marco legal",
-   "Sufocamento financeiro das facções com rastreamento de lavagem de dinheiro",
-   "Governo digital com princípio de pedir dados uma única vez",
-   "Encerramento ou reformulação de programas públicos ineficazes após avaliação"
-  ],
-  "estilo": "Gerencial e esquemático, com estrutura repetitiva de objetivos e indicadores por seção, tom tecnocrático e cauteloso quanto a metas e viabilidade jurídico-fiscal.",
-  "scores": {
-   "econ": 1,
-   "social": -0.5,
-   "seguranca": 0.5,
-   "ambiente": 0,
-   "welfare": 0.5,
-   "instituicoes": 0
+  "clariana-barao": {
+    "resumo": "Documento técnico-gerencial organizado em seis capítulos, com a proteção de mulheres e crianças como eixo transversal. Cada seção define objetivos, entregas e indicadores de acompanhamento, sem metas numéricas fechadas. Propõe ambiente de negócios simplificado, responsabilidade fiscal, segurança orientada por dados, fronteiras monitoradas por tecnologia, saúde preventiva e governo digital, com gestão por metas, avaliação de programas e federalismo de resultados.",
+    "eixos": [
+      "Proteção de mulheres e crianças",
+      "Economia pró-negócios com responsabilidade fiscal",
+      "Educação básica e formação técnica",
+      "Segurança baseada em dados e tecnologia",
+      "Gestão pública por metas e resultados"
+    ],
+    "propostas": [
+      "Rede nacional de proteção à violência com painel público de indicadores",
+      "Fronteiras monitoradas com sensores, radares e drones dentro do marco legal",
+      "Sufocamento financeiro das facções com rastreamento de lavagem de dinheiro",
+      "Governo digital com princípio de pedir dados uma única vez",
+      "Encerramento ou reformulação de programas públicos ineficazes após avaliação"
+    ],
+    "estilo": "Gerencial e esquemático, com estrutura repetitiva de objetivos e indicadores por seção, tom tecnocrático e cauteloso quanto a metas e viabilidade jurídico-fiscal.",
+    "scores": {
+      "econ": 1.5,
+      "welfare": 1,
+      "social": -1,
+      "seguranca": 1,
+      "ambiente": 0,
+      "instituicoes": 0,
+      "soberania": 0,
+      "metodo": 4
+    },
+    "evidencia": {
+      "econ": "Ambiente de negócios simples e previsível ... Simplificação regulatória ... Concessões, PPPs e planejamento de longo prazo",
+      "social": "Autonomia econômica das mulheres ... Rede de cuidado para ampliar participação no trabalho",
+      "seguranca": "Combate ao narcotráfico e ao tráfico de armas ... Sufocamento financeiro das facções ... Prioridade a grandes organizações e cadeias de abastecimento",
+      "ambiente": "ausente",
+      "welfare": "Revisão de gastos e subsídios ... Transferências associadas a indicadores quando juridicamente cabível",
+      "instituicoes": "ausente",
+      "soberania": "ausente — o documento não trata de comércio externo nem de política internacional",
+      "metodo": "Gestão por metas e evidências: objetivos anuais públicos; painéis de desempenho; avaliação e encerramento/reformulação de programas ineficazes"
+    }
   },
-  "evidencia": {
-   "econ": "Ambiente de negócios simples e previsível ... Simplificação regulatória ... Concessões, PPPs e planejamento de longo prazo",
-   "social": "Autonomia econômica das mulheres ... Rede de cuidado para ampliar participação no trabalho",
-   "seguranca": "Combate ao narcotráfico e ao tráfico de armas ... Sufocamento financeiro das facções ... Prioridade a grandes organizações e cadeias de abastecimento",
-   "ambiente": "ausente",
-   "welfare": "Revisão de gastos e subsídios ... Transferências associadas a indicadores quando juridicamente cabível",
-   "instituicoes": "ausente"
-  }
- },
- "edmilson-costa": {
-  "resumo": "Programa do PCB para construir o Poder Popular rumo ao socialismo. Propõe Assembleia Constituinte de Novo Tipo, conselhos populares e mandatos revogáveis; estatização do sistema financeiro, das comunicações e das empresas privatizadas; jornada de 30 horas sem redução salarial, salário mínimo do Dieese e tarifa zero; reforma agrária popular com desapropriação sem indenização; desmilitarização da segurança e política externa anti-imperialista, com rompimento com Israel.",
-  "eixos": [
-   "Poder popular e democracia direta (Constituinte de Novo Tipo, conselhos populares)",
-   "Estatização da economia e reversão das privatizações",
-   "Direitos trabalhistas: jornada de 30 horas e revogação das contrarreformas",
-   "Anti-imperialismo e solidariedade internacional",
-   "Combate às opressões: racismo, machismo e LGBTfobia"
-  ],
-  "propostas": [
-   "Assembleia Constituinte de Novo Tipo em dois anos, com extinção do Senado",
-   "Jornada de 30 horas sem redução salarial e fim da escala 6x1",
-   "Estatização do sistema financeiro e reestatização das empresas privatizadas",
-   "Suspensão do pagamento dos juros da dívida durante auditoria",
-   "Tarifa zero com transporte 100% público em todo o território nacional"
-  ],
-  "estilo": "Documento panfletário e doutrinário, com linguagem classista de matriz marxista e propostas maximalistas de ruptura com a ordem capitalista.",
-  "scores": {
-   "econ": -2,
-   "social": -2,
-   "seguranca": -2,
-   "ambiente": -1,
-   "welfare": -2,
-   "instituicoes": -2
+  "edmilson-costa": {
+    "resumo": "Programa do PCB para construir o Poder Popular rumo ao socialismo. Propõe Assembleia Constituinte de Novo Tipo, conselhos populares e mandatos revogáveis; estatização do sistema financeiro, das comunicações e das empresas privatizadas; jornada de 30 horas sem redução salarial, salário mínimo do Dieese e tarifa zero; reforma agrária popular com desapropriação sem indenização; desmilitarização da segurança e política externa anti-imperialista, com rompimento com Israel.",
+    "eixos": [
+      "Poder popular e democracia direta (Constituinte de Novo Tipo, conselhos populares)",
+      "Estatização da economia e reversão das privatizações",
+      "Direitos trabalhistas: jornada de 30 horas e revogação das contrarreformas",
+      "Anti-imperialismo e solidariedade internacional",
+      "Combate às opressões: racismo, machismo e LGBTfobia"
+    ],
+    "propostas": [
+      "Assembleia Constituinte de Novo Tipo em dois anos, com extinção do Senado",
+      "Jornada de 30 horas sem redução salarial e fim da escala 6x1",
+      "Estatização do sistema financeiro e reestatização das empresas privatizadas",
+      "Suspensão do pagamento dos juros da dívida durante auditoria",
+      "Tarifa zero com transporte 100% público em todo o território nacional"
+    ],
+    "estilo": "Documento panfletário e doutrinário, com linguagem classista de matriz marxista e propostas maximalistas de ruptura com a ordem capitalista.",
+    "scores": {
+      "econ": -3,
+      "welfare": -3.5,
+      "social": -3,
+      "seguranca": -2.5,
+      "ambiente": -2,
+      "instituicoes": -3.5,
+      "soberania": -4,
+      "metodo": -3
+    },
+    "evidencia": {
+      "econ": "a estatização das áreas estratégicas da economia e dos setores produtores de bens necessários à vida, como água, energia, saneamento",
+      "social": "Legalização do aborto, com garantia de atendimento na rede pública de saúde ... Criminalização da misoginia.",
+      "seguranca": "a completa desmilitarização da segurança pública ... Descriminalização do uso de drogas, com legalização da maconha a curto prazo.",
+      "ambiente": "o governo do Poder Popular desenvolverá uma política radical de combate à destruição da natureza promovida pelo capitalismo",
+      "welfare": "implantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1; a revogação das contrarreformas",
+      "instituicoes": "O governo do Poder Popular convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo",
+      "soberania": "o enfrentamento ao imperialismo, além de reafirmar a solidariedade com todos os povos em luta por sua soberania e autodeterminação",
+      "metodo": "Somente a Revolução Socialista, entendida como um forte e poderoso processo de lutas [pode transformar o país] ... Construir o Poder Popular"
+    }
   },
-  "evidencia": {
-   "econ": "a estatização das áreas estratégicas da economia e dos setores produtores de bens necessários à vida, como água, energia, saneamento",
-   "social": "Legalização do aborto, com garantia de atendimento na rede pública de saúde ... Criminalização da misoginia.",
-   "seguranca": "a completa desmilitarização da segurança pública ... Descriminalização do uso de drogas, com legalização da maconha a curto prazo.",
-   "ambiente": "o governo do Poder Popular desenvolverá uma política radical de combate à destruição da natureza promovida pelo capitalismo",
-   "welfare": "implantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1; a revogação das contrarreformas",
-   "instituicoes": "O governo do Poder Popular convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo"
-  }
- },
- "flavio-bolsonaro": {
-  "resumo": "Plano organizado como uma 'jornada do cidadão', com prioridade máxima à segurança pública: facções tratadas como narcoterroristas, presídios de segurança máxima e endurecimento penal. Promete Estado digital sem filas, redução de impostos e da conta de luz, programa 'Brasil por Elas' para mulheres, equilíbrio fiscal via 'Tesouraço', reforma do STF e retomada das agendas do governo Bolsonaro, em tom de forte oposição ao PT.",
-  "eixos": [
-   "Segurança pública com endurecimento penal máximo ('Brasil sem Medo')",
-   "Ajuste fiscal, corte de gastos e redução de impostos ('Tesouraço')",
-   "Desburocratização e Estado digital ('Brasil sem Fila')",
-   "Proteção e autonomia econômica das mulheres ('Brasil por Elas')",
-   "Crescimento pró-mercado: infraestrutura, energia, agro e reforma do Judiciário"
-  ],
-  "propostas": [
-   "Complexo 'TREVA': 5 presídios federais de segurança máxima no modelo de El Salvador",
-   "Castração química para estupradores e abusadores de crianças condenados",
-   "'Muralha Brasileira': reconhecimento facial com mais de 1 milhão de novas câmeras",
-   "Central da Mulher com assistente de IA 'ClarIA' e voucher-creche",
-   "Fim da reeleição presidencial e corte de no mínimo 10 ministérios"
-  ],
-  "estilo": "Panfletário-programático: linguagem direta de campanha, slogans e trocadilhos ('Tesouraço', 'Luz, câmara, prisão'), forte contraste retórico com o governo Lula/PT e constante evocação do legado Bolsonaro.",
-  "scores": {
-   "econ": 1,
-   "social": 1,
-   "seguranca": 2,
-   "ambiente": 0.5,
-   "welfare": 1,
-   "instituicoes": 1
+  "flavio-bolsonaro": {
+    "resumo": "Plano organizado como uma 'jornada do cidadão', com prioridade máxima à segurança pública: facções tratadas como narcoterroristas, presídios de segurança máxima e endurecimento penal. Promete Estado digital sem filas, redução de impostos e da conta de luz, programa 'Brasil por Elas' para mulheres, equilíbrio fiscal via 'Tesouraço', reforma do STF e retomada das agendas do governo Bolsonaro, em tom de forte oposição ao PT.",
+    "eixos": [
+      "Segurança pública com endurecimento penal máximo ('Brasil sem Medo')",
+      "Ajuste fiscal, corte de gastos e redução de impostos ('Tesouraço')",
+      "Desburocratização e Estado digital ('Brasil sem Fila')",
+      "Proteção e autonomia econômica das mulheres ('Brasil por Elas')",
+      "Crescimento pró-mercado: infraestrutura, energia, agro e reforma do Judiciário"
+    ],
+    "propostas": [
+      "Complexo 'TREVA': 5 presídios federais de segurança máxima no modelo de El Salvador",
+      "Castração química para estupradores e abusadores de crianças condenados",
+      "'Muralha Brasileira': reconhecimento facial com mais de 1 milhão de novas câmeras",
+      "Central da Mulher com assistente de IA 'ClarIA' e voucher-creche",
+      "Fim da reeleição presidencial e corte de no mínimo 10 ministérios"
+    ],
+    "estilo": "Panfletário-programático: linguagem direta de campanha, slogans e trocadilhos ('Tesouraço', 'Luz, câmara, prisão'), forte contraste retórico com o governo Lula/PT e constante evocação do legado Bolsonaro.",
+    "scores": {
+      "econ": 2.5,
+      "welfare": 2.5,
+      "social": 3,
+      "seguranca": 3.5,
+      "ambiente": 1.5,
+      "instituicoes": 2,
+      "soberania": 2,
+      "metodo": 2.5
+    },
+    "evidencia": {
+      "econ": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso... com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo",
+      "social": "valores que consideramos inegociáveis... o respeito à liberdade, à família, à vida desde a concepção... A educação será orientada pelo conhecimento e livre de doutrinação político-partidária",
+      "seguranca": "Bandido armado com fuzil na mão vai ser abatido pelas forças de segurança... O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador",
+      "ambiente": "Teremos a meta de zerar o desmatamento ilegal até 2029... Se não decidir nem se manifestar dentro desse prazo, a licença deve ser concedida",
+      "welfare": "Toda política deste governo será desenhada com uma pergunta em mente: isso ajuda a pessoa a depender menos do Estado amanhã do que ela depende hoje?",
+      "instituicoes": "Fim das competências criminais originárias do STF... Limitação das decisões monocráticas do STF, privilegiando as decisões colegiadas",
+      "soberania": "preparar para uma abertura comercial que dê ao setor produtivo acesso a [insumos e tecnologia] ... País integrado ao mundo",
+      "metodo": "O plano se organiza em reformas de Estado — Reforma Administrativa, Reforma Tributária, revisão normativa infralegal"
+    }
   },
-  "evidencia": {
-   "econ": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso... com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo",
-   "social": "valores que consideramos inegociáveis... o respeito à liberdade, à família, à vida desde a concepção... A educação será orientada pelo conhecimento e livre de doutrinação político-partidária",
-   "seguranca": "Bandido armado com fuzil na mão vai ser abatido pelas forças de segurança... O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador",
-   "ambiente": "Teremos a meta de zerar o desmatamento ilegal até 2029... Se não decidir nem se manifestar dentro desse prazo, a licença deve ser concedida",
-   "welfare": "Toda política deste governo será desenhada com uma pergunta em mente: isso ajuda a pessoa a depender menos do Estado amanhã do que ela depende hoje?",
-   "instituicoes": "Fim das competências criminais originárias do STF... Limitação das decisões monocráticas do STF, privilegiando as decisões colegiadas"
-  }
- },
- "hertz-dias": {
-  "resumo": "Programa revolucionário do PSTU que rejeita promessas eleitorais e convoca a classe trabalhadora à mobilização contra o imperialismo e a burguesia nacional. Propõe expropriar sem indenização empresas estratégicas e o grande agronegócio, estatizar o sistema financeiro, reduzir a jornada a 36 horas sem redução salarial, desmilitarizar a PM e descriminalizar as drogas, rumo a um governo socialista baseado na democracia operária.",
-  "eixos": [
-   "Ruptura anti-imperialista e soberania nacional",
-   "Expropriação e estatização das empresas estratégicas com planejamento econômico",
-   "Direitos do trabalho: fim da escala 6x1 e jornada de 36 horas",
-   "Combate às opressões: racismo, machismo, LGBTfobia e defesa dos povos indígenas",
-   "Governo socialista dos trabalhadores e democracia operária"
-  ],
-  "propostas": [
-   "Fim da escala 6x1 e jornada de 36 horas sem redução de salários",
-   "Aumento de 100% no salário mínimo, rumo ao mínimo do Dieese",
-   "Expropriação sem indenização de Petrobras, Vale e grandes empresas do agronegócio",
-   "Desmilitarização da PM, descriminalização das drogas e desencarceramento em massa",
-   "Suspensão do pagamento da dívida pública aos grandes investidores, com auditoria"
-  ],
-  "estilo": "Panfletário e doutrinário, com linguagem marxista de agitação, diagnóstico anti-imperialista e listas de reivindicações classistas.",
-  "scores": {
-   "econ": -2,
-   "social": -2,
-   "seguranca": -2,
-   "ambiente": -1,
-   "welfare": -2,
-   "instituicoes": -2
+  "hertz-dias": {
+    "resumo": "Programa revolucionário do PSTU que rejeita promessas eleitorais e convoca a classe trabalhadora à mobilização contra o imperialismo e a burguesia nacional. Propõe expropriar sem indenização empresas estratégicas e o grande agronegócio, estatizar o sistema financeiro, reduzir a jornada a 36 horas sem redução salarial, desmilitarizar a PM e descriminalizar as drogas, rumo a um governo socialista baseado na democracia operária.",
+    "eixos": [
+      "Ruptura anti-imperialista e soberania nacional",
+      "Expropriação e estatização das empresas estratégicas com planejamento econômico",
+      "Direitos do trabalho: fim da escala 6x1 e jornada de 36 horas",
+      "Combate às opressões: racismo, machismo, LGBTfobia e defesa dos povos indígenas",
+      "Governo socialista dos trabalhadores e democracia operária"
+    ],
+    "propostas": [
+      "Fim da escala 6x1 e jornada de 36 horas sem redução de salários",
+      "Aumento de 100% no salário mínimo, rumo ao mínimo do Dieese",
+      "Expropriação sem indenização de Petrobras, Vale e grandes empresas do agronegócio",
+      "Desmilitarização da PM, descriminalização das drogas e desencarceramento em massa",
+      "Suspensão do pagamento da dívida pública aos grandes investidores, com auditoria"
+    ],
+    "estilo": "Panfletário e doutrinário, com linguagem marxista de agitação, diagnóstico anti-imperialista e listas de reivindicações classistas.",
+    "scores": {
+      "econ": -3.5,
+      "welfare": -4,
+      "social": -4,
+      "seguranca": -3.5,
+      "ambiente": -2.5,
+      "instituicoes": -3.5,
+      "soberania": -3.5,
+      "metodo": -3.5
+    },
+    "evidencia": {
+      "econ": "Expropriação imediata (em grande parte dos casos, reversão de privatização) das grandes empresas privadas dos setores de mineração, petróleo, energia, siderurgia, celulose...",
+      "social": "O Estado nega direitos básicos à população LGBTQIAPN+ e é cúmplice da brutal [violência contra ela]",
+      "seguranca": "Descriminalização das drogas e revogação da Lei Antidrogas, para efetivamente combater e acabar com o narcotráfico, junto com políticas públicas de prevenção, tratamento e redução de danos.",
+      "ambiente": "É preciso superar o modelo do grande agronegócio e construir formas de produção que respeitem os territórios, os povos e os limites ecológicos da Terra.",
+      "welfare": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego).",
+      "instituicoes": "Defendemos um Estado operário revolucionário, uma ditadura revolucionária do proletariado contra a burguesia, os monopólios e o imperialismo...",
+      "soberania": "Não é possível falar em um país soberano sem problematizar uma ruptura com o imperialismo, isto é, com os países dominantes na atual divisão internacional do trabalho",
+      "metodo": "PELO CONTROLE DOS TRABALHADORES SOBRE AS PLATAFORMAS DIGITAIS ... submetidos à fiscalização pública e ao controle dos trabalhadores"
+    }
   },
-  "evidencia": {
-   "econ": "Expropriação imediata (em grande parte dos casos, reversão de privatização) das grandes empresas privadas dos setores de mineração, petróleo, energia, siderurgia, celulose...",
-   "social": "Educação sexual para decidir, contraceptivo para não engravidar, aborto legal e seguro para não morrer.",
-   "seguranca": "Descriminalização das drogas e revogação da Lei Antidrogas, para efetivamente combater e acabar com o narcotráfico, junto com políticas públicas de prevenção, tratamento e redução de danos.",
-   "ambiente": "É preciso superar o modelo do grande agronegócio e construir formas de produção que respeitem os territórios, os povos e os limites ecológicos da Terra.",
-   "welfare": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego).",
-   "instituicoes": "Defendemos um Estado operário revolucionário, uma ditadura revolucionária do proletariado contra a burguesia, os monopólios e o imperialismo..."
-  }
- },
- "lula": {
-  "resumo": "Plano de continuidade do governo Lula, estruturado em 13 diretrizes que combinam defesa da soberania nacional, reconstrução do Estado e combate às desigualdades. Propõe neoindustrialização verde, transição energética, desmatamento líquido zero até 2030, fortalecimento do SUS e da educação, valorização do salário mínimo e jornada de 40 horas sem redução salarial. Contrasta resultados do mandato atual com a herança dos governos Temer e Bolsonaro.",
-  "eixos": [
-   "Soberania nacional em todas as dimensões",
-   "Combate às desigualdades e proteção social",
-   "Neoindustrialização e transformação ecológica",
-   "Fortalecimento dos serviços públicos (SUS, educação)",
-   "Democracia participativa e modernização do Estado"
-  ],
-  "propostas": [
-   "Fim da escala 6x1 e jornada de 40 horas sem redução salarial",
-   "Desmatamento líquido zero até 2030",
-   "Criação do Ministério da Segurança Pública após aprovação da PEC da Segurança",
-   "Regulação democrática das redes sociais e plataformas digitais",
-   "Farmácia Popular passará a incluir exames laboratoriais de condições crônicas"
-  ],
-  "estilo": "Documento extenso e programático, em tom de balanço de gestão e continuidade, misturando prestação de contas do mandato atual com promessas de aprofundamento.",
-  "scores": {
-   "econ": -1,
-   "social": -1,
-   "seguranca": -0.5,
-   "ambiente": -1.5,
-   "welfare": -1.5,
-   "instituicoes": -1
+  "lula": {
+    "resumo": "Plano de continuidade do governo Lula, estruturado em 13 diretrizes que combinam defesa da soberania nacional, reconstrução do Estado e combate às desigualdades. Propõe neoindustrialização verde, transição energética, desmatamento líquido zero até 2030, fortalecimento do SUS e da educação, valorização do salário mínimo e jornada de 40 horas sem redução salarial. Contrasta resultados do mandato atual com a herança dos governos Temer e Bolsonaro.",
+    "eixos": [
+      "Soberania nacional em todas as dimensões",
+      "Combate às desigualdades e proteção social",
+      "Neoindustrialização e transformação ecológica",
+      "Fortalecimento dos serviços públicos (SUS, educação)",
+      "Democracia participativa e modernização do Estado"
+    ],
+    "propostas": [
+      "Fim da escala 6x1 e jornada de 40 horas sem redução salarial",
+      "Desmatamento líquido zero até 2030",
+      "Criação do Ministério da Segurança Pública após aprovação da PEC da Segurança",
+      "Regulação democrática das redes sociais e plataformas digitais",
+      "Farmácia Popular passará a incluir exames laboratoriais de condições crônicas"
+    ],
+    "estilo": "Documento extenso e programático, em tom de balanço de gestão e continuidade, misturando prestação de contas do mandato atual com promessas de aprofundamento.",
+    "scores": {
+      "econ": -2,
+      "welfare": -3,
+      "social": -2.5,
+      "seguranca": -1,
+      "ambiente": -2.5,
+      "instituicoes": -2,
+      "soberania": -1.5,
+      "metodo": 2.5
+    },
+    "evidencia": {
+      "econ": "voltamos a usar o poder de compra do Estado como uma ferramenta crucial de desenvolvimento, indução de políticas e investimentos, inovação, estabelecimento de padrões de sustentabilidade e soberania",
+      "social": "Manteremos o combate ao racismo no centro de nossa estratégia de desenvolvimento",
+      "seguranca": "manteremos uma política de controle de armas e munições, fundamental para reduzir a violência e fortalecer uma política democrática de segurança pública",
+      "ambiente": "continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos",
+      "welfare": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial",
+      "instituicoes": "É parte da reafirmação da democracia avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais",
+      "soberania": "DEFENDER A SOBERANIA NACIONAL E O PROTAGONISMO INTERNACIONAL DO BRASIL",
+      "metodo": "Vamos aprofundar este processo, a partir da Mesa Nacional de Negociação Permanente, que foi reaberta em nosso mandato"
+    }
   },
-  "evidencia": {
-   "econ": "voltamos a usar o poder de compra do Estado como uma ferramenta crucial de desenvolvimento, indução de políticas e investimentos, inovação, estabelecimento de padrões de sustentabilidade e soberania",
-   "social": "Manteremos o combate ao racismo no centro de nossa estratégia de desenvolvimento",
-   "seguranca": "manteremos uma política de controle de armas e munições, fundamental para reduzir a violência e fortalecer uma política democrática de segurança pública",
-   "ambiente": "continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos",
-   "welfare": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial",
-   "instituicoes": "É parte da reafirmação da democracia avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais"
-  }
- },
- "renan-santos": {
-  "resumo": "Resumo executivo do Livro Amarelo, plano do Partido Missão. Propõe ajuste fiscal via PEC de Transição, guerra ao crime organizado com Direito Penal do Inimigo, fusão de municípios inviáveis, Lei de Responsabilidade Gerencial, substituição do Bolsa Família por frentes de trabalho, Zonas Econômicas Especiais, verticalização das terras raras, marco de inteligência artificial e desfavelização integral em dez anos, visando tornar o Brasil potência global.",
-  "eixos": [
-   "Segurança pública e guerra ao crime organizado",
-   "Ajuste fiscal e reforma do Estado",
-   "Reforma do pacto federativo e da gestão pública",
-   "Infraestrutura, terras raras, agro e inteligência artificial",
-   "Desfavelização e projeção geopolítica do Brasil"
-  ],
-  "propostas": [
-   "Adotar o Direito Penal do Inimigo contra facções, com estado de defesa e GLO",
-   "Fundir municípios fiscalmente inviáveis, reduzindo de 5.570 para cerca de 1.656",
-   "Substituir o Bolsa Família por Frentes Cidadãs de trabalho remunerado",
-   "PEC declarando terras raras questão de segurança nacional, verticalizando a cadeia",
-   "Desfavelização integral em dez anos, com títulos de propriedade e mortgage de 50 anos"
-  ],
-  "estilo": "Ensaístico e visionário, mistura diagnóstico técnico detalhado com retórica geracional, civilizacional e de refundação nacional.",
-  "scores": {
-   "econ": 1,
-   "social": 1,
-   "seguranca": 2,
-   "ambiente": 1,
-   "welfare": 1.5,
-   "instituicoes": 1
+  "renan-santos": {
+    "resumo": "Resumo executivo do Livro Amarelo, plano do Partido Missão. Propõe ajuste fiscal via PEC de Transição, guerra ao crime organizado com Direito Penal do Inimigo, fusão de municípios inviáveis, Lei de Responsabilidade Gerencial, substituição do Bolsa Família por frentes de trabalho, Zonas Econômicas Especiais, verticalização das terras raras, marco de inteligência artificial e desfavelização integral em dez anos, visando tornar o Brasil potência global.",
+    "eixos": [
+      "Segurança pública e guerra ao crime organizado",
+      "Ajuste fiscal e reforma do Estado",
+      "Reforma do pacto federativo e da gestão pública",
+      "Infraestrutura, terras raras, agro e inteligência artificial",
+      "Desfavelização e projeção geopolítica do Brasil"
+    ],
+    "propostas": [
+      "Adotar o Direito Penal do Inimigo contra facções, com estado de defesa e GLO",
+      "Fundir municípios fiscalmente inviáveis, reduzindo de 5.570 para cerca de 1.656",
+      "Substituir o Bolsa Família por Frentes Cidadãs de trabalho remunerado",
+      "PEC declarando terras raras questão de segurança nacional, verticalizando a cadeia",
+      "Desfavelização integral em dez anos, com títulos de propriedade e mortgage de 50 anos"
+    ],
+    "estilo": "Ensaístico e visionário, mistura diagnóstico técnico detalhado com retórica geracional, civilizacional e de refundação nacional.",
+    "scores": {
+      "econ": 3.5,
+      "welfare": 3,
+      "social": 2,
+      "seguranca": 3,
+      "ambiente": 2,
+      "instituicoes": 2.5,
+      "soberania": 0.5,
+      "metodo": 1.5
+    },
+    "evidencia": {
+      "econ": "fala-se de contenção de gastos, de reforma trabalhista para flexibilizar relações de trabalho, de redução de supersalários, de reforma administrativa e de austeridade fiscal",
+      "social": "Abolir o sistema de cotas na educação brasileira e em geral.",
+      "seguranca": "o governo da Missão vai declarar no primeiro dia de mandato uma grande Guerra ao Crime, visando à adoção imediata do Direito Penal do Inimigo (DPI)",
+      "ambiente": "construir, no Congresso, o marco da exploração mineral controlada em terras indígenas, que abrigam reservas estratégicas de fosfato e potássio",
+      "welfare": "a reforma do assistencialismo e a substituição do Bolsa Família por frentes de trabalho remuneradas para a população em idade economicamente ativa",
+      "instituicoes": "a Lei de Responsabilidade Gerencial, nosso projeto que condiciona recursos partidários e até a elegibilidade dos políticos a metas objetivas de desempenho",
+      "soberania": "protecionismo crônico que blinda setores ineficientes — mas também: TERRAS RARAS E SOBERANIA NACIONAL",
+      "metodo": "promessa que fizemos a todos os militantes já em 2023, no Oitavo Congresso do Movimento"
+    }
   },
-  "evidencia": {
-   "econ": "fala-se de contenção de gastos, de reforma trabalhista para flexibilizar relações de trabalho, de redução de supersalários, de reforma administrativa e de austeridade fiscal",
-   "social": "Abolir o sistema de cotas na educação brasileira e em geral.",
-   "seguranca": "o governo da Missão vai declarar no primeiro dia de mandato uma grande Guerra ao Crime, visando à adoção imediata do Direito Penal do Inimigo (DPI)",
-   "ambiente": "construir, no Congresso, o marco da exploração mineral controlada em terras indígenas, que abrigam reservas estratégicas de fosfato e potássio",
-   "welfare": "a reforma do assistencialismo e a substituição do Bolsa Família por frentes de trabalho remuneradas para a população em idade economicamente ativa",
-   "instituicoes": "a Lei de Responsabilidade Gerencial, nosso projeto que condiciona recursos partidários e até a elegibilidade dos políticos a metas objetivas de desempenho"
-  }
- },
- "ronaldo-caiado": {
-  "resumo": "Plano extenso e gerencial de Ronaldo Caiado (PSD), organizado em 26 temas com metas e indicadores. Prioriza o combate ao crime organizado com uma Lei do Terrorismo Doméstico, estabilização fiscal, crescimento puxado pela iniciativa privada, SUS regulado por prioridade clínica e alfabetização na idade certa. Propõe fim da reeleição, sistema distrital misto e política externa pragmática, prometendo um governo que planeja, executa, mede e presta contas.",
-  "eixos": [
-   "Segurança pública e combate ao crime organizado como prioridade presidencial",
-   "Estabilização fiscal e gestão pública por metas e resultados",
-   "Crescimento via investimento privado, produtividade e infraestrutura",
-   "Reorganização do SUS por prioridade clínica e prevenção",
-   "Educação com foco em alfabetização e recomposição de aprendizagens"
-  ],
-  "propostas": [
-   "Lei do Terrorismo Doméstico enquadrando facções como PCC e CV",
-   "PEC do fim da reeleição no Executivo, valendo já para 2027",
-   "Redução da maioridade penal para 16 anos em crimes graves",
-   "Regime penitenciário REDAD: cela individual e progressão só após 90% da pena",
-   "Orçamento da Verdade e filas do SUS com prioridade clínica rastreável"
-  ],
-  "estilo": "Documento técnico-gerencial e extenso, estruturado por diagnósticos, propostas numeradas, metas quantificadas para 2030 e indicadores de acompanhamento por tema.",
-  "scores": {
-   "econ": 1,
-   "social": -0.5,
-   "seguranca": 2,
-   "ambiente": -0.5,
-   "welfare": 1,
-   "instituicoes": 0
+  "ronaldo-caiado": {
+    "resumo": "Plano extenso e gerencial de Ronaldo Caiado (PSD), organizado em 26 temas com metas e indicadores. Prioriza o combate ao crime organizado com uma Lei do Terrorismo Doméstico, estabilização fiscal, crescimento puxado pela iniciativa privada, SUS regulado por prioridade clínica e alfabetização na idade certa. Propõe fim da reeleição, sistema distrital misto e política externa pragmática, prometendo um governo que planeja, executa, mede e presta contas.",
+    "eixos": [
+      "Segurança pública e combate ao crime organizado como prioridade presidencial",
+      "Estabilização fiscal e gestão pública por metas e resultados",
+      "Crescimento via investimento privado, produtividade e infraestrutura",
+      "Reorganização do SUS por prioridade clínica e prevenção",
+      "Educação com foco em alfabetização e recomposição de aprendizagens"
+    ],
+    "propostas": [
+      "Lei do Terrorismo Doméstico enquadrando facções como PCC e CV",
+      "PEC do fim da reeleição no Executivo, valendo já para 2027",
+      "Redução da maioridade penal para 16 anos em crimes graves",
+      "Regime penitenciário REDAD: cela individual e progressão só após 90% da pena",
+      "Orçamento da Verdade e filas do SUS com prioridade clínica rastreável"
+    ],
+    "estilo": "Documento técnico-gerencial e extenso, estruturado por diagnósticos, propostas numeradas, metas quantificadas para 2030 e indicadores de acompanhamento por tema.",
+    "scores": {
+      "econ": 2.5,
+      "welfare": 2,
+      "social": -0.5,
+      "seguranca": 4,
+      "ambiente": -1,
+      "instituicoes": 0.5,
+      "soberania": 2.5,
+      "metodo": 3
+    },
+    "evidencia": {
+      "econ": "A iniciativa privada será o principal motor da economia; ao Estado caberá garantir estabilidade, concorrência, infraestrutura, capital humano, regulação de qualidade",
+      "social": "Reduzir desigualdades raciais e de gênero por políticas mensuráveis de segurança, educação, saúde e oportunidades.",
+      "seguranca": "permite que as Forças Armadas sejam integradas ao enfrentamento do crime organizado sem acionamento da GLO",
+      "ambiente": "Vamos combater com rigor o desmatamento, a grilagem e a mineração ilegal, ao mesmo tempo em que daremos previsibilidade ao empreendedor regular e remuneração a quem conserva.",
+      "welfare": "Manteremos a rede de transferência de renda para quem precisa, mas conectaremos benefícios a qualificação, cuidado infantil, inclusão produtiva, habitação, saúde e educação.",
+      "instituicoes": "pacificar o país, formar uma maioria transparente em torno do Plano de Governo ... com respeito à Constituição e aos demais Poderes.",
+      "soberania": "Ampliar acordos comerciais, reduzir barreiras a insumos e tecnologia, fortalecer defesa comercial",
+      "metodo": "Implantar sistema permanente de avaliação de resultados, metas e indicadores de produtividade"
+    }
   },
-  "evidencia": {
-   "econ": "A iniciativa privada será o principal motor da economia; ao Estado caberá garantir estabilidade, concorrência, infraestrutura, capital humano, regulação de qualidade",
-   "social": "Reduzir desigualdades raciais e de gênero por políticas mensuráveis de segurança, educação, saúde e oportunidades.",
-   "seguranca": "permite que as Forças Armadas sejam integradas ao enfrentamento do crime organizado sem acionamento da GLO",
-   "ambiente": "Vamos combater com rigor o desmatamento, a grilagem e a mineração ilegal, ao mesmo tempo em que daremos previsibilidade ao empreendedor regular e remuneração a quem conserva.",
-   "welfare": "Manteremos a rede de transferência de renda para quem precisa, mas conectaremos benefícios a qualificação, cuidado infantil, inclusão produtiva, habitação, saúde e educação.",
-   "instituicoes": "pacificar o país, formar uma maioria transparente em torno do Plano de Governo ... com respeito à Constituição e aos demais Poderes."
-  }
- },
- "rui-costa-pimenta": {
-  "resumo": "Programa revolucionário que trata a eleição como tribuna de propaganda do socialismo e do governo operário. Defende aumento salarial emergencial de 50%, jornada de 35 horas, reversão das privatizações, estatização de bancos e da grande mídia, reforma agrária com expropriação do latifúndio, dissolução da Polícia Militar, fim do STF e cancelamento das dívidas, culminando em um governo das organizações operárias e camponesas.",
-  "eixos": [
-   "Revolução e governo operário",
-   "Salários e direitos trabalhistas",
-   "Reestatização da economia e dos bancos",
-   "Reforma agrária e moradia com expropriações",
-   "Fim do aparato repressivo e da 'ditadura do Judiciário'"
-  ],
-  "propostas": [
-   "Aumento emergencial de 50% dos salários e escala móvel contra a inflação",
-   "Salário mínimo vital de R$ 7.500 e jornada máxima de 35 horas",
-   "Estatização do sistema financeiro em banco estatal único sob controle operário",
-   "Dissolução da Polícia Militar e comitês de autodefesa dos trabalhadores",
-   "Fim do STF, com juízes eleitos por voto popular e mandatos revogáveis"
-  ],
-  "estilo": "Panfletário e agitativo, com linguagem classista de confronto, palavras de ordem e rejeição explícita da via eleitoral como meio de transformação.",
-  "scores": {
-   "econ": -2,
-   "social": -0.5,
-   "seguranca": -2,
-   "ambiente": 0,
-   "welfare": -2,
-   "instituicoes": -2
+  "rui-costa-pimenta": {
+    "resumo": "Programa revolucionário que trata a eleição como tribuna de propaganda do socialismo e do governo operário. Defende aumento salarial emergencial de 50%, jornada de 35 horas, reversão das privatizações, estatização de bancos e da grande mídia, reforma agrária com expropriação do latifúndio, dissolução da Polícia Militar, fim do STF e cancelamento das dívidas, culminando em um governo das organizações operárias e camponesas.",
+    "eixos": [
+      "Revolução e governo operário",
+      "Salários e direitos trabalhistas",
+      "Reestatização da economia e dos bancos",
+      "Reforma agrária e moradia com expropriações",
+      "Fim do aparato repressivo e da 'ditadura do Judiciário'"
+    ],
+    "propostas": [
+      "Aumento emergencial de 50% dos salários e escala móvel contra a inflação",
+      "Salário mínimo vital de R$ 7.500 e jornada máxima de 35 horas",
+      "Estatização do sistema financeiro em banco estatal único sob controle operário",
+      "Dissolução da Polícia Militar e comitês de autodefesa dos trabalhadores",
+      "Fim do STF, com juízes eleitos por voto popular e mandatos revogáveis"
+    ],
+    "estilo": "Panfletário e agitativo, com linguagem classista de confronto, palavras de ordem e rejeição explícita da via eleitoral como meio de transformação.",
+    "scores": {
+      "econ": -4,
+      "welfare": -4,
+      "social": -1.5,
+      "seguranca": -4,
+      "ambiente": 1,
+      "instituicoes": -4,
+      "soberania": -4,
+      "metodo": -4
+    },
+    "evidencia": {
+      "econ": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.) ... Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores",
+      "social": "uma única menção a opressões de gênero ou raça no documento inteiro: o programa é classista e trata a opressão como derivada da exploração",
+      "seguranca": "Dissolução da polícia militar e de todo o aparato repressivo",
+      "ambiente": "Nacionalização do petróleo, Petrobrás 100% estatal ... Redução imediata do preço dos combustíveis em 50% — o único plano da esquerda que é produtivista, sem agenda climática",
+      "welfare": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem",
+      "instituicoes": "Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com mandatos revogáveis",
+      "soberania": "Não à internacionalização da Amazônia e a toda a política de ingerência do imperialismo na região ... fora o imperialismo da América Latina",
+      "metodo": "as conquistas do povo trabalhador não virão pelo voto, pelo discurso demagógico dos políticos da burguesia, mas pela luta do povo trabalhador"
+    }
   },
-  "evidencia": {
-   "econ": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.) ... Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores",
-   "social": "o massacre do povo negro, dos jovens e trabalhadores, com as mais de seis mil mortes por ano provocadas pela polícia",
-   "seguranca": "Dissolução da polícia militar e de todo o aparato repressivo",
-   "ambiente": "ausente — a Amazônia aparece apenas como tema de soberania anti-imperialista, sem agenda climática",
-   "welfare": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem",
-   "instituicoes": "Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com mandatos revogáveis"
-  }
- },
- "samara": {
-  "resumo": "Programa abertamente socialista da Unidade Popular. Diagnostica o capitalismo como causa de guerras, fome e desigualdade e propõe um governo popular dos trabalhadores: dobrar o salário mínimo, jornada de 30 horas, suspensão do pagamento da dívida pública, estatização de bancos, monopólios e transportes, reforma agrária popular, desmilitarização das polícias, combate às opressões e ruptura anti-imperialista com EUA, China e União Europeia.",
-  "eixos": [
-   "Socialismo e governo popular dos trabalhadores",
-   "Estatização de bancos, monopólios e setores estratégicos",
-   "Direitos trabalhistas, salário e jornada",
-   "Combate às opressões (mulheres, negros, LGBTI+, indígenas, PCDs)",
-   "Anti-imperialismo e soberania nacional"
-  ],
-  "propostas": [
-   "Aumento imediato de 100% do salário mínimo como medida emergencial",
-   "Suspensão imediata do pagamento da dívida pública, com auditoria cidadã",
-   "Nacionalização dos bancos e estatização de todo o sistema financeiro",
-   "Jornada de 30 horas semanais sem redução salarial e fim da escala 6x1",
-   "Eleição direta para juízes e tribunais superiores"
-  ],
-  "estilo": "Panfletário e doutrinário, com citações de Marx e Engels e linguagem de agitação classista voltada à mobilização.",
-  "scores": {
-   "econ": -2,
-   "social": -2,
-   "seguranca": -2,
-   "ambiente": -1,
-   "welfare": -2,
-   "instituicoes": -2
+  "samara": {
+    "resumo": "Programa abertamente socialista da Unidade Popular. Diagnostica o capitalismo como causa de guerras, fome e desigualdade e propõe um governo popular dos trabalhadores: dobrar o salário mínimo, jornada de 30 horas, suspensão do pagamento da dívida pública, estatização de bancos, monopólios e transportes, reforma agrária popular, desmilitarização das polícias, combate às opressões e ruptura anti-imperialista com EUA, China e União Europeia.",
+    "eixos": [
+      "Socialismo e governo popular dos trabalhadores",
+      "Estatização de bancos, monopólios e setores estratégicos",
+      "Direitos trabalhistas, salário e jornada",
+      "Combate às opressões (mulheres, negros, LGBTI+, indígenas, PCDs)",
+      "Anti-imperialismo e soberania nacional"
+    ],
+    "propostas": [
+      "Aumento imediato de 100% do salário mínimo como medida emergencial",
+      "Suspensão imediata do pagamento da dívida pública, com auditoria cidadã",
+      "Nacionalização dos bancos e estatização de todo o sistema financeiro",
+      "Jornada de 30 horas semanais sem redução salarial e fim da escala 6x1",
+      "Eleição direta para juízes e tribunais superiores"
+    ],
+    "estilo": "Panfletário e doutrinário, com citações de Marx e Engels e linguagem de agitação classista voltada à mobilização.",
+    "scores": {
+      "econ": -3.5,
+      "welfare": -3.5,
+      "social": -4,
+      "seguranca": -3,
+      "ambiente": -3,
+      "instituicoes": -3,
+      "soberania": -3,
+      "metodo": -2.5
+    },
+    "evidencia": {
+      "econ": "Reestatização das Empresas Estratégicas: Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale",
+      "social": "combater o machismo, a LGBTfobia, o capacitismo — a agenda de reconhecimento é um eixo central do programa (30 menções)",
+      "seguranca": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada",
+      "ambiente": "a superação da crise climática exige transformações profundas e uma nova ordem econômica e social, que não esteja subordinada aos lucros da burguesia",
+      "welfare": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial",
+      "instituicoes": "Um Governo Popular dos Trabalhadores, baseado na participação permanente do povo, no controle público dos setores estratégicos, na soberania nacional, na planificação democrática da economia",
+      "soberania": "nossa candidatura está a serviço da luta anti-imperialista, na defesa da autodeterminação dos povos e da soberania do nosso país",
+      "metodo": "colocando as televisões, as rádios e a internet sob controle do poder popular"
+    }
   },
-  "evidencia": {
-   "econ": "Reestatização das Empresas Estratégicas: Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale",
-   "social": "Vamos combater todas as formas de exploração, racismo, machismo, LGBTfobia, capacitismo e opressão; defender os povos indígenas, quilombolas e comunidades tradicionais",
-   "seguranca": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada",
-   "ambiente": "a superação da crise climática exige transformações profundas e uma nova ordem econômica e social, que não esteja subordinada aos lucros da burguesia",
-   "welfare": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial",
-   "instituicoes": "Um Governo Popular dos Trabalhadores, baseado na participação permanente do povo, no controle público dos setores estratégicos, na soberania nacional, na planificação democrática da economia"
-  }
- },
- "wilson-grassi": {
-  "resumo": "Plano do Democrata centrado no Imposto Único Federal sobre movimentação financeira, substituindo nove tributos e desonerando a folha, com isenção de IRPF até cinco salários mínimos. Traz segurança baseada em isolamento de líderes de facções, asfixia financeira e plebiscito sobre presídio modelo El Salvador, Saúde Única com viés veterinário, proteção animal, habitação via portabilidade do aluguel e metas verificáveis por eixo.",
-  "eixos": [
-   "Reforma tributária: Imposto Único Federal sobre movimentação financeira",
-   "Segurança pública e guerra ao crime organizado",
-   "Saúde Única, sanidade e proteção animal",
-   "Desburocratização, Estado digital e transparência",
-   "Emprego e formalização via desoneração da folha"
-  ],
-  "propostas": [
-   "Imposto Único Federal sobre movimentação financeira substituindo nove tributos federais",
-   "Isenção de Imposto de Renda para quem ganha até cinco salários mínimos",
-   "Plebiscito nacional sobre presídio de segurança máxima nos moldes de El Salvador",
-   "Bolsa Atleta com inscrição direta do atleta, sem intermediação de federações",
-   "Financiamento habitacional com parcela equivalente ao aluguel já comprovado"
-  ],
-  "estilo": "Gerencial e didático, em primeira pessoa, com instrumento jurídico, indicador e prazo declarados ao fim de cada eixo.",
-  "scores": {
-   "econ": 1,
-   "social": 0,
-   "seguranca": 1.5,
-   "ambiente": 0.5,
-   "welfare": 0.5,
-   "instituicoes": 0
+  "wilson-grassi": {
+    "resumo": "Plano do Democrata centrado no Imposto Único Federal sobre movimentação financeira, substituindo nove tributos e desonerando a folha, com isenção de IRPF até cinco salários mínimos. Traz segurança baseada em isolamento de líderes de facções, asfixia financeira e plebiscito sobre presídio modelo El Salvador, Saúde Única com viés veterinário, proteção animal, habitação via portabilidade do aluguel e metas verificáveis por eixo.",
+    "eixos": [
+      "Reforma tributária: Imposto Único Federal sobre movimentação financeira",
+      "Segurança pública e guerra ao crime organizado",
+      "Saúde Única, sanidade e proteção animal",
+      "Desburocratização, Estado digital e transparência",
+      "Emprego e formalização via desoneração da folha"
+    ],
+    "propostas": [
+      "Imposto Único Federal sobre movimentação financeira substituindo nove tributos federais",
+      "Isenção de Imposto de Renda para quem ganha até cinco salários mínimos",
+      "Plebiscito nacional sobre presídio de segurança máxima nos moldes de El Salvador",
+      "Bolsa Atleta com inscrição direta do atleta, sem intermediação de federações",
+      "Financiamento habitacional com parcela equivalente ao aluguel já comprovado"
+    ],
+    "estilo": "Gerencial e didático, em primeira pessoa, com instrumento jurídico, indicador e prazo declarados ao fim de cada eixo.",
+    "scores": {
+      "econ": 3,
+      "welfare": 1.5,
+      "social": 0,
+      "seguranca": 2.5,
+      "ambiente": 1,
+      "instituicoes": 1,
+      "soberania": 0,
+      "metodo": 3.5
+    },
+    "evidencia": {
+      "econ": "A aposta econômica desta candidatura está declarada: crescer reduzindo atrito, não expandindo gasto.",
+      "social": "ausente",
+      "seguranca": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima, destinado exclusivamente a lideranças e presos de alta periculosidade.",
+      "ambiente": "Defendemos abrir o debate sobre um regime legal de aproveitamento mineral em terra indígena com participação econômica dos indígenas e responsabilidade ambiental.",
+      "welfare": "Sem avaliação, programa social vira folha de pagamento.",
+      "instituicoes": "Respeito à decisão judicial, inclusive quando desfavorável ao governo, com uso dos meios processuais em vez do enfrentamento retórico.",
+      "soberania": "ausente — o plano é doméstico: tributos, gastos e regulação, sem agenda internacional",
+      "metodo": "Não se troca o sistema tributário de um país da noite para o dia. São três movimentos"
+    }
   },
-  "evidencia": {
-   "econ": "A aposta econômica desta candidatura está declarada: crescer reduzindo atrito, não expandindo gasto.",
-   "social": "ausente",
-   "seguranca": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima, destinado exclusivamente a lideranças e presos de alta periculosidade.",
-   "ambiente": "Defendemos abrir o debate sobre um regime legal de aproveitamento mineral em terra indígena com participação econômica dos indígenas e responsabilidade ambiental.",
-   "welfare": "Sem avaliação, programa social vira folha de pagamento.",
-   "instituicoes": "Respeito à decisão judicial, inclusive quando desfavorável ao governo, com uso dos meios processuais em vez do enfrentamento retórico."
+  "zema": {
+    "resumo": "Documento de propostas objetivas em 18 capítulos temáticos. Prioriza segurança pública com Forças Armadas contra facções, combate a privilégios e corrupção, reforma do Judiciário para limitar o STF e choque fiscal com privatização de todas as estatais, corte de impostos e abertura comercial. Defende contrapartidas de trabalho no Bolsa Família, liberdade de expressão, saída do BRICS e gestão pública por resultados.",
+    "eixos": [
+      "Choque liberal na economia: privatizações, corte de gastos e abertura comercial",
+      "Segurança pública com endurecimento penal e Forças Armadas contra facções",
+      "Reforma do Judiciário e combate a privilégios da elite política",
+      "Estado enxuto e gestão pública por resultados",
+      "Contrapartidas e 'porta de saída' dos programas sociais pelo trabalho"
+    ],
+    "propostas": [
+      "Privatizar todas as empresas estatais e desverticalizar a Petrobras",
+      "Sair do BRICS e transformar o Mercosul em zona de livre comércio",
+      "'Sócios do Brasil': depositar R$1.000 em ações para cada brasileiro ao nascer",
+      "Prêmio de R$5 mil às famílias que saírem do Bolsa Família",
+      "Autonomia para estados criarem crimes próprios e agravarem penas"
+    ],
+    "estilo": "Gerencial e tecnocrático-liberal: cada capítulo abre com diagnóstico carregado de estatísticas e desemboca em eixos com propostas curtas e padronizadas, em tom de 'choque de gestão' apartidário.",
+    "scores": {
+      "econ": 4,
+      "welfare": 3.5,
+      "social": 1,
+      "seguranca": 3.5,
+      "ambiente": 1.5,
+      "instituicoes": 3,
+      "soberania": 4,
+      "metodo": 3.5
+    },
+    "evidencia": {
+      "econ": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe, como segurança pública e educação",
+      "social": "avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling",
+      "seguranca": "Empregar as Forças Armadas de forma integrada às polícias para retomar territórios dominados pelo crime organizado... Reduzir a maioridade penal para 16 anos ou menos",
+      "ambiente": "Garantir critérios técnicos, previsibilidade e segurança jurídica no licenciamento ambiental... sem penalizar quem produz e investe dentro da lei",
+      "welfare": "com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público",
+      "instituicoes": "Restringir as competências do STF à sua função constitucional, retirando da Corte matérias tributárias e penais... Criar uma corregedoria independente para o STF",
+      "soberania": "Retirar o Brasil do BRICS de forma diplomática ... Integrar a economia brasileira ao mundo por meio da expansão de acordos comerciais e da entrada na OCDE",
+      "metodo": "Fazer uma Reforma Administrativa para enxugar a estrutura do Governo Federal"
+    }
   }
- },
- "zema": {
-  "resumo": "Documento de propostas objetivas em 18 capítulos temáticos. Prioriza segurança pública com Forças Armadas contra facções, combate a privilégios e corrupção, reforma do Judiciário para limitar o STF e choque fiscal com privatização de todas as estatais, corte de impostos e abertura comercial. Defende contrapartidas de trabalho no Bolsa Família, liberdade de expressão, saída do BRICS e gestão pública por resultados.",
-  "eixos": [
-   "Choque liberal na economia: privatizações, corte de gastos e abertura comercial",
-   "Segurança pública com endurecimento penal e Forças Armadas contra facções",
-   "Reforma do Judiciário e combate a privilégios da elite política",
-   "Estado enxuto e gestão pública por resultados",
-   "Contrapartidas e 'porta de saída' dos programas sociais pelo trabalho"
-  ],
-  "propostas": [
-   "Privatizar todas as empresas estatais e desverticalizar a Petrobras",
-   "Sair do BRICS e transformar o Mercosul em zona de livre comércio",
-   "'Sócios do Brasil': depositar R$1.000 em ações para cada brasileiro ao nascer",
-   "Prêmio de R$5 mil às famílias que saírem do Bolsa Família",
-   "Autonomia para estados criarem crimes próprios e agravarem penas"
-  ],
-  "estilo": "Gerencial e tecnocrático-liberal: cada capítulo abre com diagnóstico carregado de estatísticas e desemboca em eixos com propostas curtas e padronizadas, em tom de 'choque de gestão' apartidário.",
-  "scores": {
-   "econ": 2,
-   "social": 0.5,
-   "seguranca": 2,
-   "ambiente": 0.5,
-   "welfare": 1.5,
-   "instituicoes": 1.5
-  },
-  "evidencia": {
-   "econ": "Privatizar todas as empresas estatais para que o governo possa se concentrar naquilo que de fato lhe cabe, como segurança pública e educação",
-   "social": "avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling",
-   "seguranca": "Empregar as Forças Armadas de forma integrada às polícias para retomar territórios dominados pelo crime organizado... Reduzir a maioridade penal para 16 anos ou menos",
-   "ambiente": "Garantir critérios técnicos, previsibilidade e segurança jurídica no licenciamento ambiental... sem penalizar quem produz e investe dentro da lei",
-   "welfare": "com possibilidade de suspensão do benefício para quem, sem justificativa, recusar ofertas formais de trabalho intermediadas pelo poder público",
-   "instituicoes": "Restringir as competências do STF à sua função constitucional, retirando da Corte matérias tributárias e penais... Criar uma corregedoria independente para o STF"
-  }
- }
 }

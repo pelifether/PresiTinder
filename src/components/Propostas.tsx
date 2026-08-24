@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { CANDIDATES, bySlug } from "../data/candidates";
 import wordfreq from "../data/wordfreq.json";
 import aiscore from "../data/aiscore.json";
 import { asset } from "../lib/asset";
-import { SEMANTIC, type Dim } from "../data/quiz";
+import { SCALE, SEMANTIC, type Dim } from "../data/quiz";
 
 interface WordEntry {
   w: string;
@@ -16,7 +17,7 @@ interface DocStats {
 }
 
 const stats = wordfreq as Record<string, DocStats>;
-const ai = aiscore as Record<string, { score: number }>;
+const ai = aiscore as Record<string, number>;
 
 const DIMS: { key: Dim; label: string; left: string; right: string }[] = [
   { key: "econ", label: "Economia", left: "+ Estado", right: "+ Mercado" },
@@ -25,11 +26,13 @@ const DIMS: { key: Dim; label: string; left: string; right: string }[] = [
   { key: "seguranca", label: "Segurança", left: "Prevenção", right: "Punição" },
   { key: "ambiente", label: "Ambiente", left: "Clima 1º", right: "Agro 1º" },
   { key: "instituicoes", label: "Instituições", left: "Refundar", right: "Conter" },
+  { key: "soberania", label: "Brasil no mundo", left: "Soberania", right: "Integração" },
+  { key: "metodo", label: "Método", left: "Ruptura", right: "Gestão" },
 ];
 
 /** diverging scale: red (left) → paper (0) → blue (right) */
 function cellColor(v: number): string {
-  const t = Math.max(-2, Math.min(2, v)) / 2;
+  const t = Math.max(-SCALE, Math.min(SCALE, v)) / SCALE;
   if (t < 0) {
     const a = -t;
     return `rgba(214, 53, 44, ${0.12 + a * 0.75})`;
@@ -51,7 +54,7 @@ const ORDERED = [...CANDIDATES].sort(
 );
 
 const AI_RANKED = Object.entries(ai)
-  .map(([slug, v]) => ({ c: bySlug[slug], score: v.score }))
+  .map(([slug, score]) => ({ c: bySlug[slug], score }))
   .filter((e) => e.c)
   .sort((a, b) => b.score - a.score);
 
@@ -80,10 +83,7 @@ export default function Propostas() {
     <section>
       <div className="prop-header">
         <h2>Quanto a IA ajudou no plano?</h2>
-        <p>
-          Estimativa estilométrica aberta: frases-clichê típicas de IA,
-          uniformidade das frases, travessões e aberturas repetidas.
-        </p>
+        <p>Estimativas do Pangram 4.0 — você pode reproduzir por conta</p>
       </div>
       <div className="ai-grid">
         {AI_RANKED.map(({ c, score }) => (
@@ -104,12 +104,6 @@ export default function Propostas() {
           </article>
         ))}
       </div>
-      <p className="heat-hint">
-        Não é um detector treinado (como Pangram ou GPTZero) — trate como
-        indício, não veredito. Nenhum plano tem cara de IA pura; o método está
-        aberto em <code>pipeline/aidetect.py</code>.
-      </p>
-
       <div className="section-divider">
         <h3>Palavra mais repetida em cada plano</h3>
       </div>
@@ -135,60 +129,8 @@ export default function Propostas() {
       </div>
 
       <div className="section-divider">
-        <h3>A matriz semântica</h3>
-      </div>
-      <div className="card" style={{ overflowX: "auto", padding: 18 }}>
-        <table className="heat-table">
-          <thead>
-            <tr>
-              <th />
-              {DIMS.map((d) => (
-                <th key={d.key}>
-                  <div>{d.label}</div>
-                  <span className="heat-poles">
-                    {d.left} ↔ {d.right}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {ORDERED.map((c) => (
-              <tr key={c.slug}>
-                <td className="heat-name">
-                  <img src={asset(`candidatos/${c.slug}.jpg`)} alt="" />
-                  {c.name}
-                </td>
-                {DIMS.map((d) => {
-                  const v = SEMANTIC[c.slug].scores[d.key];
-                  return (
-                    <td key={d.key}>
-                      <div
-                        className="heat-cell"
-                        style={{ background: cellColor(v) }}
-                        title={`${d.label}: ${v > 0 ? "+" : ""}${v} — "${SEMANTIC[c.slug].evidencia[d.key]}"`}
-                      >
-                        {v > 0 ? `+${v}` : v}
-                      </div>
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p className="heat-hint">
-          Passe o mouse numa célula para ver a citação do plano que justifica a
-          nota.
-        </p>
-      </div>
-
-      <div className="section-divider">
         <h3>O que é único de cada candidato</h3>
-        <p>
-          Termos estatisticamente distintivos de cada documento (TF-IDF): o
-          vocabulário que um candidato usa e os outros não.
-        </p>
+        <p>Termos estatisticamente distintivos de cada documento (TF-IDF)</p>
       </div>
       <div className="prop-grid">
         {CANDIDATES.map((c) => (
@@ -237,6 +179,105 @@ export default function Propostas() {
             })}
         </div>
       </div>
+
+      <div className="section-divider">
+        <h3>A matriz semântica</h3>
+      </div>
+      <Matrix />
     </section>
+  );
+}
+
+interface Tip {
+  x: number;
+  y: number;
+  below: boolean;
+  title: string;
+  body: string;
+}
+
+function Matrix() {
+  // The table scrolls horizontally, and a scroll container clips absolutely
+  // positioned children — so the tooltip is a single fixed-position node
+  // placed from the hovered cell's rect instead of living inside the cell.
+  const [tip, setTip] = useState<Tip | null>(null);
+
+  const show = (el: HTMLElement, title: string, body: string) => {
+    const r = el.getBoundingClientRect();
+    const below = r.top < 190;
+    setTip({
+      x: Math.min(Math.max(r.left + r.width / 2, 170), window.innerWidth - 170),
+      y: below ? r.bottom + 10 : r.top - 10,
+      below,
+      title,
+      body,
+    });
+  };
+
+  return (
+    <div className="card matrix-card">
+      <table className="heat-table">
+        <thead>
+          <tr>
+            <th />
+            {DIMS.map((d) => (
+              <th key={d.key}>
+                <div>{d.label}</div>
+                <span className="heat-poles">
+                  {d.left} ↔ {d.right}
+                </span>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {ORDERED.map((c) => (
+            <tr key={c.slug}>
+              <td className="heat-name">
+                <img src={asset(`candidatos/${c.slug}.jpg`)} alt="" />
+                {c.name}
+              </td>
+              {DIMS.map((d) => {
+                const v = SEMANTIC[c.slug].scores[d.key];
+                const ev = SEMANTIC[c.slug].evidencia[d.key];
+                const title = `${c.name} · ${d.label} ${v > 0 ? `+${v}` : v}`;
+                const body = ev.startsWith("ausente") ? ev : `“${ev}”`;
+                return (
+                  <td key={d.key}>
+                    {/* The native title= attribute waits about a second
+                        before showing, which read as broken. */}
+                    <div
+                      className="heat-cell"
+                      style={{ background: cellColor(v) }}
+                      tabIndex={0}
+                      onMouseEnter={(e) => show(e.currentTarget, title, body)}
+                      onFocus={(e) => show(e.currentTarget, title, body)}
+                      onMouseLeave={() => setTip(null)}
+                      onBlur={() => setTip(null)}
+                    >
+                      {v > 0 ? `+${v}` : v}
+                    </div>
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="heat-hint">
+        Passe o mouse numa célula para ver a citação do plano que justifica a
+        nota.
+      </p>
+      {tip && (
+        <div
+          className={`heat-tip${tip.below ? " below" : ""}`}
+          role="tooltip"
+          style={{ left: tip.x, top: tip.y }}
+        >
+          <strong>{tip.title}</strong>
+          {tip.body}
+        </div>
+      )}
+    </div>
   );
 }

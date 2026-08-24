@@ -1,22 +1,28 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Compass from "./Compass";
 import SwipeCard from "./SwipeCard";
-import { CANDIDATES } from "../data/candidates";
+import { CANDIDATES, bySlug } from "../data/candidates";
 import { asset } from "../lib/asset";
-import { BUNDLE, logRun } from "../lib/experiment";
+import wordfreq from "../data/wordfreq.json";
 import {
-  affinity,
   agreementHighlights,
   answeredCount,
   buildSession,
+  concordance,
   DIM_LABEL,
   PER_SESSION,
+  ranking as rankPlans,
   SEMANTIC,
   userCompass,
   type Answer,
   type Question,
 } from "../data/quiz";
+
+const TOP_WORDS = wordfreq as Record<
+  string,
+  { top: { w: string; n: number }[] }
+>;
 
 type Phase = "intro" | "asking" | "result";
 
@@ -86,34 +92,12 @@ export default function Quiz() {
 
   const ranking = useMemo(() => {
     if (phase !== "result") return [];
-    // Some plans score identically (the far-left programmes are the same on
-    // every dimension we measure). Break ties at random instead of letting
-    // list order silently crown the same candidate every time.
-    return CANDIDATES
-      .map((c) => ({
-        c,
-        pct: affinity(session, answers, c.slug),
-        seed: Math.random(),
-      }))
-      .sort((a, b) => b.pct - a.pct || a.seed - b.seed);
+    return rankPlans(
+      session,
+      answers,
+      CANDIDATES.map((c) => c.slug),
+    ).map((r) => ({ c: bySlug[r.slug], pct: r.pct }));
   }, [phase, session, answers]);
-
-  // One experiment record per completed run (see EXPERIMENT.md).
-  const logged = useRef(false);
-  useEffect(() => {
-    if (phase !== "result" || !ranking.length || !answered || logged.current)
-      return;
-    logged.current = true;
-    logRun({
-      v: 1,
-      t: Math.round(Date.now() / 1000),
-      b: BUNDLE.id,
-      q: session.map((q) => q.id),
-      a: session.map((q) => answers[q.id] ?? 0),
-      m: ranking[0].c.slug,
-      p: ranking[0].pct,
-    });
-  }, [phase, ranking, answered, session, answers]);
 
   useEffect(() => {
     if (phase !== "asking") return;
@@ -138,7 +122,6 @@ export default function Quiz() {
   }
 
   function restart() {
-    logged.current = false;
     setSession(buildSession());
     setPhase("intro");
     setIdx(0);
@@ -194,7 +177,12 @@ export default function Quiz() {
 
     const top = ranking[0];
     const why = whyMatch(top.c.slug, session, answers);
-    const tied = ranking.filter((r) => r.pct === top.pct).slice(1);
+    const pct = Math.round(top.pct);
+    // Near-exact scores are now rare enough to call out honestly when they do
+    // happen, instead of hiding a coin flip.
+    const tied = ranking.slice(1).filter((r) => Math.abs(r.pct - top.pct) < 0.5);
+    const topWords = TOP_WORDS[top.c.slug]?.top.slice(0, 5) ?? [];
+    const wordMax = topWords[0]?.n ?? 1;
     return (
       <section>
         <motion.div
@@ -203,6 +191,11 @@ export default function Quiz() {
           animate={{ scale: 1, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
         >
+          {concordance(session, answers, top.c.slug) < 0.5 && (
+            <p className="match-warning">
+              Você não bate com nenhum candidato em mais de 50% de concordância
+            </p>
+          )}
           <div className="result-kicker">deu match!</div>
           <img
             className="result-photo"
@@ -211,7 +204,7 @@ export default function Quiz() {
           />
           <div className="result-name">{top.c.name}</div>
           <div className="result-party">
-            {top.c.party} · nº {top.c.number} · {top.pct}% de afinidade
+            {top.c.party} · nº {top.c.number} · {pct}% de afinidade
           </div>
           <div className="result-why">
             <p style={{ marginTop: 0 }}>
@@ -234,24 +227,47 @@ export default function Quiz() {
             )}
           </div>
 
+          <div className="result-words">
+            <div className="result-words-title">
+              As 5 palavras que o plano mais repete
+            </div>
+            <div className="wordbars">
+              {topWords.map((e) => (
+                <div className="wordbar-row" key={e.w}>
+                  <span className="wordbar-label">{e.w}</span>
+                  <div className="wordbar-track">
+                    <div
+                      className="wordbar-fill"
+                      style={{
+                        width: `${(e.n / wordMax) * 100}%`,
+                        background: top.c.color,
+                      }}
+                    />
+                  </div>
+                  <span className="wordbar-n">{e.n}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="ranking">
-            {ranking.slice(1, 6).map(({ c, pct }) => (
-              <div className="rank-row" key={c.slug}>
+            {ranking.slice(1, 6).map((r) => (
+              <div className="rank-row" key={r.c.slug}>
                 <img
                   className="rank-avatar"
-                  src={asset(`candidatos/${c.slug}.jpg`)}
-                  alt={c.name}
+                  src={asset(`candidatos/${r.c.slug}.jpg`)}
+                  alt={r.c.name}
                 />
                 <div>
-                  {c.name}
+                  {r.c.name}
                   <div className="rank-bar-track">
                     <div
                       className="rank-bar"
-                      style={{ width: `${pct}%`, background: c.color }}
+                      style={{ width: `${r.pct}%`, background: r.c.color }}
                     />
                   </div>
                 </div>
-                <span className="rank-pct">{pct}%</span>
+                <span className="rank-pct">{Math.round(r.pct)}%</span>
               </div>
             ))}
           </div>

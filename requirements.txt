@@ -1,6 +1,1 @@
 Pillow>=10.0
-numpy>=1.26,<2
-# cartoonify.py only (AnimeGAN2 via torch hub)
-torch>=2.2
-torchvision>=0.17
-certifi
