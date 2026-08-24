@@ -1,5 +1,6 @@
 import { CANDIDATES } from "../data/candidates";
 import wordfreq from "../data/wordfreq.json";
+import { asset } from "../lib/asset";
 import { SEMANTIC, type Dim } from "../data/quiz";
 
 interface WordEntry {
@@ -77,7 +78,7 @@ export default function Propostas() {
             <div className="cand-head">
               <img
                 className="cand-photo"
-                src={`/candidatos/${c.slug}.jpg`}
+                src={asset(`candidatos/${c.slug}.jpg`)}
                 alt={c.name}
               />
               <div>
@@ -125,7 +126,7 @@ export default function Propostas() {
             {ORDERED.map((c) => (
               <tr key={c.slug}>
                 <td className="heat-name">
-                  <img src={`/candidatos/${c.slug}.jpg`} alt="" />
+                  <img src={asset(`candidatos/${c.slug}.jpg`)} alt="" />
                   {c.name}
                 </td>
                 {DIMS.map((d) => {

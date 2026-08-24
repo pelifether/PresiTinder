@@ -1,56 +1,70 @@
 import { motion } from "framer-motion";
 import { CANDIDATES } from "../data/candidates";
-import { candidateAnswers, compassFromAnswers } from "../data/quiz";
+import { candidateCompass } from "../data/quiz";
 
 const SIZE = 560;
 const PAD = 64;
+// Extra inset so a plan at the extreme (−1) lands inside the frame instead of
+// sitting on the border line.
+const INSET = 30;
+const SPAN = SIZE - 2 * PAD - 2 * INSET;
 
-const toPx = (v: number) => PAD + ((v + 2) / 4) * (SIZE - 2 * PAD);
+const toPx = (v: number) => PAD + INSET + ((v + 1) / 2) * SPAN;
 
-// Several plans score identically (the far-left cluster) or nearly so
-// (the center-right pack). Deterministic pixel jitter keeps every dot
-// visible; label anchors are hand-placed to avoid collisions.
-const JITTER: Record<string, [number, number]> = {
-  "edmilson-costa": [-12, -10],
-  "hertz-dias": [12, -2],
-  samara: [-2, 14],
-  "augusto-cury": [8, -4],
-  "ronaldo-caiado": [-6, 8],
+// Some plans land on the exact same coordinates (the three far-left programmes
+// score identically) or within a dot's width of each other. Deterministic
+// nudges keep every candidate visible; label offsets are hand-placed so no two
+// names collide.
+// The three identical far-left plans are dealt as a tight vertical stack: it
+// reads as one cluster rather than pretending they hold different positions.
+const NUDGE: Record<string, [number, number]> = {
+  "edmilson-costa": [0, -24],
+  samara: [0, 24],
+  "ronaldo-caiado": [8, 7],
+  "augusto-cury": [-6, -8],
 };
 
 const LABEL: Record<
   string,
   { dx: number; dy: number; anchor?: "start" | "middle" | "end" }
 > = {
-  "edmilson-costa": { dx: 14, dy: -14, anchor: "start" },
-  "hertz-dias": { dx: 14, dy: 4, anchor: "start" },
-  samara: { dx: 8, dy: 24, anchor: "start" },
-  "rui-costa-pimenta": { dx: 12, dy: -12, anchor: "start" },
+  "edmilson-costa": { dx: 13, dy: 4, anchor: "start" },
+  "hertz-dias": { dx: 13, dy: 4, anchor: "start" },
+  samara: { dx: 13, dy: 4, anchor: "start" },
+  "rui-costa-pimenta": { dx: 13, dy: 8, anchor: "start" },
   lula: { dx: 0, dy: -14 },
-  "clariana-barao": { dx: -14, dy: 20, anchor: "end" },
-  "wilson-grassi": { dx: -12, dy: -12, anchor: "end" },
+  "clariana-barao": { dx: 0, dy: 22 },
+  "wilson-grassi": { dx: 0, dy: -14 },
   "augusto-cury": { dx: 14, dy: 4, anchor: "start" },
-  "ronaldo-caiado": { dx: 14, dy: 20, anchor: "start" },
-  "flavio-bolsonaro": { dx: -12, dy: 2, anchor: "end" },
-  "renan-santos": { dx: 4, dy: -16, anchor: "start" },
-  zema: { dx: 0, dy: -14 },
+  "ronaldo-caiado": { dx: 14, dy: 16, anchor: "start" },
+  "flavio-bolsonaro": { dx: -14, dy: 2, anchor: "end" },
+  "renan-santos": { dx: 10, dy: -12, anchor: "start" },
+  zema: { dx: 0, dy: 24 },
 };
 
 // SVG y grows downward; conservative is up, so invert y.
 const CAND_POS = CANDIDATES.filter((c) => c.hasPlan).map((c) => {
-  const p = compassFromAnswers(candidateAnswers(c.slug));
-  const [jx, jy] = JITTER[c.slug] ?? [0, 0];
-  return { ...c, px: toPx(p.x) + jx, py: toPx(-p.y) + jy };
+  const p = candidateCompass(c.slug);
+  const [nx, ny] = NUDGE[c.slug] ?? [0, 0];
+  return { ...c, px: toPx(p.x) + nx, py: toPx(-p.y) + ny };
 });
 
 interface Props {
   user: { x: number; y: number } | null;
   /** bump key: changes on every answer to trigger the squish */
   pulse: number;
+  /** candidates stay hidden until the result is revealed */
+  showCandidates?: boolean;
   highlight?: string;
 }
 
-export default function Compass({ user, pulse, highlight }: Props) {
+export default function Compass({
+  user,
+  pulse,
+  showCandidates = false,
+  highlight,
+}: Props) {
+  const q = (SIZE - 2 * PAD) / 2;
   return (
     <div className="compass-wrap">
       <svg
@@ -60,10 +74,10 @@ export default function Compass({ user, pulse, highlight }: Props) {
         aria-label="Mapa político bidimensional"
       >
         {/* quadrant tints */}
-        <rect x={PAD} y={PAD} width={(SIZE - 2 * PAD) / 2} height={(SIZE - 2 * PAD) / 2} fill="#d6352c" opacity="0.05" />
-        <rect x={SIZE / 2} y={PAD} width={(SIZE - 2 * PAD) / 2} height={(SIZE - 2 * PAD) / 2} fill="#1b3f8f" opacity="0.05" />
-        <rect x={PAD} y={SIZE / 2} width={(SIZE - 2 * PAD) / 2} height={(SIZE - 2 * PAD) / 2} fill="#0e7a4e" opacity="0.05" />
-        <rect x={SIZE / 2} y={SIZE / 2} width={(SIZE - 2 * PAD) / 2} height={(SIZE - 2 * PAD) / 2} fill="#f26522" opacity="0.05" />
+        <rect x={PAD} y={PAD} width={q} height={q} fill="#d6352c" opacity="0.05" />
+        <rect x={SIZE / 2} y={PAD} width={q} height={q} fill="#1b3f8f" opacity="0.05" />
+        <rect x={PAD} y={SIZE / 2} width={q} height={q} fill="#0e7a4e" opacity="0.05" />
+        <rect x={SIZE / 2} y={SIZE / 2} width={q} height={q} fill="#f26522" opacity="0.05" />
 
         <rect
           x={PAD}
@@ -93,24 +107,33 @@ export default function Compass({ user, pulse, highlight }: Props) {
           + MERCADO
         </text>
 
-        {/* candidates */}
-        {CAND_POS.map((c) => {
-          const hl = highlight === c.slug;
-          const lb = LABEL[c.slug] ?? { dx: 0, dy: -12 };
-          return (
-            <g key={c.slug} opacity={highlight ? (hl ? 1 : 0.35) : 0.85}>
-              <circle cx={c.px} cy={c.py} r={hl ? 11 : 7} fill={c.color} stroke="#191512" strokeWidth="2" />
-              <text
-                x={c.px + lb.dx}
-                y={c.py + lb.dy}
-                textAnchor={lb.anchor ?? "middle"}
-                className={`cand-label ${hl ? "hl" : ""}`}
+        {/* candidates — only after the reveal */}
+        {showCandidates &&
+          CAND_POS.map((c, i) => {
+            const hl = highlight === c.slug;
+            const lb = LABEL[c.slug] ?? { dx: 0, dy: -12 };
+            return (
+              // Fade lives on the outer group so the reveal animation cannot
+              // fight the inline dimming of the non-matched candidates.
+              <g
+                key={c.slug}
+                className="cand-pop"
+                style={{ animationDelay: `${i * 55}ms` }}
               >
-                {c.name}
-              </text>
-            </g>
-          );
-        })}
+                <g opacity={highlight ? (hl ? 1 : 0.38) : 0.85}>
+                  <circle cx={c.px} cy={c.py} r={hl ? 11 : 7} fill={c.color} stroke="#191512" strokeWidth="2" />
+                  <text
+                    x={c.px + lb.dx}
+                    y={c.py + lb.dy}
+                    textAnchor={lb.anchor ?? "middle"}
+                    className={`cand-label ${hl ? "hl" : ""}`}
+                  >
+                    {c.name}
+                  </text>
+                </g>
+              </g>
+            );
+          })}
 
         {/* user dot */}
         {user && (
@@ -134,6 +157,11 @@ export default function Compass({ user, pulse, highlight }: Props) {
           </motion.g>
         )}
       </svg>
+      {!showCandidates && (
+        <p className="compass-hint">
+          Os candidatos aparecem no mapa no fim do quiz.
+        </p>
+      )}
     </div>
   );
 }
