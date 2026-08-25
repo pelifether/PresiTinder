@@ -58,7 +58,14 @@ interface Props {
   pulse: number;
   /** candidates stay hidden until the result is revealed */
   showCandidates?: boolean;
-  highlight?: string;
+  /** slugs shown at full opacity; everyone else dims */
+  highlight?: string[];
+  /**
+   * Thumbnail beside the matched photo. Candidate names are dropped: at a
+   * fifth of the width the matched pair's labels overlap each other and the
+   * VOCÊ marker, and the names are already set in 38px type right below it.
+   */
+  compact?: boolean;
 }
 
 export default function Compass({
@@ -66,10 +73,12 @@ export default function Compass({
   pulse,
   showCandidates = false,
   highlight,
+  compact = false,
 }: Props) {
   const q = (SIZE - 2 * PAD) / 2;
+  const hasFocus = !!highlight?.length;
   return (
-    <div className="compass-wrap">
+    <div className={`compass-wrap${compact ? " compact" : ""}`}>
       <svg
         className="compass-svg"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
@@ -113,7 +122,7 @@ export default function Compass({
         {/* candidates — only after the reveal */}
         {showCandidates &&
           CAND_POS.map((c, i) => {
-            const hl = highlight === c.slug;
+            const hl = !!highlight?.includes(c.slug);
             const lb = LABEL[c.slug] ?? { dx: 0, dy: -12 };
             return (
               // Fade lives on the outer group so the reveal animation cannot
@@ -123,16 +132,18 @@ export default function Compass({
                 className="cand-pop"
                 style={{ animationDelay: `${i * 55}ms` }}
               >
-                <g opacity={highlight ? (hl ? 1 : 0.38) : 0.85}>
+                <g opacity={hasFocus ? (hl ? 1 : 0.3) : 0.85}>
                   <circle cx={c.px} cy={c.py} r={hl ? 11 : 7} fill={c.color} stroke="#191512" strokeWidth="2" />
-                  <text
-                    x={c.px + lb.dx}
-                    y={c.py + lb.dy}
-                    textAnchor={lb.anchor ?? "middle"}
-                    className={`cand-label ${hl ? "hl" : ""}`}
-                  >
-                    {c.name}
-                  </text>
+                  {!compact && (
+                    <text
+                      x={c.px + lb.dx}
+                      y={c.py + lb.dy}
+                      textAnchor={lb.anchor ?? "middle"}
+                      className={`cand-label ${hl ? "hl" : ""}`}
+                    >
+                      {c.name}
+                    </text>
+                  )}
                 </g>
               </g>
             );
@@ -160,11 +171,6 @@ export default function Compass({
           </motion.g>
         )}
       </svg>
-      {!showCandidates && (
-        <p className="compass-hint">
-          Os candidatos aparecem no mapa no fim do quiz.
-        </p>
-      )}
     </div>
   );
 }

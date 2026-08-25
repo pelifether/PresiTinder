@@ -1,6 +1,7 @@
 {
   "augusto-cury": {
     "resumo": "Plano ensaístico do psiquiatra Augusto Cury que propõe superar a polarização com uma 'cultura da paz' e gestão da emoção. Combina responsabilidade fiscal, simplificação tributária e empreendedorismo em massa com programas de saúde mental, proteção às mulheres e telemedicina. Estrutura-se em 18 projetos e três reformas: semipresidencialismo, mandato de oito anos para ministros do STF e diplomacia econômica com embaixadas empreendedoras.",
+    "pitch": "Augusto Cury é psiquiatra e escritor, e o plano tem a cara disso: propõe furar a polarização com “cultura da paz” e gestão da emoção, somando responsabilidade fiscal e empreendedorismo em massa a programas de saúde mental.",
     "eixos": [
       "Pacificação nacional, gestão da emoção e saúde mental",
       "Empreendedorismo em massa e economia distribuída",
@@ -39,6 +40,7 @@
   },
   "clariana-barao": {
     "resumo": "Documento técnico-gerencial organizado em seis capítulos, com a proteção de mulheres e crianças como eixo transversal. Cada seção define objetivos, entregas e indicadores de acompanhamento, sem metas numéricas fechadas. Propõe ambiente de negócios simplificado, responsabilidade fiscal, segurança orientada por dados, fronteiras monitoradas por tecnologia, saúde preventiva e governo digital, com gestão por metas, avaliação de programas e federalismo de resultados.",
+    "pitch": "Clariana Barão se apresenta pela via da gestão: seis capítulos com objetivos, entregas e indicadores, proteção de mulheres e crianças como eixo transversal e uma cautela deliberada com metas numéricas fechadas.",
     "eixos": [
       "Proteção de mulheres e crianças",
       "Economia pró-negócios com responsabilidade fiscal",
@@ -77,6 +79,7 @@
   },
   "edmilson-costa": {
     "resumo": "Programa do PCB para construir o Poder Popular rumo ao socialismo. Propõe Assembleia Constituinte de Novo Tipo, conselhos populares e mandatos revogáveis; estatização do sistema financeiro, das comunicações e das empresas privatizadas; jornada de 30 horas sem redução salarial, salário mínimo do Dieese e tarifa zero; reforma agrária popular com desapropriação sem indenização; desmilitarização da segurança e política externa anti-imperialista, com rompimento com Israel.",
+    "pitch": "Edmilson Costa carrega o programa histórico do PCB: Assembleia Constituinte de Novo Tipo, conselhos populares com mandatos revogáveis, estatização do sistema financeiro e reforma agrária com desapropriação sem indenização.",
     "eixos": [
       "Poder popular e democracia direta (Constituinte de Novo Tipo, conselhos populares)",
       "Estatização da economia e reversão das privatizações",
@@ -115,6 +118,7 @@
   },
   "flavio-bolsonaro": {
     "resumo": "Plano organizado como uma 'jornada do cidadão', com prioridade máxima à segurança pública: facções tratadas como narcoterroristas, presídios de segurança máxima e endurecimento penal. Promete Estado digital sem filas, redução de impostos e da conta de luz, programa 'Brasil por Elas' para mulheres, equilíbrio fiscal via 'Tesouraço', reforma do STF e retomada das agendas do governo Bolsonaro, em tom de forte oposição ao PT.",
+    "pitch": "Flávio Bolsonaro se apresenta como o herdeiro político do pai e escreve o plano como uma “jornada do cidadão”, com segurança pública no centro de tudo — facções tratadas como narcoterrorismo — e oposição frontal ao PT.",
     "eixos": [
       "Segurança pública com endurecimento penal máximo ('Brasil sem Medo')",
       "Ajuste fiscal, corte de gastos e redução de impostos ('Tesouraço')",
@@ -153,6 +157,7 @@
   },
   "hertz-dias": {
     "resumo": "Programa revolucionário do PSTU que rejeita promessas eleitorais e convoca a classe trabalhadora à mobilização contra o imperialismo e a burguesia nacional. Propõe expropriar sem indenização empresas estratégicas e o grande agronegócio, estatizar o sistema financeiro, reduzir a jornada a 36 horas sem redução salarial, desmilitarizar a PM e descriminalizar as drogas, rumo a um governo socialista baseado na democracia operária.",
+    "pitch": "Hertz Dias recusa a lógica da promessa eleitoral e usa a candidatura do PSTU como convocação da classe trabalhadora: expropriação sem indenização do grande agronegócio e das empresas estratégicas, rumo a um governo socialista.",
     "eixos": [
       "Ruptura anti-imperialista e soberania nacional",
       "Expropriação e estatização das empresas estratégicas com planejamento econômico",
@@ -191,6 +196,7 @@
   },
   "lula": {
     "resumo": "Plano de continuidade do governo Lula, estruturado em 13 diretrizes que combinam defesa da soberania nacional, reconstrução do Estado e combate às desigualdades. Propõe neoindustrialização verde, transição energética, desmatamento líquido zero até 2030, fortalecimento do SUS e da educação, valorização do salário mínimo e jornada de 40 horas sem redução salarial. Contrasta resultados do mandato atual com a herança dos governos Temer e Bolsonaro.",
+    "pitch": "Lula disputa a reeleição pedindo mais quatro anos para o que chama de reconstrução do Estado: o plano se organiza em 13 diretrizes e volta sempre a soberania nacional, neoindustrialização verde e combate à desigualdade.",
     "eixos": [
       "Soberania nacional em todas as dimensões",
       "Combate às desigualdades e proteção social",
@@ -229,6 +235,7 @@
   },
   "renan-santos": {
     "resumo": "Resumo executivo do Livro Amarelo, plano do Partido Missão. Propõe ajuste fiscal via PEC de Transição, guerra ao crime organizado com Direito Penal do Inimigo, fusão de municípios inviáveis, Lei de Responsabilidade Gerencial, substituição do Bolsa Família por frentes de trabalho, Zonas Econômicas Especiais, verticalização das terras raras, marco de inteligência artificial e desfavelização integral em dez anos, visando tornar o Brasil potência global.",
+    "pitch": "Renan Santos vem do ativismo de rua e escreve como quem quer refundar o país: ajuste fiscal por PEC de Transição, guerra ao crime organizado e desfavelização integral em dez anos, tudo em nome de transformar o Brasil em potência global.",
     "eixos": [
       "Segurança pública e guerra ao crime organizado",
       "Ajuste fiscal e reforma do Estado",
@@ -267,6 +274,7 @@
   },
   "ronaldo-caiado": {
     "resumo": "Plano extenso e gerencial de Ronaldo Caiado (PSD), organizado em 26 temas com metas e indicadores. Prioriza o combate ao crime organizado com uma Lei do Terrorismo Doméstico, estabilização fiscal, crescimento puxado pela iniciativa privada, SUS regulado por prioridade clínica e alfabetização na idade certa. Propõe fim da reeleição, sistema distrital misto e política externa pragmática, prometendo um governo que planeja, executa, mede e presta contas.",
+    "pitch": "Caiado disputa o voto de quem quer administrador: 26 temas com metas e indicadores para 2030, prioridade absoluta ao crime organizado e a promessa de um governo que planeja, executa, mede e presta contas.",
     "eixos": [
       "Segurança pública e combate ao crime organizado como prioridade presidencial",
       "Estabilização fiscal e gestão pública por metas e resultados",
@@ -305,6 +313,7 @@
   },
   "rui-costa-pimenta": {
     "resumo": "Programa revolucionário que trata a eleição como tribuna de propaganda do socialismo e do governo operário. Defende aumento salarial emergencial de 50%, jornada de 35 horas, reversão das privatizações, estatização de bancos e da grande mídia, reforma agrária com expropriação do latifúndio, dissolução da Polícia Militar, fim do STF e cancelamento das dívidas, culminando em um governo das organizações operárias e camponesas.",
+    "pitch": "Rui Costa Pimenta trata a eleição como tribuna, não como disputa de governo: o PCO pede aumento salarial emergencial de 50%, dissolução da Polícia Militar, fim do STF e um governo das organizações operárias e camponesas.",
     "eixos": [
       "Revolução e governo operário",
       "Salários e direitos trabalhistas",
@@ -343,6 +352,7 @@
   },
   "samara": {
     "resumo": "Programa abertamente socialista da Unidade Popular. Diagnostica o capitalismo como causa de guerras, fome e desigualdade e propõe um governo popular dos trabalhadores: dobrar o salário mínimo, jornada de 30 horas, suspensão do pagamento da dívida pública, estatização de bancos, monopólios e transportes, reforma agrária popular, desmilitarização das polícias, combate às opressões e ruptura anti-imperialista com EUA, China e União Europeia.",
+    "pitch": "Samara concorre pela Unidade Popular sem rodeios sobre o objetivo — socialismo: dobrar o salário mínimo, jornada de 30 horas, suspender o pagamento da dívida pública e estatizar bancos, monopólios e transportes.",
     "eixos": [
       "Socialismo e governo popular dos trabalhadores",
       "Estatização de bancos, monopólios e setores estratégicos",
@@ -381,6 +391,7 @@
   },
   "wilson-grassi": {
     "resumo": "Plano do Democrata centrado no Imposto Único Federal sobre movimentação financeira, substituindo nove tributos e desonerando a folha, com isenção de IRPF até cinco salários mínimos. Traz segurança baseada em isolamento de líderes de facções, asfixia financeira e plebiscito sobre presídio modelo El Salvador, Saúde Única com viés veterinário, proteção animal, habitação via portabilidade do aluguel e metas verificáveis por eixo.",
+    "pitch": "Wilson Grassi aposta praticamente numa ideia só: o Imposto Único Federal sobre movimentação financeira, que substituiria nove tributos — em volta dele orbitam segurança por asfixia financeira das facções e uma “Saúde Única” de viés veterinário.",
     "eixos": [
       "Reforma tributária: Imposto Único Federal sobre movimentação financeira",
       "Segurança pública e guerra ao crime organizado",
@@ -419,6 +430,7 @@
   },
   "zema": {
     "resumo": "Documento de propostas objetivas em 18 capítulos temáticos. Prioriza segurança pública com Forças Armadas contra facções, combate a privilégios e corrupção, reforma do Judiciário para limitar o STF e choque fiscal com privatização de todas as estatais, corte de impostos e abertura comercial. Defende contrapartidas de trabalho no Bolsa Família, liberdade de expressão, saída do BRICS e gestão pública por resultados.",
+    "pitch": "Zema leva para a disputa nacional o “choque de gestão” que virou sua marca em Minas: 18 capítulos curtos que prometem privatizar todas as estatais, cortar impostos, limitar o STF e pôr as Forças Armadas contra as facções.",
     "eixos": [
       "Choque liberal na economia: privatizações, corte de gastos e abertura comercial",
       "Segurança pública com endurecimento penal e Forças Armadas contra facções",

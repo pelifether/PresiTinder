@@ -1,15 +1,15 @@
-# PresiTinder · 2026
+# Presidentinder · 2026
 
 Dê match com um plano de governo. Quiz e análise dos planos dos candidatos à
 Presidência do Brasil em 2026, baseados exclusivamente nos documentos oficiais
 protocolados no
 [TSE / DivulgaCandContas](https://divulgacandcontas.tse.jus.br/divulga/#/candidato/BR/BR/20322002026).
 
-**Ao vivo:** https://pelifether.github.io/PresiTinder/
+**Ao vivo:** https://presi-tinder.vercel.app/
 
 ## O que tem aqui
 
-- **Quiz "PresiTinder"** (página principal): 10 cards, respondidos como no
+- **Quiz "Presidentinder"** (página principal): 10 cards, respondidos como no
   Tinder — arrasta pra esquerda (NÃO), pra direita (SIM) ou pra cima (pular).
   A cada resposta, sua posição se move num mapa político 2D
   (Estado ↔ Mercado × Progressista ↔ Conservador). Os candidatos só aparecem
@@ -83,6 +83,7 @@ protocolados no
 npm install
 npm run dev
 node scripts/testquiz.mjs   # valida o motor do quiz (empates, recuperação)
+npm run check:api           # roda as funções de api/ e renderiza cards de teste
 ```
 
 Pipeline de dados (só necessário para regenerar `src/data/`, as fotos e o card
@@ -102,11 +103,55 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 - `data/semantic/` — rubrica e análises por candidato (JSON com evidências)
 - `pipeline/` — scripts de processamento
 - `src/` — aplicação (Vite + React + TypeScript + Framer Motion)
+- `api/` — funções serverless (card social dinâmico, captura de e-mail)
 
 ## Deploy
 
-GitHub Pages via Actions (`.github/workflows/deploy.yml`) a cada push na `main`.
-O `base` do Vite é `/PresiTinder/`.
+Vercel, deploy contínuo a cada push na `main` (projeto
+`pelifethers-projects/presi-tinder`). O site é servido da raiz do domínio — o
+`base` do Vite é `/` — e o `vercel.json` reescreve qualquer rota desconhecida
+para `/index.html`, sem engolir `/api/*` nem os arquivos estáticos.
+
+### Funções (`api/`)
+
+- **`/r/<payload>`** → `api/share`: HTML com as metatags OpenGraph/Twitter do
+  resultado compartilhado. Robô de rede social lê as metatags; navegador de
+  verdade é mandado para `/?r=<payload>`.
+
+  O payload é um único segmento de caminho, `idxs_pct_x100_y100`: os índices
+  em `CANDIDATES` separados por `.` (mais de um só em caso de empate), a
+  afinidade de 0 a 100, e a posição do usuário na bússola multiplicada por 100.
+  Exemplo: `/r/4_86_-42_-31` — candidato 4, 86% de afinidade, usuário em
+  x = −0,42 e y = −0,31. Entrada inválida cai no card genérico, nunca em erro.
+
+- **`/api/og?i=4&p=86&x=-42&y=-31`** → PNG 1200×630 com `@vercel/og`: a tag
+  "DEU MATCH!", a(s) foto(s), nome, partido, número, a afinidade e a bússola
+  com o ponto do usuário. As fontes vivem em `api/_fonts/` (satori precisa do
+  binário; não dá pra usar o webfont do site).
+
+- **`POST /api/subscribe`** `{"email": "..."}` → `{"ok": true}`: captura de
+  e-mail da página de resultado. É *write-only* de propósito — não existe
+  endpoint que liste, leia ou exporte o que foi coletado. A leitura é feita
+  direto no console do Upstash.
+
+### Variáveis de ambiente
+
+Só o `subscribe` precisa de configuração, e ela é opcional: sem as credenciais
+ele continua respondendo 200 (a página nunca trava pro visitante) e apenas
+registra um aviso no log.
+
+| variável | onde |
+| --- | --- |
+| `KV_REST_API_URL` | injetada automaticamente ao conectar um store Upstash Redis em Vercel → Storage |
+| `KV_REST_API_TOKEN` | idem |
+
+Alternativamente, `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`
+(mesmos valores, nomes nativos do Upstash) definidos em Vercel → Settings →
+Environment Variables, nos três ambientes. Veja `.env.example`. Nenhum segredo
+vai pro repositório.
+
+Os endereços ficam num SET `subscribers` (deduplicado) e a data da primeira
+inscrição num hash `subscribers:first_seen`.
 
 Análise independente, sem filiação partidária. Não substitui a leitura dos
 planos.

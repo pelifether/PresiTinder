@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import AxisMaps from "./AxisMaps";
 import Compass from "./Compass";
+import EmailGate, { useUnlocked } from "./EmailGate";
 import SwipeCard from "./SwipeCard";
 import { CANDIDATES, bySlug } from "../data/candidates";
 import { asset } from "../lib/asset";
@@ -23,6 +25,12 @@ const TOP_WORDS = wordfreq as Record<
   string,
   { top: { w: string; n: number }[] }
 >;
+
+/** Shared links must resolve on the deployed site, not on localhost. */
+const SITE = "https://presi-tinder.vercel.app";
+
+/** Milliseconds before the intro starts the quiz on the visitor's behalf. */
+const AUTOSTART_MS = 5000;
 
 type Phase = "intro" | "asking" | "result";
 
@@ -47,10 +55,16 @@ const IconYes = () => (
   </svg>
 );
 
-/** First sentence only — the result card should tease the plan, not retell it. */
-function firstSentence(text: string): string {
-  return text.match(/^.*?\.(?=\s+[A-ZÀ-Ú])/s)?.[0] ?? text;
-}
+const IconShare = () => (
+  <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true">
+    <g fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="2.8" />
+      <circle cx="6" cy="12" r="2.8" />
+      <circle cx="18" cy="19" r="2.8" />
+      <path d="M8.5 10.6l7-4.1M8.5 13.4l7 4.1" />
+    </g>
+  </svg>
+);
 
 function whyMatch(
   slug: string,
@@ -70,7 +84,7 @@ function whyMatch(
   );
   return {
     where,
-    resumo: firstSentence(s.resumo),
+    pitch: s.pitch,
     quote: evDim ? s.evidencia[evDim] : "",
     quoteDim: evDim ? DIM_LABEL[evDim] : "",
   };
@@ -83,6 +97,10 @@ export default function Quiz() {
   const [answers, setAnswers] = useState<Record<string, Answer>>({});
   const [pulse, setPulse] = useState(0);
   const [forced, setForced] = useState<Answer | null>(null);
+  const [autoPress, setAutoPress] = useState(false);
+  const [toast, setToast] = useState(false);
+  const [unlocked, unlock] = useUnlocked();
+  const toastTimer = useRef(0);
 
   const answered = answeredCount(answers);
   const user = useMemo(
@@ -112,6 +130,21 @@ export default function Quiz() {
     return () => window.removeEventListener("keydown", onKey);
   }, [phase]);
 
+  // Nobody arrives here to admire the button. The countdown under it says the
+  // quiz is about to start on its own, and the press animation fires just
+  // before the deck does, so the transition reads as a click and not a jump.
+  useEffect(() => {
+    if (phase !== "intro") return;
+    const press = window.setTimeout(() => setAutoPress(true), AUTOSTART_MS);
+    const go = window.setTimeout(() => setPhase("asking"), AUTOSTART_MS + 380);
+    return () => {
+      window.clearTimeout(press);
+      window.clearTimeout(go);
+    };
+  }, [phase]);
+
+  useEffect(() => () => window.clearTimeout(toastTimer.current), []);
+
   function handleAnswer(q: Question, v: Answer) {
     setForced(null);
     setAnswers((prev) => ({ ...prev, [q.id]: v }));
@@ -128,6 +161,7 @@ export default function Quiz() {
     setAnswers({});
     setPulse(0);
     setForced(null);
+    setAutoPress(false);
   }
 
   if (phase === "intro") {
@@ -139,17 +173,18 @@ export default function Quiz() {
         </div>
         <div style={{ textAlign: "center" }}>
           <motion.button
-            className="btn"
-            style={{ fontSize: 18, padding: "16px 38px" }}
-            whileHover={{ scale: 1.04, rotate: -1 }}
+            className="btn start-btn"
+            animate={autoPress ? { scale: [1, 0.9, 1.07, 1] } : { scale: 1 }}
+            transition={{ duration: 0.36, ease: "easeOut" }}
+            whileHover={{ rotate: -1 }}
             whileTap={{ scale: 0.94 }}
             onClick={() => setPhase("asking")}
           >
             COMEÇAR
+            <span className="start-countdown" aria-hidden="true">
+              <span className="start-countdown-fill" />
+            </span>
           </motion.button>
-          <p className="intro-hint">
-            arraste os cards — esquerda não, direita sim, para cima pula
-          </p>
         </div>
         <Compass user={null} pulse={0} />
       </section>
@@ -176,13 +211,54 @@ export default function Quiz() {
     }
 
     const top = ranking[0];
-    const why = whyMatch(top.c.slug, session, answers);
     const pct = Math.round(top.pct);
     // Near-exact scores are now rare enough to call out honestly when they do
     // happen, instead of hiding a coin flip.
     const tied = ranking.slice(1).filter((r) => Math.abs(r.pct - top.pct) < 0.5);
+    const winners = [top, ...tied];
+    const slugs = winners.map((w) => w.c.slug);
+    const names = winners.map((w) => w.c.name).join(" e ");
+    const why = whyMatch(top.c.slug, session, answers);
     const topWords = TOP_WORDS[top.c.slug]?.top.slice(0, 5) ?? [];
     const wordMax = topWords[0]?.n ?? 1;
+
+    const shareUrl = () => {
+      const ids = slugs
+        .map((s) => CANDIDATES.findIndex((c) => c.slug === s))
+        .join(".");
+      const u = user ?? { x: 0, y: 0 };
+      const round = (v: number) => Math.round(v * 100);
+      return `${SITE}/r/${ids}_${pct}_${round(u.x)}_${round(u.y)}`;
+    };
+
+    async function share() {
+      const url = shareUrl();
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        /* http, or permission denied — the share sheet still has the link */
+      }
+      const sheet =
+        typeof navigator.share === "function" &&
+        window.matchMedia("(max-width: 820px)").matches;
+      if (sheet) {
+        try {
+          await navigator.share({
+            title: "Presidentinder",
+            text: `Deu match com ${names} — ${pct}% de afinidade. E você?`,
+            url,
+          });
+          return;
+        } catch {
+          // Dismissing the sheet lands here too; the link is already copied,
+          // so falling through to the toast tells the truth either way.
+        }
+      }
+      setToast(true);
+      window.clearTimeout(toastTimer.current);
+      toastTimer.current = window.setTimeout(() => setToast(false), 1900);
+    }
+
     return (
       <section>
         <motion.div
@@ -191,28 +267,63 @@ export default function Quiz() {
           animate={{ scale: 1, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
         >
+          <button
+            className="share-btn"
+            onClick={share}
+            aria-label="Compartilhar resultado"
+          >
+            <IconShare />
+          </button>
+
           {concordance(session, answers, top.c.slug) < 0.5 && (
             <p className="match-warning">
               Você não bate com nenhum candidato em mais de 50% de concordância
             </p>
           )}
+
           <div className="result-kicker">deu match!</div>
-          <img
-            className="result-photo"
-            src={asset(`candidatos/${top.c.slug}.jpg`)}
-            alt={top.c.name}
-          />
-          <div className="result-name">{top.c.name}</div>
-          <div className="result-party">
-            {top.c.party} · nº {top.c.number} · {pct}% de afinidade
+
+          <div className="result-head">
+            <div className="result-faces" data-n={winners.length}>
+              {winners.map((w) => (
+                <img
+                  key={w.c.slug}
+                  className="result-photo"
+                  src={asset(`candidatos/${w.c.slug}.jpg`)}
+                  alt={w.c.name}
+                />
+              ))}
+              <div className="affinity-tag">
+                <b>{pct}%</b>
+                <span>afinidade</span>
+              </div>
+            </div>
+            <div className="result-mini">
+              <Compass
+                user={user}
+                pulse={pulse}
+                showCandidates
+                highlight={slugs}
+                compact
+              />
+            </div>
           </div>
+
+          <div className="result-name">{names}</div>
+          <div className="result-party">
+            {winners.map((w) => `${w.c.party} · nº ${w.c.number}`).join(" · ")}
+          </div>
+
           <div className="result-why">
             <p style={{ marginTop: 0 }}>
               {why.where
                 ? `Vocês combinam principalmente em ${why.where}. `
                 : ""}
-              {why.resumo}
+              {why.pitch}
             </p>
+            {tied.map((t) => (
+              <p key={t.c.slug}>{SEMANTIC[t.c.slug].pitch}</p>
+            ))}
             {why.quote && (
               <p>
                 Do plano, sobre {why.quoteDim}: <em>“{why.quote}”</em>
@@ -220,63 +331,88 @@ export default function Quiz() {
             )}
             {tied.length > 0 && (
               <p style={{ marginBottom: 0 }}>
-                <strong>Empate técnico</strong> com{" "}
-                {tied.map((t) => `${t.c.name} (${t.c.party})`).join(", ")}: nas
-                dimensões medidas, esses planos são equivalentes.
+                <strong>Empate técnico:</strong> nas dimensões medidas, esses
+                planos são equivalentes para as suas respostas.
               </p>
             )}
           </div>
 
-          <div className="result-words">
-            <div className="result-words-title">
-              As 5 palavras que o plano mais repete
-            </div>
-            <div className="wordbars">
-              {topWords.map((e) => (
-                <div className="wordbar-row" key={e.w}>
-                  <span className="wordbar-label">{e.w}</span>
-                  <div className="wordbar-track">
-                    <div
-                      className="wordbar-fill"
-                      style={{
-                        width: `${(e.n / wordMax) * 100}%`,
-                        background: top.c.color,
-                      }}
-                    />
-                  </div>
-                  <span className="wordbar-n">{e.n}</span>
+          <div className="gated-zone">
+            <div className={`gated${unlocked ? " open" : ""}`}>
+              <div className="result-words">
+                <div className="result-words-title">
+                  As 5 palavras que o plano mais repete
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="ranking">
-            {ranking.slice(1, 6).map((r) => (
-              <div className="rank-row" key={r.c.slug}>
-                <img
-                  className="rank-avatar"
-                  src={asset(`candidatos/${r.c.slug}.jpg`)}
-                  alt={r.c.name}
-                />
-                <div>
-                  {r.c.name}
-                  <div className="rank-bar-track">
-                    <div
-                      className="rank-bar"
-                      style={{ width: `${r.pct}%`, background: r.c.color }}
-                    />
-                  </div>
+                <div className="wordbars">
+                  {topWords.map((e) => (
+                    <div className="wordbar-row" key={e.w}>
+                      <span className="wordbar-label">{e.w}</span>
+                      <div className="wordbar-track">
+                        <div
+                          className="wordbar-fill"
+                          style={{
+                            width: `${(e.n / wordMax) * 100}%`,
+                            background: top.c.color,
+                          }}
+                        />
+                      </div>
+                      <span className="wordbar-n">{e.n}</span>
+                    </div>
+                  ))}
                 </div>
-                <span className="rank-pct">{Math.round(r.pct)}%</span>
               </div>
-            ))}
+
+              <div className="result-words-title others-title">
+                Outras afinidades
+              </div>
+              <div className="ranking">
+                {ranking
+                  .filter((r) => !slugs.includes(r.c.slug))
+                  .slice(0, 5)
+                  .map((r) => (
+                    <div className="rank-row" key={r.c.slug}>
+                      <img
+                        className="rank-avatar"
+                        src={asset(`candidatos/${r.c.slug}.jpg`)}
+                        alt={r.c.name}
+                      />
+                      <div>
+                        {r.c.name}
+                        <div className="rank-bar-track">
+                          <div
+                            className="rank-bar"
+                            style={{
+                              width: `${r.pct}%`,
+                              background: r.c.color,
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <span className="rank-pct">{Math.round(r.pct)}%</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
+            {!unlocked && <EmailGate onUnlock={unlock} />}
           </div>
 
           <button className="btn ghost" onClick={restart}>
             Jogar de novo
           </button>
         </motion.div>
-        <Compass user={user} pulse={pulse} showCandidates highlight={top.c.slug} />
+
+        <AxisMaps session={session} answers={answers} highlight={slugs} />
+
+        {toast && (
+          <motion.div
+            className="toast"
+            initial={{ scale: 0.6, opacity: 0, y: 24 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 320, damping: 13 }}
+          >
+            <span>Link copiado</span>
+          </motion.div>
+        )}
       </section>
     );
   }

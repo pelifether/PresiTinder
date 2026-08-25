@@ -3,5 +3,10 @@ dist/
 .venv/
 .DS_Store
 *.log
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 __pycache__/
+.vercel
+.env
+.env.local
+.env*.local
+!.env.example

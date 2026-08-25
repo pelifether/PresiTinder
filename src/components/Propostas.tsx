@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { CANDIDATES, bySlug } from "../data/candidates";
 import wordfreq from "../data/wordfreq.json";
 import aiscore from "../data/aiscore.json";
@@ -58,6 +58,58 @@ const AI_RANKED = Object.entries(ai)
   .filter((e) => e.c)
   .sort((a, b) => b.score - a.score);
 
+const IconRobot = () => (
+  <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+    <g fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="8" width="16" height="11" rx="3" />
+      <path d="M12 5.2V8M8.5 22h7" />
+      <circle cx="12" cy="3.6" r="1.6" fill="currentColor" stroke="none" />
+      <circle cx="9.2" cy="13" r="1.3" fill="currentColor" stroke="none" />
+      <circle cx="14.8" cy="13" r="1.3" fill="currentColor" stroke="none" />
+    </g>
+  </svg>
+);
+
+/**
+ * Lights the pink keyword in a heading the first time it scrolls into view.
+ * One-shot: re-lighting on every pass turns the page into a strobe.
+ */
+function useLit<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [lit, setLit] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setLit(true);
+        io.disconnect();
+      },
+      { threshold: 0.55 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, lit] as const;
+}
+
+function SectionTitle({
+  children,
+  sub,
+}: {
+  children: ReactNode;
+  sub?: ReactNode;
+}) {
+  const [ref, lit] = useLit<HTMLDivElement>();
+  return (
+    <div className={`section-divider${lit ? " lit" : ""}`} ref={ref}>
+      <h3>{children}</h3>
+      {sub && <p>{sub}</p>}
+    </div>
+  );
+}
+
 function WordBars({ words, color }: { words: WordEntry[]; color: string }) {
   const max = words[0]?.n ?? 1;
   return (
@@ -79,15 +131,36 @@ function WordBars({ words, color }: { words: WordEntry[]; color: string }) {
 }
 
 export default function Propostas() {
+  const [headRef, headLit] = useLit<HTMLDivElement>();
   return (
     <section>
-      <div className="prop-header">
-        <h2>Quanto a IA ajudou no plano?</h2>
-        <p>Estimativas do Pangram 4.0 — você pode reproduzir por conta</p>
+      <div className={`prop-header${headLit ? " lit" : ""}`} ref={headRef}>
+        <h2>
+          Quanto a <span className="hl-word">IA ajudou</span> no plano?
+        </h2>
+        <p>
+          Estimativas do{" "}
+          <a
+            href="https://www.pangram.com/research/model-card/pangram-4"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Pangram 4.0
+          </a>{" "}
+          — você pode reproduzir por conta
+        </p>
       </div>
       <div className="ai-grid">
         {AI_RANKED.map(({ c, score }) => (
           <article className="card ai-box" key={c.slug}>
+            {score >= 95 && (
+              <span
+                className="ai-robot"
+                title="Praticamente todo o documento foi classificado como escrito por IA"
+              >
+                <IconRobot />
+              </span>
+            )}
             <img
               className="ai-avatar"
               src={asset(`candidatos/${c.slug}.jpg`)}
@@ -104,9 +177,9 @@ export default function Propostas() {
           </article>
         ))}
       </div>
-      <div className="section-divider">
-        <h3>Palavra mais repetida em cada plano</h3>
-      </div>
+      <SectionTitle>
+        <span className="hl-word">Palavras</span> mais repetidas
+      </SectionTitle>
 
       <div className="prop-grid">
         {CANDIDATES.map((c) => (
@@ -123,15 +196,16 @@ export default function Propostas() {
               </div>
               <div className="cand-word">{stats[c.slug].top[0].w}</div>
             </div>
-            <WordBars words={stats[c.slug].top.slice(0, 10)} color={c.color} />
+            <WordBars words={stats[c.slug].top.slice(0, 7)} color={c.color} />
           </article>
         ))}
       </div>
 
-      <div className="section-divider">
-        <h3>O que é único de cada candidato</h3>
-        <p>Termos estatisticamente distintivos de cada documento (TF-IDF)</p>
-      </div>
+      <SectionTitle
+        sub="Termos estatisticamente distintivos de cada documento (TF-IDF)"
+      >
+        <span className="hl-word">O que é único</span> de cada candidato
+      </SectionTitle>
       <div className="prop-grid">
         {CANDIDATES.map((c) => (
           <article className="card chip-card" key={c.slug}>
@@ -140,7 +214,7 @@ export default function Propostas() {
               {c.name}
             </div>
             <div className="chips">
-              {stats[c.slug].distinctive.slice(0, 6).map((e) => (
+              {stats[c.slug].distinctive.slice(0, 5).map((e) => (
                 <span className="chip" key={e.w}>
                   {e.w}
                 </span>
@@ -150,9 +224,9 @@ export default function Propostas() {
         ))}
       </div>
 
-      <div className="section-divider">
-        <h3>Quantas palavras tem o plano?</h3>
-      </div>
+      <SectionTitle>
+        <span className="hl-word">Quantas palavras</span> tem o plano?
+      </SectionTitle>
       <div className="card" style={{ padding: "22px 26px" }}>
         <div className="wordbars">
           {[...CANDIDATES]
@@ -180,9 +254,9 @@ export default function Propostas() {
         </div>
       </div>
 
-      <div className="section-divider">
-        <h3>A matriz semântica</h3>
-      </div>
+      <SectionTitle>
+        A <span className="hl-word">matriz semântica</span>
+      </SectionTitle>
       <Matrix />
     </section>
   );

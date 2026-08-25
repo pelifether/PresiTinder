@@ -383,6 +383,13 @@ export function buildSession(): Question[] {
 
 export interface SemanticEntry {
   resumo: string;
+  /**
+   * One sentence that frames the *candidate*, not the document. `resumo`
+   * opens with a noun phrase ("Plano de continuidade do governo Lula…"),
+   * which reads like a library catalogue entry when dropped into the result
+   * card. This says who is running and what they are running on.
+   */
+  pitch: string;
   eixos: string[];
   propostas: string[];
   estilo: string;
@@ -518,6 +525,50 @@ export function userCompass(
     y: axis(dims.filter((d) => !X_DIMS.includes(d))),
   };
 }
+
+export interface AxisPair {
+  id: string;
+  title: string;
+  /** horizontal dimension; negative pole on the left */
+  x: { dim: Dim; neg: string; pos: string };
+  /** vertical dimension; positive pole on top (SVG y is inverted on draw) */
+  y: { dim: Dim; neg: string; pos: string };
+}
+
+/**
+ * The eight dimensions read as four maps instead of one.
+ *
+ * The single compass averages three dimensions onto x and five onto y, which
+ * is what makes it readable but also what hides the disagreements: two plans
+ * can land on the same dot and still be opposites on the environment. Each
+ * pair below is one dimension per axis, so nothing is averaged away.
+ */
+export const AXIS_PAIRS: AxisPair[] = [
+  {
+    id: "classico",
+    title: "Economia × Costumes",
+    x: { dim: "econ", neg: "+ ESTADO", pos: "+ MERCADO" },
+    y: { dim: "social", neg: "PROGRESSISTA", pos: "CONSERVADOR" },
+  },
+  {
+    id: "social",
+    title: "Trabalho × Segurança",
+    x: { dim: "welfare", neg: "EXPANDIR", pos: "CONTER" },
+    y: { dim: "seguranca", neg: "PREVENÇÃO", pos: "PUNIÇÃO" },
+  },
+  {
+    id: "estado",
+    title: "Ambiente × Instituições",
+    x: { dim: "ambiente", neg: "CLIMA 1º", pos: "AGRO 1º" },
+    y: { dim: "instituicoes", neg: "REFUNDAR", pos: "CONTER" },
+  },
+  {
+    id: "mundo",
+    title: "Brasil no mundo × Método",
+    x: { dim: "soberania", neg: "SOBERANIA", pos: "INTEGRAÇÃO" },
+    y: { dim: "metodo", neg: "RUPTURA", pos: "GESTÃO" },
+  },
+];
 
 /**
  * Candidate position, −1…+1. Taken straight from the plan's scores rather

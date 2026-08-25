@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/r/:payload", "destination": "/api/share?p=:payload" },
+    { "source": "/:path((?!api/)(?!.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/og.tsx": {
+      "includeFiles": "api/_fonts/**"
+    }
+  }
+}
