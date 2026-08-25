@@ -1,9 +1,9 @@
 /**
  * 1200×630 social card for a shared quiz result: /api/og?i=4&p=86&x=-42&y=-31
  *
- * Echoes the top of the in-app result card — the "DEU MATCH!" tag, the
- * candidate photo(s) and the affinity — plus the political compass with the
- * user's dot on it. Malformed input renders the generic card instead of 500ing.
+ * Echoes the top of the in-app result card — the logo, the candidate
+ * photo(s) with the affinity tag on the corner, and the political compass
+ * with the user's dot. Malformed input renders the generic card instead of 500ing.
  */
 // `vercel dev` compiles this file with the classic JSX transform, so React has
 // to be in scope or every render throws "React is not defined" and quietly
@@ -58,22 +58,111 @@ const initials = (name: string) =>
     .join("")
     .toUpperCase();
 
-function Tag({ children }: { children: string }) {
+/** Same three-tongue mark as the site header. Solid fills: satori is picky
+ *  about SVG gradients and this still reads as the logo from a phone screen. */
+function FlameMark({ size = 52 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24">
+      <path
+        d="M12 23.1c-4.5 0-8.1-3.5-8.1-8 0-3.4 2-5.8 4-7.6 1.8-1.8 3.4-3.5 3.7-6.2.1-.9 1.1-1.3 1.7-.7 1 1 1.4 2.5 2 3.7 1.2 2.3 5 4.8 5 9.8-.1 4.6-3.7 8.1-8.3 8z"
+        fill="#199c56"
+        stroke={INK}
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 23.1c-4.5 0-8.1-3.5-8.1-8 0-3.4 2-5.8 4-7.6 1.8-1.8 3.4-3.5 3.7-6.2.1-.9 1.1-1.3 1.7-.7 1 1 1.4 2.5 2 3.7 1.2 2.3 5 4.8 5 9.8-.1 4.6-3.7 8.1-8.3 8z"
+        fill="#fd3a6d"
+        stroke={INK}
+        strokeWidth="1.9"
+        strokeLinejoin="round"
+        transform="translate(12 23) scale(0.72) translate(-12 -23)"
+      />
+      <path
+        d="M12 20.9c-2.1 0-3.8-1.6-3.8-3.7 0-1.6 1.1-2.7 2.1-3.7.7-.7 1.3-1.4 1.6-2.3.6 1.1 1.2 1.8 1.9 2.6.9.9 2 2 2 3.4 0 2.1-1.7 3.7-3.8 3.7z"
+        fill={YELLOW}
+        stroke={INK}
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        transform="translate(12 23) scale(0.72) translate(-12 -23)"
+      />
+    </svg>
+  );
+}
+
+function Logo() {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <div
+        style={{
+          display: "flex",
+          background: INK,
+          color: PAPER_2,
+          fontFamily: BLACK,
+          fontSize: 34,
+          letterSpacing: 0.4,
+          padding: "7px 18px 10px",
+          borderRadius: 12,
+          boxShadow: `4px 4px 0 ${INK}`,
+          transform: "rotate(-1.2deg)",
+        }}
+      >
+        Presiden
+        <span style={{ color: "#ffc9b0" }}>Tinder</span>
+      </div>
+      <div style={{ display: "flex", transform: "rotate(4deg)" }}>
+        <FlameMark size={48} />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          background: PINK,
+          color: "#fff",
+          fontFamily: BLACK,
+          fontSize: 18,
+          padding: "4px 12px 6px",
+          borderRadius: 9,
+          boxShadow: `3px 3px 0 ${INK}`,
+          transform: "rotate(2deg)",
+        }}
+      >
+        2026
+      </div>
+    </div>
+  );
+}
+
+function AffinityTag({ pct }: { pct: number }) {
   return (
     <div
       style={{
         display: "flex",
-        background: INK,
-        color: PAPER_2,
-        fontFamily: BLACK,
-        fontSize: 30,
-        letterSpacing: 1,
-        padding: "14px 26px 16px",
-        borderRadius: 999,
-        boxShadow: `6px 6px 0 ${PINK}`,
+        flexDirection: "column",
+        position: "absolute",
+        top: -18,
+        right: -20,
+        background: PINK,
+        color: "#fff",
+        border: `3px solid ${INK}`,
+        borderRadius: 14,
+        padding: "8px 13px 9px",
+        boxShadow: `4px 4px 0 ${INK}`,
+        transform: "rotate(5deg)",
+        lineHeight: 1,
       }}
     >
-      {children}
+      <div style={{ display: "flex", fontFamily: BLACK, fontSize: 36 }}>{`${pct}%`}</div>
+      <div
+        style={{
+          display: "flex",
+          fontSize: 11,
+          fontWeight: 700,
+          letterSpacing: 1.3,
+          marginTop: 4,
+        }}
+      >
+        AFINIDADE
+      </div>
     </div>
   );
 }
@@ -281,19 +370,17 @@ function Card({ r, photos }: { r: ShareResult; photos: (string | null)[] }) {
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", width: 600, justifyContent: "space-between" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
-          <div style={{ display: "flex", fontSize: 15, fontWeight: 700, letterSpacing: 3, color: FAINT }}>
-            PresidenTinder · 2026
-          </div>
-          {r.ok ? (
-            <div style={{ display: "flex" }}>
-              <Tag>DEU MATCH!</Tag>
-            </div>
-          ) : null}
+        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+          <Logo />
           {cands.length ? (
-            <div style={{ display: "flex", gap: 22, marginTop: 4 }}>
+            <div style={{ display: "flex", gap: 22, marginTop: 6 }}>
               {cands.map((c, i) => (
-                <Photo key={c.slug} src={photos[i] ?? null} color={c.color} name={c.name} />
+                <div key={c.slug} style={{ display: "flex", position: "relative" }}>
+                  <Photo src={photos[i] ?? null} color={c.color} name={c.name} />
+                  {r.ok && i === cands.length - 1 ? (
+                    <AffinityTag pct={Math.round(r.pct)} />
+                  ) : null}
+                </div>
               ))}
             </div>
           ) : null}
@@ -312,16 +399,7 @@ function Card({ r, photos }: { r: ShareResult; photos: (string | null)[] }) {
             </div>
           )}
         </div>
-        {r.ok ? (
-          <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
-            <div style={{ display: "flex", fontFamily: BLACK, fontSize: 96, color: PINK, lineHeight: 0.9 }}>
-              {`${Math.round(r.pct)}%`}
-            </div>
-            <div style={{ display: "flex", fontSize: 27, fontWeight: 700, color: INK, paddingBottom: 10 }}>
-              de afinidade
-            </div>
-          </div>
-        ) : (
+        {r.ok ? null : (
           <div style={{ display: "flex", fontSize: 22, fontWeight: 600, color: MUTED }}>
             {SITE_TAGLINE} · presi-tinder.vercel.app
           </div>

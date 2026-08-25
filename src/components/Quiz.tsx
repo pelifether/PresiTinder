@@ -385,7 +385,7 @@ export default function Quiz() {
               </div>
 
               <div className="result-words-title others-title">
-                Outras afinidades
+                Suas outras afinidades
               </div>
               <div className="ranking">
                 {ranking

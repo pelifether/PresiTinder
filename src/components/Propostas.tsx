@@ -137,7 +137,8 @@ export default function Propostas() {
     <section>
       <div className={`prop-header${headLit ? " lit" : ""}`} ref={headRef}>
         <h2>
-          Quanto a <span className="hl-word">IA ajudou</span> no plano?
+          Quanto a <span className="hl-word">IA ajudou</span> no plano de
+          governo?
         </h2>
         <p>
           Estimativas do{" "}
@@ -173,10 +174,6 @@ export default function Propostas() {
             <div className="ai-name">
               <PlanLink slug={c.slug}>{c.name}</PlanLink>
             </div>
-            <div
-              className="ai-bar"
-              style={{ width: `${score}%`, background: aiColor(score) }}
-            />
           </article>
         ))}
       </div>
@@ -262,7 +259,7 @@ export default function Propostas() {
       </div>
 
       <SectionTitle>
-        A <span className="hl-word">matriz semântica</span>
+        Comparando os <span className="hl-word">planos de governo</span>
       </SectionTitle>
       <Matrix />
     </section>
