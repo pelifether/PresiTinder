@@ -72,7 +72,7 @@ def main() -> None:
 
     # logo badge
     f_logo = black(46)
-    presi, tinder = "Presiden", "tinder"
+    presi, tinder = "Presiden", "Tinder"
     w_presi = d.textlength(presi, font=f_logo)
     w_tinder = d.textlength(tinder, font=f_logo)
     badge = (LX, 64, LX + w_presi + w_tinder + 44, 64 + 74)

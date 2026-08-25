@@ -283,7 +283,7 @@ function Card({ r, photos }: { r: ShareResult; photos: (string | null)[] }) {
       <div style={{ display: "flex", flexDirection: "column", width: 600, justifyContent: "space-between" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
           <div style={{ display: "flex", fontSize: 15, fontWeight: 700, letterSpacing: 3, color: FAINT }}>
-            PRESIDENTINDER · 2026
+            PresidenTinder · 2026
           </div>
           {r.ok ? (
             <div style={{ display: "flex" }}>

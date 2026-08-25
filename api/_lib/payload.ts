@@ -13,7 +13,7 @@
 // specifiers untouched, and Node's ESM resolver will not guess extensions.
 import { CANDIDATES } from "./data.js";
 
-export const SITE_NAME = "Presidentinder";
+export const SITE_NAME = "PresidenTinder";
 export const SITE_TAGLINE = "dê match com um plano de governo";
 
 /** A tie beyond three candidates is not worth rendering on a card. */

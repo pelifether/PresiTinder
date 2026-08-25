@@ -52,7 +52,7 @@ export default function EmailGate({ onUnlock }: { onUnlock: () => void }) {
 
   return (
     <form className="gate" onSubmit={submit}>
-      <div className="gate-title">Falta pouco</div>
+      <div className="gate-title">Descubra mais sobre você</div>
       <div className="gate-row">
         <input
           type="email"

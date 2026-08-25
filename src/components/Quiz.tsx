@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import AxisMaps from "./AxisMaps";
 import Compass from "./Compass";
 import EmailGate, { useUnlocked } from "./EmailGate";
+import PlanLink from "./PlanLink";
 import SwipeCard from "./SwipeCard";
 import { CANDIDATES, bySlug } from "../data/candidates";
 import { asset } from "../lib/asset";
@@ -172,19 +173,21 @@ export default function Quiz() {
           <p>Responda {PER_SESSION} perguntas rápidas e descubra.</p>
         </div>
         <div style={{ textAlign: "center" }}>
-          <motion.button
-            className="btn start-btn"
-            animate={autoPress ? { scale: [1, 0.9, 1.07, 1] } : { scale: 1 }}
-            transition={{ duration: 0.36, ease: "easeOut" }}
-            whileHover={{ rotate: -1 }}
-            whileTap={{ scale: 0.94 }}
-            onClick={() => setPhase("asking")}
-          >
-            COMEÇAR
+          <div className="start-wrap">
+            <motion.button
+              className="btn start-btn"
+              animate={autoPress ? { scale: [1, 0.9, 1.07, 1] } : { scale: 1 }}
+              transition={{ duration: 0.36, ease: "easeOut" }}
+              whileHover={{ rotate: -1 }}
+              whileTap={{ scale: 0.94 }}
+              onClick={() => setPhase("asking")}
+            >
+              COMEÇAR
+            </motion.button>
             <span className="start-countdown" aria-hidden="true">
               <span className="start-countdown-fill" />
             </span>
-          </motion.button>
+          </div>
         </div>
         <Compass user={null} pulse={0} />
       </section>
@@ -244,7 +247,7 @@ export default function Quiz() {
       if (sheet) {
         try {
           await navigator.share({
-            title: "Presidentinder",
+            title: "PresidenTinder",
             text: `Deu match com ${names} — ${pct}% de afinidade. E você?`,
             url,
           });
@@ -309,7 +312,14 @@ export default function Quiz() {
             </div>
           </div>
 
-          <div className="result-name">{names}</div>
+          <div className="result-name">
+            {winners.map((w, i) => (
+              <span key={w.c.slug}>
+                {i > 0 ? " e " : null}
+                <PlanLink slug={w.c.slug}>{w.c.name}</PlanLink>
+              </span>
+            ))}
+          </div>
           <div className="result-party">
             {winners.map((w) => `${w.c.party} · nº ${w.c.number}`).join(" · ")}
           </div>
@@ -330,11 +340,23 @@ export default function Quiz() {
               </p>
             )}
             {tied.length > 0 && (
-              <p style={{ marginBottom: 0 }}>
+              <p>
                 <strong>Empate técnico:</strong> nas dimensões medidas, esses
                 planos são equivalentes para as suas respostas.
               </p>
             )}
+            <p className="result-plan">
+              {winners.length === 1 ? (
+                <PlanLink slug={top.c.slug}>Ler o plano</PlanLink>
+              ) : (
+                winners.map((w, i) => (
+                  <span key={w.c.slug}>
+                    {i > 0 ? " · " : null}
+                    <PlanLink slug={w.c.slug}>Ler o plano de {w.c.name}</PlanLink>
+                  </span>
+                ))
+              )}
+            </p>
           </div>
 
           <div className="gated-zone">
@@ -377,7 +399,7 @@ export default function Quiz() {
                         alt={r.c.name}
                       />
                       <div>
-                        {r.c.name}
+                        <PlanLink slug={r.c.slug}>{r.c.name}</PlanLink>
                         <div className="rank-bar-track">
                           <div
                             className="rank-bar"

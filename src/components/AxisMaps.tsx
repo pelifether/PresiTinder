@@ -203,8 +203,7 @@ export default function AxisMaps({ session, answers, highlight }: Props) {
 
   return (
     <div className="axis-maps">
-      <div className="axis-maps-top">
-        <span className="axis-maps-title">as oito dimensões, quatro mapas</span>
+          <div className="axis-maps-top">
         {manual ? (
           <button className="axis-maps-btn" onClick={() => setManual(false)}>
             retomar

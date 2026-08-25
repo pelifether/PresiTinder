@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { CANDIDATES, bySlug } from "../data/candidates";
+import PlanLink from "./PlanLink";
 import wordfreq from "../data/wordfreq.json";
 import aiscore from "../data/aiscore.json";
 import { asset } from "../lib/asset";
@@ -169,7 +170,9 @@ export default function Propostas() {
             <div className="ai-pct" style={{ color: aiColor(score) }}>
               {score}%
             </div>
-            <div className="ai-name">{c.name}</div>
+            <div className="ai-name">
+              <PlanLink slug={c.slug}>{c.name}</PlanLink>
+            </div>
             <div
               className="ai-bar"
               style={{ width: `${score}%`, background: aiColor(score) }}
@@ -191,7 +194,9 @@ export default function Propostas() {
                 alt={c.name}
               />
               <div>
-                <div className="cand-name">{c.name}</div>
+                <div className="cand-name">
+                  <PlanLink slug={c.slug}>{c.name}</PlanLink>
+                </div>
                 <div className="cand-party">{c.party}</div>
               </div>
               <div className="cand-word">{stats[c.slug].top[0].w}</div>
@@ -211,7 +216,7 @@ export default function Propostas() {
           <article className="card chip-card" key={c.slug}>
             <div className="chip-owner">
               <span className="chip-dot" style={{ background: c.color }} />
-              {c.name}
+              <PlanLink slug={c.slug}>{c.name}</PlanLink>
             </div>
             <div className="chips">
               {stats[c.slug].distinctive.slice(0, 5).map((e) => (
@@ -238,7 +243,9 @@ export default function Propostas() {
               const n = stats[c.slug].totalWords;
               return (
                 <div className="wordbar-row size-row" key={c.slug}>
-                  <span className="wordbar-label">{c.name}</span>
+                  <span className="wordbar-label">
+                    <PlanLink slug={c.slug}>{c.name}</PlanLink>
+                  </span>
                   <div className="wordbar-track">
                     <div
                       className="wordbar-fill"
@@ -309,7 +316,7 @@ function Matrix() {
             <tr key={c.slug}>
               <td className="heat-name">
                 <img src={asset(`candidatos/${c.slug}.jpg`)} alt="" />
-                {c.name}
+                <PlanLink slug={c.slug}>{c.name}</PlanLink>
               </td>
               {DIMS.map((d) => {
                 const v = SEMANTIC[c.slug].scores[d.key];

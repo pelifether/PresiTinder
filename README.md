@@ -1,4 +1,4 @@
-# Presidentinder · 2026
+# PresidenTinder · 2026
 
 Dê match com um plano de governo. Quiz e análise dos planos dos candidatos à
 Presidência do Brasil em 2026, baseados exclusivamente nos documentos oficiais
@@ -9,7 +9,7 @@ protocolados no
 
 ## O que tem aqui
 
-- **Quiz "Presidentinder"** (página principal): 10 cards, respondidos como no
+- **Quiz "PresidenTinder"** (página principal): 10 cards, respondidos como no
   Tinder — arrasta pra esquerda (NÃO), pra direita (SIM) ou pra cima (pular).
   A cada resposta, sua posição se move num mapa político 2D
   (Estado ↔ Mercado × Progressista ↔ Conservador). Os candidatos só aparecem
@@ -104,7 +104,9 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 ## Estrutura
 
-- `data/pdfs/` — planos originais (TSE)
+- `data/pdfs/` — planos originais (TSE), servidos em `/planos/<slug>.pdf`.
+  Nomes de candidatos no site (exceto rótulos dos mapas políticos) apontam
+  para o PDF protocolado.
 - `data/text/` — texto extraído (pdftotext)
 - `data/semantic/` — rubrica e análises por candidato (JSON com evidências)
 - `pipeline/` — scripts de processamento

@@ -105,19 +105,24 @@ export default function Compass({
         <line x1={SIZE / 2} y1={PAD} x2={SIZE / 2} y2={SIZE - PAD} stroke="#191512" strokeWidth="1.4" strokeDasharray="5 6" opacity="0.5" />
         <line x1={PAD} y1={SIZE / 2} x2={SIZE - PAD} y2={SIZE / 2} stroke="#191512" strokeWidth="1.4" strokeDasharray="5 6" opacity="0.5" />
 
-        {/* axis labels */}
-        <text x={SIZE / 2} y={PAD - 34} textAnchor="middle" className="ax-label">
-          CONSERVADOR
-        </text>
-        <text x={SIZE / 2} y={SIZE - PAD + 44} textAnchor="middle" className="ax-label">
-          PROGRESSISTA
-        </text>
-        <text x={PAD - 34} y={SIZE / 2} textAnchor="middle" className="ax-label" transform={`rotate(-90 ${PAD - 34} ${SIZE / 2})`}>
-          + ESTADO
-        </text>
-        <text x={SIZE - PAD + 34} y={SIZE / 2} textAnchor="middle" className="ax-label" transform={`rotate(90 ${SIZE - PAD + 34} ${SIZE / 2})`}>
-          + MERCADO
-        </text>
+        {/* axis labels — dropped on the result thumbnail, the names are already
+            under the photo and the poles just crowd a fifth-scale map. */}
+        {!compact && (
+          <>
+            <text x={SIZE / 2} y={PAD - 34} textAnchor="middle" className="ax-label">
+              CONSERVADOR
+            </text>
+            <text x={SIZE / 2} y={SIZE - PAD + 44} textAnchor="middle" className="ax-label">
+              PROGRESSISTA
+            </text>
+            <text x={PAD - 34} y={SIZE / 2} textAnchor="middle" className="ax-label" transform={`rotate(-90 ${PAD - 34} ${SIZE / 2})`}>
+              + ESTADO
+            </text>
+            <text x={SIZE - PAD + 34} y={SIZE / 2} textAnchor="middle" className="ax-label" transform={`rotate(90 ${SIZE - PAD + 34} ${SIZE / 2})`}>
+              + MERCADO
+            </text>
+          </>
+        )}
 
         {/* candidates — only after the reveal */}
         {showCandidates &&
