@@ -5,6 +5,13 @@
  * candidate photo(s) and the affinity — plus the political compass with the
  * user's dot on it. Malformed input renders the generic card instead of 500ing.
  */
+// `vercel dev` compiles this file with the classic JSX transform, so React has
+// to be in scope or every render throws "React is not defined" and quietly
+// falls back to the static card. The build pipeline uses the automatic runtime
+// instead, where the import is unused — hence the explicit reference below, so
+// neither pipeline complains. Losing the import breaks local dev only, which
+// is exactly the kind of thing that ships.
+import React from "react";
 import { ImageResponse } from "@vercel/og";
 import { CANDIDATES } from "./_lib/data.js";
 import { fonts } from "./_lib/fonts.js";
@@ -15,6 +22,8 @@ import {
   SITE_TAGLINE,
   type ShareResult,
 } from "./_lib/payload.js";
+
+void React;
 
 const PAPER = "#f6f1e7";
 const PAPER_2 = "#fffdf6";
