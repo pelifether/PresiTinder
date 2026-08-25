@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b tsconfig.json tsconfig.api.json && vite build",
     "preview": "vite preview",
-    "check:api": "node scripts/checkapi.mjs"
+    "check:api": "node scripts/checkapi.mjs",
+    "gen:api": "node scripts/genapidata.mjs"
   },
   "dependencies": {
     "@vercel/og": "^0.11.1",

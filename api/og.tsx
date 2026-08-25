@@ -5,20 +5,16 @@
  * candidate photo(s) and the affinity — plus the political compass with the
  * user's dot on it. Malformed input renders the generic card instead of 500ing.
  */
-// Vercel compiles functions with the classic JSX transform, so React has to be
-// in scope here even though the app itself uses the automatic runtime.
-import React from "react";
 import { ImageResponse } from "@vercel/og";
-import { CANDIDATES } from "../src/data/candidates";
-import { candidateCompass } from "../src/data/quiz";
-import { fonts } from "./_lib/fonts";
+import { CANDIDATES } from "./_lib/data.js";
+import { fonts } from "./_lib/fonts.js";
 import {
   matched,
   originOf,
   parseQuery,
   SITE_TAGLINE,
   type ShareResult,
-} from "./_lib/payload";
+} from "./_lib/payload.js";
 
 const PAPER = "#f6f1e7";
 const PAPER_2 = "#fffdf6";
@@ -161,8 +157,7 @@ function Compass({ r }: { r: ShareResult }) {
             }}
           />
           {others.map((c) => {
-            const p = candidateCompass(c.slug);
-            const { left, top } = dotPos(p.x, p.y, BOX - 8, PAD, 7);
+            const { left, top } = dotPos(c.x, c.y, BOX - 8, PAD, 7);
             return (
               <div
                 key={c.slug}
@@ -180,8 +175,7 @@ function Compass({ r }: { r: ShareResult }) {
             );
           })}
           {mine.map((c) => {
-            const p = candidateCompass(c.slug);
-            const { left, top } = dotPos(p.x, p.y, BOX - 8, PAD, 11);
+            const { left, top } = dotPos(c.x, c.y, BOX - 8, PAD, 11);
             return (
               <div
                 key={c.slug}

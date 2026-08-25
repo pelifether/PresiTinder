@@ -13,9 +13,10 @@
  * only proof it works is a real image coming out the other end.
  */
 import { build } from "esbuild";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
 import path from "node:path";
+import { render } from "./genapidata.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT = path.join(ROOT, "node_modules", ".cache", "checkapi");
@@ -42,6 +43,38 @@ await build({
   packages: "external",
   logLevel: "warning",
 });
+
+// Bundling is what makes the rest of this file possible, and it is also what
+// hid a production outage: tsc emits import specifiers verbatim, the functions
+// run as ESM, and Node's ESM resolver never guesses an extension. Both
+// og and share 500'd on every request with ERR_MODULE_NOT_FOUND while every
+// check below passed. So the specifiers are linted statically instead.
+console.log("0. module resolution");
+{
+  const files = (await readdir(path.join(ROOT, "api"), { recursive: true }))
+    .filter((f) => /\.tsx?$/.test(f))
+    .map((f) => path.join("api", f));
+  check(files.length >= 4, `${files.length} source files under api/`);
+  let bad = 0;
+  for (const file of files) {
+    const src = await readFile(path.join(ROOT, file), "utf8");
+    for (const m of src.matchAll(/\bfrom\s+"(\.[^"]*)"/g)) {
+      const spec = m[1];
+      if (spec.startsWith("../src/") || spec.startsWith("../../src/")) {
+        fail(`${file}: imports app source (${spec}); use api/_lib/data.ts`);
+        bad++;
+      } else if (!spec.endsWith(".js")) {
+        fail(`${file}: relative import "${spec}" needs an explicit .js`);
+        bad++;
+      }
+    }
+  }
+  check(bad === 0, "every relative import is resolvable by Node's ESM loader");
+
+  const generated = await render();
+  const onDisk = await readFile(path.join(ROOT, "api/_lib/data.ts"), "utf8");
+  check(generated === onDisk, "api/_lib/data.ts matches src/data (npm run gen:api)");
+}
 
 const load = async (name) => (await import(path.join(OUT, `${name}.mjs`))).default;
 const [og, share, subscribe] = await Promise.all([

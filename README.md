@@ -14,11 +14,17 @@ protocolados no
   A cada resposta, sua posição se move num mapa político 2D
   (Estado ↔ Mercado × Progressista ↔ Conservador). Os candidatos só aparecem
   no mapa no fim, junto com o plano que mais combina com você, a explicação e
-  uma citação do documento.
+  uma citação do documento. Empate mostra os dois (ou três) planos empatados
+  lado a lado, sem desempate arbitrário.
+  Abaixo do resultado, as 8 dimensões viram **4 mapas** — um par de dimensões
+  por mapa, nada de média — que passam de lado até você tocar num deles.
+  O resultado é compartilhável: o link gera um card social renderizado na hora
+  com o match e o mapa (`api/og`).
 - **Aba "Propostas"**: 5 visualizações dos 12 planos — estimativa de uso de
-  IA por documento, palavra mais repetida em cada plano, termos distintivos por
-  TF-IDF (chips), tamanho de cada documento e a matriz semântica candidatos ×
-  8 dimensões (heatmap com a citação que justifica cada nota no hover).
+  IA por documento, palavras mais repetidas em cada plano, termos distintivos
+  por TF-IDF (chips), tamanho de cada documento e a matriz semântica
+  candidatos × 8 dimensões (heatmap com a citação que justifica cada nota no
+  hover).
 
 ## Método
 

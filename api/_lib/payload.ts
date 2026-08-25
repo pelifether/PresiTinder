@@ -9,7 +9,9 @@
  * when the quiz ended in a tie). Fields are separated by "_"; because negative
  * numbers use "-", splitting on "_" always yields exactly four fields.
  */
-import { CANDIDATES } from "../../src/data/candidates";
+// Note the `.js` extension: these functions run as ESM, tsc emits import
+// specifiers untouched, and Node's ESM resolver will not guess extensions.
+import { CANDIDATES } from "./data.js";
 
 export const SITE_NAME = "Presidentinder";
 export const SITE_TAGLINE = "dê match com um plano de governo";

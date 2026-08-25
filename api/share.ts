@@ -13,7 +13,7 @@ import {
   parsePayload,
   SITE_NAME,
   SITE_TAGLINE,
-} from "./_lib/payload";
+} from "./_lib/payload.js";
 
 const esc = (s: string) =>
   s
