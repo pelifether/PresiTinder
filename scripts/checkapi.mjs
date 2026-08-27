@@ -33,7 +33,7 @@ const check = (cond, msg) => (cond ? ok(msg) : fail(msg));
 
 await mkdir(OUT, { recursive: true });
 await build({
-  entryPoints: ["api/og.tsx", "api/share.ts", "api/subscribe.ts"],
+  entryPoints: ["api/og.tsx", "api/share.ts", "api/subscribe.ts", "api/match.ts"],
   outdir: OUT,
   outExtension: { ".js": ".mjs" },
   bundle: true,
@@ -77,10 +77,11 @@ console.log("0. module resolution");
 }
 
 const load = async (name) => (await import(path.join(OUT, `${name}.mjs`))).default;
-const [og, share, subscribe] = await Promise.all([
+const [og, share, subscribe, match] = await Promise.all([
   load("og"),
   load("share"),
   load("subscribe"),
+  load("match"),
 ]);
 
 /** Requests carry the live host so the card can fetch the candidate photos. */
@@ -196,6 +197,131 @@ console.log("3. api/subscribe");
     "SADDs the normalised address",
   );
   check(call?.body?.[1]?.[0] === "HSETNX", "records first-seen timestamp with HSETNX");
+
+  server.close();
+  delete process.env.KV_REST_API_URL;
+  delete process.env.KV_REST_API_TOKEN;
+}
+
+console.log("4. api/match");
+{
+  const nonce = "11111111-1111-4111-a111-111111111111";
+  const post = (body, headers = {}) =>
+    match.fetch(
+      req("/api/match", {
+        method: "POST",
+        body: typeof body === "string" ? body : JSON.stringify(body),
+        headers: {
+          origin: `https://${HOST}`,
+          "content-type": "application/json",
+          ...headers,
+        },
+      }),
+    );
+
+  const get = await match.fetch(req("/api/match"));
+  const getBody = await get.text();
+  check(get.status === 405, `GET → HTTP ${get.status}`);
+  check(!/"matches"/.test(getBody) && !/\d{2,}/.test(getBody), "GET never returns counts");
+
+  const noOrigin = await match.fetch(
+    req("/api/match", {
+      method: "POST",
+      body: JSON.stringify({ slugs: ["lula"], nonce }),
+      headers: { "content-type": "application/json", "x-forwarded-for": "8.8.8.8" },
+    }),
+  );
+  check(noOrigin.status === 403, `missing Origin → HTTP ${noOrigin.status}`);
+
+  const cross = await post({ slugs: ["lula"], nonce }, { origin: "https://evil.example", "x-forwarded-for": "8.8.8.9" });
+  check(cross.status === 403, `foreign Origin → HTTP ${cross.status}`);
+
+  const good = await post({ slugs: ["lula"], nonce }, { "x-forwarded-for": "9.9.9.1" });
+  const goodJson = JSON.stringify(await good.json());
+  check(good.status === 200, `valid match → HTTP ${good.status}`);
+  check(goodJson === '{"ok":true}', "returns {ok:true} with no storage configured");
+  check(!good.headers.get("access-control-allow-origin"), "no CORS header — other sites cannot read the response");
+
+  const badSlug = await post({ slugs: ["not-a-candidate"], nonce }, { "x-forwarded-for": "9.9.9.2" });
+  check(badSlug.status === 400, `unknown slug → HTTP ${badSlug.status}`);
+
+  const dup = await post({ slugs: ["lula", "lula"], nonce }, { "x-forwarded-for": "9.9.9.3" });
+  check(dup.status === 400, `duplicate slugs → HTTP ${dup.status}`);
+
+  const tooMany = await post(
+    { slugs: ["lula", "zema", "renan-santos", "flavio-bolsonaro"], nonce },
+    { "x-forwarded-for": "9.9.9.4" },
+  );
+  check(tooMany.status === 400, `more than 3 slugs → HTTP ${tooMany.status}`);
+
+  const badNonce = await post({ slugs: ["lula"], nonce: "nope" }, { "x-forwarded-for": "9.9.9.5" });
+  check(badNonce.status === 400, `invalid nonce → HTTP ${badNonce.status}`);
+
+  const big = await post(JSON.stringify({ slugs: ["lula"], nonce, pad: "a".repeat(2000) }), {
+    "x-forwarded-for": "9.9.9.6",
+    "content-length": "5000",
+  });
+  check(big.status === 413, `oversized body → HTTP ${big.status}`);
+
+  let limited = 0;
+  for (let i = 0; i < 12; i++) {
+    const res = await post(
+      { slugs: ["lula"], nonce: `22222222-2222-4222-a222-22222222222${i.toString(16)}` },
+      { "x-forwarded-for": "9.9.9.7" },
+    );
+    if (res.status === 429) limited++;
+  }
+  check(limited > 0, `rate limit kicks in (${limited}/12 rejected)`);
+
+  const seen = [];
+  const claimed = new Set();
+  const server = createServer((req, res) => {
+    let body = "";
+    req.on("data", (c) => (body += c));
+    req.on("end", () => {
+      const parsed = JSON.parse(body);
+      seen.push({ url: req.url, auth: req.headers.authorization, body: parsed });
+      res.writeHead(200, { "content-type": "application/json" });
+      if (parsed[0]?.[0] === "SET") {
+        const key = parsed[0][1];
+        if (claimed.has(key)) {
+          res.end(JSON.stringify([{ result: null }]));
+        } else {
+          claimed.add(key);
+          res.end(JSON.stringify([{ result: "OK" }]));
+        }
+      } else {
+        res.end("[]");
+      }
+    });
+  });
+  await new Promise((r) => server.listen(0, "127.0.0.1", r));
+  process.env.KV_REST_API_URL = `http://127.0.0.1:${server.address().port}/`;
+  process.env.KV_REST_API_TOKEN = "test-token";
+
+  const n1 = "33333333-3333-4333-a333-333333333333";
+  const stored = await post({ slugs: ["lula", "zema"], nonce: n1 }, { "x-forwarded-for": "9.9.9.8" });
+  const storedBody = JSON.stringify(await stored.json());
+  check(stored.status === 200, `with storage configured → HTTP ${stored.status}`);
+  check(storedBody === '{"ok":true}', "response is identical either way");
+  check(!/lula|zema|matches/.test(storedBody), "response never names a candidate or a Redis key");
+  check(seen[0]?.url === "/pipeline", `posts to ${seen[0]?.url}`);
+  check(seen[0]?.auth === "Bearer test-token", "sends the bearer token");
+  check(
+    JSON.stringify(seen[0]?.body?.[0]) === `["SET","matches:nonce:${n1}","1","NX","EX",86400]`,
+    "claims the nonce with SET NX before incrementing",
+  );
+  check(seen[1]?.body?.[0]?.[0] === "INCR" && seen[1]?.body?.[0]?.[1] === "matches:total", "INCRs matches:total");
+  check(
+    JSON.stringify(seen[1]?.body?.slice(1)) ===
+      '[["HINCRBY","matches","lula",1],["HINCRBY","matches","zema",1]]',
+    "HINCRBYs each winner",
+  );
+
+  const replay = await post({ slugs: ["lula"], nonce: n1 }, { "x-forwarded-for": "9.9.9.9" });
+  check(replay.status === 200, `replayed nonce → HTTP ${replay.status}`);
+  check(JSON.stringify(await replay.json()) === '{"ok":true}', "replay still returns {ok:true}");
+  check(seen.filter((c) => c.body?.[0]?.[0] === "INCR").length === 1, "replay does not increment again");
 
   server.close();
   delete process.env.KV_REST_API_URL;

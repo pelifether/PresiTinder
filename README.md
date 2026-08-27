@@ -142,11 +142,22 @@ para `/index.html`, sem engolir `/api/*` nem os arquivos estáticos.
   endpoint que liste, leia ou exporte o que foi coletado. A leitura é feita
   direto no console do Upstash.
 
+- **`POST /api/match`** `{"slugs":["lula"],"nonce":"<uuid>"}` → `{"ok": true}`:
+  incrementa o tally de matches quando alguém termina o quiz de verdade.
+  Também é *write-only*: não há GET, lista, export, tela de admin nem
+  porcentagem no site. A resposta é sempre `{ok:true}` (ou 4xx) — nunca
+  devolve contagens. Só aceita POST same-origin com `Content-Type:
+  application/json`, slugs conhecidos, um nonce UUID (SET NX, 24h) e no
+  máximo 8 posts / 10 min por IP. Pular tudo, abrir um link `/r/…` ou
+  só desbloquear o e-mail não conta. Empate incrementa cada vencedor
+  mostrado; o total de quizzes é outra chave.
+
 ### Variáveis de ambiente
 
-Só o `subscribe` precisa de configuração, e ela é opcional: sem as credenciais
-ele continua respondendo 200 (a página nunca trava pro visitante) e apenas
-registra um aviso no log.
+`subscribe` e `match` usam o mesmo store. Sem as credenciais os dois
+continuam respondendo 200 (a página nunca trava pro visitante) e apenas
+registram um aviso no log. A resposta é idêntica com ou sem store, então
+o cliente não descobre se o Redis está ligado.
 
 | variável | onde |
 | --- | --- |
@@ -158,8 +169,14 @@ Alternativamente, `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`
 Environment Variables, nos três ambientes. Veja `.env.example`. Nenhum segredo
 vai pro repositório.
 
-Os endereços ficam num SET `subscribers` (deduplicado) e a data da primeira
-inscrição num hash `subscribers:first_seen`.
+No console do Upstash (só quem tem a conta):
+
+- SET `subscribers` — e-mails, deduplicados
+- hash `subscribers:first_seen` — primeira inscrição
+- `GET matches:total` — quizzes que geraram match
+- `HGETALL matches` — vezes que cada slug foi match
+- porcentagem de um candidato = `HGET matches <slug>` / `GET matches:total`
+  (a soma dos slugs pode passar de 100% por causa de empates)
 
 Análise independente, sem filiação partidária. Não substitui a leitura dos
 planos.

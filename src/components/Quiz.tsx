@@ -33,6 +33,30 @@ const SITE = "https://presi-tinder.vercel.app";
 /** Milliseconds before the intro starts the quiz on the visitor's behalf. */
 const AUTOSTART_MS = 5000;
 
+/** Survives a Strict Mode remount so the server nonce can reject a double POST. */
+const MATCH_NONCE_KEY = "presidentinder-match-nonce";
+
+function readMatchNonce(): string {
+  try {
+    const existing = sessionStorage.getItem(MATCH_NONCE_KEY);
+    if (existing) return existing;
+    const next = crypto.randomUUID();
+    sessionStorage.setItem(MATCH_NONCE_KEY, next);
+    return next;
+  } catch {
+    return crypto.randomUUID();
+  }
+}
+
+function resetMatchNonce(): string {
+  try {
+    sessionStorage.removeItem(MATCH_NONCE_KEY);
+  } catch {
+    /* private mode */
+  }
+  return readMatchNonce();
+}
+
 type Phase = "intro" | "asking" | "result";
 
 const IconNo = () => (
@@ -102,6 +126,8 @@ export default function Quiz() {
   const [toast, setToast] = useState(false);
   const [unlocked, unlock] = useUnlocked();
   const toastTimer = useRef(0);
+  const matchNonce = useRef(readMatchNonce());
+  const matchSent = useRef(false);
 
   const answered = answeredCount(answers);
   const user = useMemo(
@@ -119,7 +145,27 @@ export default function Quiz() {
   }, [phase, session, answers]);
 
   useEffect(() => {
+    if (phase !== "result" || !answered || matchSent.current || ranking.length === 0) {
+      return;
+    }
+    matchSent.current = true;
+    const top = ranking[0];
+    const tied = ranking.slice(1).filter((r) => Math.abs(r.pct - top.pct) < 0.5);
+    const slugs = [top, ...tied].map((w) => w.c.slug);
+    void fetch("/api/match", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ slugs, nonce: matchNonce.current }),
+      keepalive: true,
+    }).catch(() => {
+      /* telemetry must never break the result page */
+    });
+  }, [phase, answered, ranking]);
+
+  useEffect(() => {
     if (phase !== "asking") return;
+    matchNonce.current = resetMatchNonce();
+    matchSent.current = false;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") setForced(-1);
       else if (e.key === "ArrowRight") setForced(1);
@@ -156,6 +202,8 @@ export default function Quiz() {
   }
 
   function restart() {
+    matchNonce.current = resetMatchNonce();
+    matchSent.current = false;
     setSession(buildSession());
     setPhase("intro");
     setIdx(0);

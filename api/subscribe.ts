@@ -10,6 +10,7 @@
  * way — while warning in the server logs. The response body is identical in
  * both cases, so it never reveals whether storage is configured.
  */
+import { redisCredentials, redisPipeline } from "./_lib/redis.js";
 
 /** Anything longer than this is not an email address. */
 const MAX_BODY = 1024;
@@ -39,19 +40,11 @@ function clientIp(req: Request): string {
   return (fwd ? fwd.split(",")[0] : req.headers.get("x-real-ip") || "").trim() || "unknown";
 }
 
-function credentials(): { url: string; token: string } | null {
-  const env = process.env;
-  const url = env.KV_REST_API_URL || env.UPSTASH_REDIS_REST_URL;
-  const token = env.KV_REST_API_TOKEN || env.UPSTASH_REDIS_REST_TOKEN;
-  return url && token ? { url: url.replace(/\/+$/, ""), token } : null;
-}
-
 let warned = false;
 
 /** Best effort: a storage failure must never fail the request. */
 async function store(email: string): Promise<void> {
-  const creds = credentials();
-  if (!creds) {
+  if (!redisCredentials()) {
     if (!warned) {
       warned = true;
       console.warn(
@@ -61,20 +54,11 @@ async function store(email: string): Promise<void> {
     return;
   }
   const now = new Date().toISOString();
-  const res = await fetch(`${creds.url}/pipeline`, {
-    method: "POST",
-    headers: {
-      authorization: `Bearer ${creds.token}`,
-      "content-type": "application/json",
-    },
-    // SADD dedupes the address; HSETNX keeps the first time we saw it.
-    body: JSON.stringify([
-      ["SADD", "subscribers", email],
-      ["HSETNX", "subscribers:first_seen", email, now],
-    ]),
-    signal: AbortSignal.timeout(3000),
-  });
-  if (!res.ok) throw new Error(`upstash HTTP ${res.status}`);
+  // SADD dedupes the address; HSETNX keeps the first time we saw it.
+  await redisPipeline([
+    ["SADD", "subscribers", email],
+    ["HSETNX", "subscribers:first_seen", email, now],
+  ]);
 }
 
 const json = (status: number, body: unknown) =>
