@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Quiz from "./components/Quiz";
 import Propostas from "./components/Propostas";
 import Flame from "./components/Flame";
@@ -49,6 +50,7 @@ export default function App() {
         . Este site não tem filiação partidária e não substitui a leitura dos
         planos.
       </p>
+      <Analytics />
     </div>
   );
 }
